@@ -1,0 +1,10 @@
+node_modules
+*.vsix
+schemas/key/skills-schema.json
+schemas/key/monsters-schema.json
+schemas/key/items-schema.json
+schemas/key/locations-schema.json
+schemas/key/perks-schema.json
+snippets
+.vscode
+vsc-extension-quickstart.md

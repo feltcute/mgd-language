@@ -1,0 +1,2030 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["theScene", "NameOfScene"],
+  "defaultSnippets": [
+    {
+        "label": "Scene",
+        "markdownDescription": "A blank EventText scene.",
+        "body": { "NameOfScene": "$1", "theScene": ["$2"]}
+    }
+  ],
+  "properties": {
+    "additionalProperties": false,
+    "NameOfScene": {
+      "title": "EventText child key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
+      "type": "string",
+      "minLength": 1
+    },
+    "theScene": {
+      "type": "array",
+      "title": "EventText child key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
+      "items": {
+        "type": "string",
+        "defaultSnippets": [
+          {
+            "label": "\"\"",
+            "markdownDescription": "Safety buffer for autocomplete, commas placed automagically.",
+            "bodyText": "\"$0\""
+          },
+          {
+            "label": "\"\", \n\" \"",
+            "markdownDescription": "Inserts a new line with a string that you can tab to.",
+            "bodyText": "\"$1\",\n\"$0\""
+          },
+          {
+            "label": "\"\", \"\"",
+            "markdownDescription": "Adds a new string that you can tab to.",
+            "bodyText": "\"$1\", \"$0\""
+          },
+          {
+            "label": "SetChoice",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Choice.html#setchoice)**. Choices not yet set are blank strings.",
+            "bodyText": "\"SetChoice\", \"$1\", \"$2\""
+          },
+                  {
+                    "label": "IfChoice",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Choice.html#ifchoice)**. Choices not yet set are blank strings.",
+                    "bodyText": "\"IfChoice\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "ChoiceToDisplayPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Choice.html#choicetodisplayplayer-and-choicetodisplaymonster)**. ",
+                    "bodyText": "\"ChoiceToDisplayPlayer\", \"$1\""
+                  },
+                  {
+                    "label": "ChoiceToDisplayMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Choice.html#choicetodisplayplayer-and-choicetodisplaymonster)**. Markup: `{DisplayPlayerChoice}` and `{DisplayMonsterChoice}`",
+                    "bodyText": "\"ChoiceToDisplayMonster\", \"$1\""
+                  },
+                  {
+                    "label": "SetChoiceToPlayerName",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Choice.html#setchoicetoplayername)**. ",
+                    "bodyText": "\"SetChoiceToPlayerName\", \"$1\""
+                  },
+                  {
+                    "label": "SetChoiceTo PlayerName",
+                    "markdownDescription": "**[Documentation]()**. ",
+                    "bodyText": "\"SetChoiceTo PlayerName\", \"$1\""
+                  },
+          {
+            "label": "QuestComplete",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Complete.html#questcomplete)**. Toggles Quests *and* Events Grimoire visibility. ",
+            "bodyText": "\"QuestComplete\""
+          },
+          {
+            "label": "AdventureComplete",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Complete.html#adventurecomplete)**. Applies to any Location that has the Adventure.",
+            "bodyText": "\"AdventureComplete\""
+          },
+          {
+            "label": "GetEventAndIfChoice",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventChoice.html#geteventandifchoice)**. ",
+            "bodyText": "\"GetEventAndIfChoice\", \"$1\", \"$2\", \"$3\", \"$4\""
+          },
+                  {
+                    "label": "GetEventAndSetChoice",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventChoice.html#geteventandsetchoice)**. ",
+                    "bodyText": "\"GetEventAndSetChoice\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "ChoiceToDisplayPlayerFromOtherEvent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventChoice.html#choicetodisplayplayerfromotherevent-choicetodisplaymonsterfromotherevent)**. ",
+                    "bodyText": "\"ChoiceToDisplayPlayerFromOtherEvent\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ChoiceToDisplayMonsterFromOtherEvent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventChoice.html#choicetodisplayplayerfromotherevent-choicetodisplaymonsterfromotherevent)**. Markup: `{DisplayPlayerChoice}` and `{DisplayMonsterChoice}`",
+                    "bodyText": "\"ChoiceToDisplayMonsterFromOtherEvent\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "SetChoiceToPlayerNameFromOtherEvent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventChoice.html#choicetodisplayplayerfromotherevent-choicetodisplaymonsterfromotherevent)**. ",
+                    "bodyText": "\"SetChoiceToPlayerNameFromOtherEvent\", \"$1\", \"$2\""
+                  },
+          {
+            "label": "GetEventAndChangeProgress",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#geteventandchangeprogress)**. Can be negative.",
+            "bodyText": "\"GetEventAndChangeProgress\", \"$1\", \"$2\""
+          },
+                  {
+                    "label": "GetEventAndSetProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#geteventandsetprogress)**. Can be negative.",
+                    "bodyText": "\"GetEventAndSetProgress\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "GetAnEventsProgressThenIfEquals",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#getaneventsprogressthenifequals)**. ",
+                    "bodyText": "\"GetAnEventsProgressThenIfEquals\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "GetAnEventsProgressThenIfEqualsOrLess",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#getaneventsprogressthenifequalsorgreater)**. ",
+                    "bodyText": "\"GetAnEventsProgressThenIfEqualsOrLess\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "EventsProgressEqualsOtherEventsProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#eventsprogressequalsothereventsprogress)**. ",
+                    "bodyText": "\"EventsProgressEqualsOtherEventsProgress\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfEventsProgressEqualsOrLessThanOtherEventsProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#ifeventsprogressequalsorlessthanothereventsprogress)**. ",
+                    "bodyText": "\"IfEventsProgressEqualsOrLessThanOtherEventsProgress\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "EventsProgressEqualsOrGreaterThanOtherEventsProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GetEventProgress.html#eventsprogressequalsorgreaterthanothereventsprogress)**. ",
+                    "bodyText": "\"EventsProgressEqualsOrGreaterThanOtherEventsProgress\", \"$1\", \"$2\", \"$3\""
+                  },
+          {
+            "label": "InputProgress",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#inputprogress)**. ",
+            "bodyText": "\"InputProgress\""
+          },
+                  {
+                    "label": "IfInputEquals",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#haseroslessthaninput)**. ",
+                    "bodyText": "\"IfInputEquals\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfInputEqualsOrLessThan",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#ifinputequalsorlessthan)**. ",
+                    "bodyText": "\"IfInputEqualsOrLessThan\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "RemoveInputFromPlayerEros",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#removeinputfromplayereros)**. ",
+                    "bodyText": "\"RemoveInputFromPlayerEros\""
+                  },
+                  {
+                    "label": "AddInputToProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#addinputtoprogress-removeinputfromprogress)**. ",
+                    "bodyText": "\"AddInputToProgress\""
+                  },
+                  {
+                    "label": "RemoveInputFromProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#addinputtoprogress-removeinputfromprogress)**. ",
+                    "bodyText": "\"RemoveInputFromProgress\""
+                  },
+                  {
+                    "label": "RemoveProgressFromEros",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#removeprogressfromeros)**. ",
+                    "bodyText": "\"RemoveProgressFromEros\""
+                  },
+          {
+            "label": "Menu",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#menu-system)**. If more than 6 choices, page arrows will be added.",
+            "bodyText": "\"Menu\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+          },
+                  {
+                    "label": "Menu + ShuffleMenu",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#shufflemenu)**. FinalOption disregards ShuffleMenu.",
+                    "bodyText": "\"Menu\", \"ShuffleMenu\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "MaxMenuSlots",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#maxmenuslots)**. Maximum of 6, minimum of 1. FinalOption does not count.",
+                    "bodyText": "\"MaxMenuSlots\", \"$0\""
+                  },
+                  {
+                    "label": "FinalOption",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#finaloption)**. Does not count towards MaxMenuSlots, at bottom of every page.",
+                    "bodyText": "\"FinalOption\", \"$0\""
+                  },
+                  {
+                    "label": "EventJump",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#eventjump-thenjumptoscene)**. ",
+                    "bodyText": "\"EventJump\", \"$0\""
+                  },
+                  {
+                    "label": "EventJump + ThenJumpToScene OR FinalOption",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#eventjump-thenjumptoscene)**. ",
+                    "bodyText": "\"EventJump\", \"${1|ThenJumpToScene,FinalOption|}\", \"$0\""
+                  },
+                  {
+                    "label": "HideOptionOnRequirementFail",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#hideoptiononrequirementfail)**. ",
+                    "bodyText": "\"HideOptionOnRequirementFail\", \"$0\""
+                  },
+                  {
+                    "label": "HideOptionOnRequirementFail + InverseRequirement",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#hideoptiononrequirementfail)**. ",
+                    "bodyText": "\"HideOptionOnRequirementFail\", \"InverseRequirement\", \"$0\""
+                  },
+                  {
+                    "label": "InverseRequirement",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#inverserequirement)**. ",
+                    "bodyText": "\"InverseRequirement\", \"$0\""
+                  },
+                          {
+                            "label": "RequiresStat",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresstat)**. Displayed by default.",
+                            "bodyText": "\"RequiresStat\", \"${1|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresItem",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresitem)**. Displayed by default.",
+                            "bodyText": "\"RequiresItem\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresSkill",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresskill)**. Displayed by default.",
+                            "bodyText": "\"RequiresSkill\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresPerk",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresperk)**. Displayed by default.",
+                            "bodyText": "\"RequiresPerk\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresEnergy",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresenergy)**. Displayed by default.",
+                            "bodyText": "\"RequiresEnergy\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresVirility",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresvirility)**. Displayed by default.",
+                            "bodyText": "\"RequiresVirility\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresItemEquipped",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresitemequipped)**. ",
+                            "bodyText": "\"RequiresItemEquipped\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresTime",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requirestime)**. ",
+                            "bodyText": "\"RequiresTime\", \"${1|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresFetishLevelEqualOrGreater",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresfetishlevelequalorgreater-requiresfetishlevelequalorless)**. ",
+                            "bodyText": "\"RequiresFetishLevelEqualOrGreater\", \"$1\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresFetishLevelEqualOrLess",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresfetishlevelequalorgreater-requiresfetishlevelequalorless)**. ",
+                            "bodyText": "\"RequiresFetishLevelEqualOrLess\", \"$1\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresMinimumProgress",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresminimumprogress-requiresminimumprogressfromevent)**. ",
+                            "bodyText": "\"RequiresMinimumProgress\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresMinimumProgressFromEvent",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresminimumprogress-requiresminimumprogressfromevent)**. ",
+                            "bodyText": "\"RequiresMinimumProgressFromEvent\", \"$1\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresLessProgress",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireslessprogress-requireslessprogressfromevent)**. ",
+                            "bodyText": "\"RequiresLessProgress\", \"$1\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresLessProgressFromEvent",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireslessprogress-requireslessprogressfromevent)**. ",
+                            "bodyText": "\"RequiresLessProgressFromEvent\", \"$1\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresChoice",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireschoice-requireschoicefromevent)**. ",
+                            "bodyText": "\"RequiresChoice\", \"$1\", \"$2\", \"$0\""
+                          },
+                          {
+                            "label": "RequiresChoiceFromEvent",
+                            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireschoice-requireschoicefromevent)**. ",
+                            "bodyText": "\"RequiresChoiceFromEvent\", \"$1\", \"$2\", \"$3\", \"$0\""
+                          },
+          {
+            "label": "StatEqualsOrMore",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#statequalsormore)**. ",
+            "bodyText": "\"StatEqualsOrMore\", \"${1|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$0\""
+          },
+                  {
+                    "label": "HasErosLessThan",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#haseroslessthan)**. ",
+                    "bodyText": "\"HasErosLessThan\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "VirilityEqualsOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#virilityequalsorgreater)**. ",
+                    "bodyText": "\"VirilityEqualsOrGreater\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerorgasm)**. ",
+                    "bodyText": "\"IfPlayerOrgasm\", \"$1\""
+                  },
+                  {
+                    "label": "IfPlayerArousalOverPercentOfMax",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerarousaloverpercentofmax)**. ",
+                    "bodyText": "\"IfPlayerArousalOverPercentOfMax\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerSpiritGone",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerspiritgone)**. ",
+                    "bodyText": "\"IfPlayerSpiritGone\", \"$1\""
+                  },
+                  {
+                    "label": "IfPlayerEnergyGone",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerenergygone)**. ",
+                    "bodyText": "\"IfPlayerEnergyGone\", \"$1\","
+                  },
+                  {
+                    "label": "IfPlayerEnergyLessThanPercent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerenergylessthanpercent)**. ",
+                    "bodyText": "\"IfPlayerEnergyLessThanPercent\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfSensitivityEqualOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifsensitivityequalorgreater)**. ",
+                    "bodyText": "\"IfSensitivityEqualOrGreater\", \"${1|Sex,Ass,Breasts,Mouth,Seduction,Magic,Pain,Holy,Unholy|}\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfHasFetish",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasfetish)**. ",
+                    "bodyText": "\"IfHasFetish\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfFetishLevelEqualOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#iffetishlevelequalorgreater)**. ",
+                    "bodyText": "\"IfFetishLevelEqualOrGreater\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfHasSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasskill)**. ",
+                    "bodyText": "\"IfHasSkill\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfHasItem",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**. ",
+                    "bodyText": "\"IfHasItem\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfDoesntHaveItem",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**. ",
+                    "bodyText": "\"IfDoesntHaveItem\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfHasItemEquipped",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemequipped)**. ",
+                    "bodyText": "\"IfHasItemEquipped\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfHasItemInInventory",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemininventory)**. ",
+                    "bodyText": "\"IfHasItemInInventory\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfHasPerk",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasperk)**. ",
+                    "bodyText": "\"IfHasPerk\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerLevelGreaterThan",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifplayerlevelgreaterthan)**. ",
+                    "bodyText": "\"IfPlayerLevelGreaterThan\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfInExploration",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifinexploration)**. ",
+                    "bodyText": "\"\", \"$1\""
+                  },
+          {
+            "label": "CombatEncounter",
+            "markdownDescription": "**[Documentation]()**. ",
+            "bodyText": "\"CombatEncounter\",\n\t\"$1\",\n\t\"$2\",\n\"StartCombat\""
+          },
+                  {
+                    "label": "CombatEncounter + NoRunning",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PreCombat.html#norunning)**. ",
+                    "bodyText": "\"CombatEncounter\", \"NoRunning\",\n\t\"$1\",\n\t\"$2\",\n\"StartCombat\""
+                  },
+                  {
+                    "label": "CombatEncounter + RunningWontSkipEvent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PreCombat.html#norunning)**. ",
+                    "bodyText": "\"CombatEncounter\", \"RunningWontSkipEvent\",\n\t\"$1\",\n\t\"$2\",\n\"StartCombat\""
+                  },
+                  {
+                    "label": "SetBGOnRun",
+                    "markdownDescription": "*Sub-function*. **[Documentation]()**. Uses Clipboard.",
+                    "bodyText": "\"SetBGOnRun\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "Restrainer",
+                    "markdownDescription": "*Sub-function*. **[Documentation]()**. ",
+                    "bodyText": "\"Restrainer\""
+                  },
+          {
+            "label": "SetProgress",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#setprogress)**. Can be negative.",
+            "bodyText": "\"SetProgress\", \"$1\""
+          },
+                  {
+                    "label": "ChangeProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#changeprogress)**. Can be negative.",
+                    "bodyText": "\"ChangeProgress\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeProgressBasedOnVirility",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#changeprogressbasedonvirility)**. ",
+                    "bodyText": "\"ChangeProgressBasedOnVirility\", \"$1\""
+                  },
+                  {
+                    "label": "ProgressEquals",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#progressequals)**. Can be negative.",
+                    "bodyText": "\"ProgressEquals\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ProgressEqualsOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#progressequalsorgreater)**. Can be negative.",
+                    "bodyText": "\"ProgressEqualsOrGreater\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ProgressEqualsOrLess",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Progress.html#progressequalsorless)**. Can be negative.",
+                    "bodyText": "\"ProgressEqualsOrLess\", \"$1\", \"$2\""
+                  },
+          {
+            "label": "JumpToScene",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SceneJumps.html#jumptoscene)**. ",
+            "bodyText": "\"JumpToScene\", \"$1\""
+          },
+                  {
+                    "label": "JumpToRandomScene",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SceneJumps.html#jumptorandomscene)**. Shares requirement sub-functions with Menus.",
+                    "bodyText": "\"JumpToRandomScene\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "CallSceneThenReturn",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SceneJumps.html#callscenethenreturn)**. ",
+                    "bodyText": "\"CallSceneThenReturn\", \"$1\""
+                  },
+                  {
+                    "label": "CallNextSceneJumpThenReturn",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SceneJumps.html#callnextscenejumpthenreturn)**. ",
+                    "bodyText": "\"CallNextSceneJumpThenReturn\", \"$1\""
+                  },
+          {
+            "label": "DisplayCharacters",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SpeakersSpecific.html#displaycharacters)**. Can use nameID of monster, but still must be in `Speakers`",
+            "bodyText": "\"DisplayCharacters\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+          },
+                  {
+                    "label": "Speaks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SpeakersSpecific.html#speaks)**. Goes up to `Speaks12`.",
+                    "bodyText": "\"Speaks${1:}\",\n\t\"$2\""
+                  },
+                  {
+                    "label": "SetPostName",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SpeakersSpecific.html#setpostname)**. ",
+                    "bodyText": "\"SetPostName\", \"${1: -- }$2\""
+                  },
+                  {
+                    "label": "SetFlexibleSpeaker",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SpeakersSpecific.html#setflexiblespeaker-flexiblespeaks)**. ",
+                    "bodyText": "\"SetFlexibleSpeaker\", \"$1\""
+                  },
+                  {
+                    "label": "FlexibleSpeaks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SpeakersSpecific.html#setflexiblespeaker-flexiblespeaks)**. ",
+                    "bodyText": "\"FlexibleSpeaks\",\n\t\"$2\""
+                  },
+          {
+            "label": "StatCheck",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#statcheck)**. ",
+            "bodyText": "\"StatCheck\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
+          },
+                  {
+                    "label": "StatCheck + ChangeStatCheckDifficulty(s)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#changestatcheckdifficulty)**. Use Tab + Space to force autocomplete options.",
+                    "bodyText": "\"StatCheck\",\n\t\"$1\"\n\t\"${2|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$3\", \"$4\"\n\t\"Fail\", \"$5\""
+                  },
+                          {
+                            "label": "ChangeStatCheckDifficulty+StatusEffect",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifplayerhasstatuseffect)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+StatusEffect(Buff)",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifplayerhasstatuseffect)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfHasPerk",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifhasperk)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasPerk\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfHasFetish",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifhasfetish)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasFetish\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfHasFetishEqualOrGreater",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#iffetishlevelequalorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasFetishEqualOrGreater\", \"$1\", \"$2\", \"$3\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfVirilityEqualOrGreater",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifvirilityequalsorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfVirilityEqualOrGreater\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+EncounterSizeGreaterOrEqualTo",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifencountersizegreaterorequalto-ifencountersizelessorequalto)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfEncounterSizeGreaterOrEqualTo\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+EncounterSizeLessOrEqualTo",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifencountersizegreaterorequalto-ifencountersizelessorequalto)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfEncounterSizeLessOrEqualTo\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfProgressEqualsOrGreater",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifprogressequalsorgreater-getaneventsprogressthenifequalsorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfProgressEqualsOrGreater\", \"$1\", \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+GetAnEventsProgressThenIfEqualsOrGreater",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifprogressequalsorgreater-getaneventsprogressthenifequalsorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"GetAnEventsProgressThenIfEqualsOrGreater\", \"$1\", \"$2\", \"$3\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfChoice",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifchoice-geteventandifchoice)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"\", \"$1\", \"$2\", \"$3\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+GetEventAndIfChoice",
+                            "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifchoice-geteventandifchoice)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"GetEventAndIfChoice\", \"$1\", \"$2\", \"$3\", \"$4\""
+                          },
+                  {
+                    "label": "StatCheckRollUnder",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#statcheckrollunder)**. Can't use any sub-functions or related functions.",
+                    "bodyText": "\"StatCheckRollUnder\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
+                  },
+                  {
+                    "label": "ChangeNextStatCheckDifficulty",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#changenextstatcheckdifficulty)**. ",
+                    "bodyText": "\"ChangeNextStatCheckDifficulty\", \"$1\""
+                  },
+                  {
+                    "label": "ResetStatCheckDifficultyModifer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#resetstatcheckdifficultymodifer)**. ",
+                    "bodyText": "\"ResetStatCheckDifficultyModifer\""
+                  },
+          {
+            "label": "StoreCurrentEventSpotSkippingLines",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StoreEvent.html#storecurrenteventspotskippinglines)**. ",
+            "bodyText": "\"StoreCurrentEventSpotSkippingLines\", \"$1\""
+          },
+          {
+            "label": "GoBackToStoredEvent",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StoreEvent.html#gobacktostoredevent)**. ",
+            "bodyText": "\"GoBackToStoredEvent\""
+          },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {
+              "label": "ChangeBG",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#changebg)**. ",
+              "bodyText": "\"ChangeBG\", \"${1:$CLIPBOARD}\""
+          },
+                  {
+                      "label": "StoreCurrentBG",
+                      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#storecurrentbg-useheldbg)**. ",
+                      "bodyText": "\"StoreCurrentBG\""
+                  },
+                  {
+                    "label": "UseHeldBG",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#storecurrentbg-useheldbg)**. ",
+                    "bodyText": "\"UseHeldBG\""
+                  },
+                  {
+                    "label": "ShowTreasureChest",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#showtreasurechest-hidetreasurechest)**. ",
+                    "bodyText": "\"ShowTreasureChest\""
+                  },
+                  {
+                    "label": "HideTreasureChest",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#showtreasurechest-hidetreasurechest)**. ",
+                    "bodyText": "\"HideTreasureChest\""
+                  },
+          {
+            "label": "ChangeImageLayer",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#changeimagelayer)**. ",
+            "bodyText": "\"ChangeImageLayer\", \"$1\", \"$2\", \"$3\""
+          },
+                  {
+                    "label": "AnimateImageLayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#animateimagelayer)**. ",
+                    "bodyText": "\"AnimateImageLayer\", \"${1|Animation,Animation2,Animation3|}\", \"$2\", \"$3\", \"$4\"\n\t\"$5\",\n\t\"$6\",\n\"EndLoop\""
+                  },
+          {
+            "label": "StopBGM",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#stopbgm)**. ",
+            "bodyText": "\"StopBGM\""
+          },
+                  {
+                    "label": "StopBGMHard",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#stopbgmhard)**. ",
+                    "bodyText": "\"StopBGMHard\""
+                  },
+                  {
+                    "label": "ChangeBGM",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm)**. ",
+                    "bodyText": "\"ChangeBGM\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "ChangeBGM-List",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-list)**. ",
+                    "bodyText": "\"ChangeBGM-List\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "ChangeBGM-OverrideCombatMusic",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-overridecombatmusic)**. ",
+                    "bodyText": "\"ChangeBGM-OverrideCombatMusic\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "ChangeBGM-NoFade",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-nofade)**. ",
+                    "bodyText": "\"ChangeBGM-NoFade\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "PlayThisSongAfterCombat",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#playthissongaftercombat)**. ",
+                    "bodyText": "\"PlayThisSongAfterCombat\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "StoreCurrentBGM",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#storecurrentbgm-playstoredbgm)**. ",
+                    "bodyText": "\"StoreCurrentBGM\""
+                  },
+                  {
+                    "label": "PlayStoredBGM",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#storecurrentbgm-playstoredbgm)**. ",
+                    "bodyText": "\"PlayStoredBGM\""
+                  },
+          {
+            "label": "PlaySoundEffect",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+            "bodyText": "\"PlaySoundEffect\", \"${1:$CLIPBOARD}\""
+          },
+                  {
+                    "label": "PlaySoundEffect2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+                    "bodyText": "\"PlaySoundEffect2\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "PlaySoundEffect SoundBank",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+                    "bodyText": "\"PlaySoundEffect\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+                  },
+                  {
+                    "label": "PlaySoundEffect2 SoundBank",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+                    "bodyText": "\"PlaySoundEffect2\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+                  },
+                  {
+                    "label": "PlaySoundBankOnce",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundbankonce)**. ",
+                    "bodyText": "\"PlaySoundBankOnce\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+                  },
+                  {
+                    "label": "PlayLoopingSoundEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"PlayLoopingSoundEffect\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "PlayLoopingSoundEffect2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"PlayLoopingSoundEffect2\", \"${1:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "PlayLoopingSoundEffect SoundBank",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"PlayLoopingSoundEffect\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+                  },
+                  {
+                    "label": "PlayLoopingSoundEffect2 SoundBank",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"PlayLoopingSoundEffect2\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+                  },
+                  {
+                    "label": "StopSoundEffectLoop",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"StopSoundEffectLoop\""
+                  },
+                  {
+                    "label": "StopSoundEffectLoop2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+                    "bodyText": "\"StopSoundEffectLoop2\""
+                  },
+          {
+            "label": "PlayVisualEffect",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+            "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+          },
+                  {
+                    "label": "PlayVisualEffect2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+                    "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "PlayVisualEffect3",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+                    "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+                  },
+                  {
+                    "label": "EndVisualEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+                    "bodyText": "\"EndVisualEffect\""
+                  },
+                  {
+                    "label": "EndVisualEffect2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+                    "bodyText": "\"EndVisualEffect2\""
+                  },
+                  {
+                    "label": "EndVisualEffect3",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+                    "bodyText": "\"EndVisualEffect3\""
+                  },
+          {
+            "label": "PlayKiss",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+            "bodyText": "\"PlayKiss\""
+          },
+                  {
+                    "label": "PlayKissingBarrage",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+                    "bodyText": "\"PlayKissingBarrage\""
+                  },
+                  {
+                    "label": "EndKissingBarrage",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+                    "bodyText": "\"EndKissingBarrage\""
+                  },
+                  {
+                    "label": "PlayKissingBarrageOnce",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+                    "bodyText": "\"PlayKissingBarrageOnce\""
+                  },
+                  {
+                    "label": "PlayBlackOut",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+                    "bodyText": "\"PlayBlackOut\""
+                  },
+                  {
+                    "label": "EndBlackOut",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+                    "bodyText": "\"EndBlackOut\""
+                  },
+          {
+            "label": "PlayHypnoSpiral",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+            "bodyText": "\"PlayHypnoSpiral\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+          },
+                  {
+                    "label": "EndHypnoSpiral",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+                    "bodyText": "\"EndHypnoSpiral\""
+                  },
+                  {
+                    "label": "PlayPendulum",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. ",
+                    "bodyText": "\"PlayPendulum\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+                  },
+                  {
+                    "label": "EndPendulum",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. ",
+                    "bodyText": "\"EndPendulum\""
+                  },
+          {
+            "label": "PlayImagePulseLoopingList",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+            "bodyText": "\"PlayImagePulseLoopingList\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+          },
+                  {
+                    "label": "EndImagePulseLoopingList",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+                    "bodyText": "\"EndImagePulseLoopingList\""
+                  },
+                  {
+                    "label": "PlayImagePulseLoopingList2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+                    "bodyText": "\"PlayImagePulseLoopingList2\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "EndImagePulseLoopingList2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+                    "bodyText": "\"EndImagePulseLoopingList2\""
+                  },
+                  {
+                    "label": "PlayImagePulseLoopingRandom",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopingrandom)**. ",
+                    "bodyText": "\"PlayImagePulseLoopingRandom\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "EndImagePulseLoopingRandom",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopingrandom)**. ",
+                    "bodyText": "\"EndImagePulseLoopingRandom\""
+                  },
+                  {
+                    "label": "PlayCustomBarrage",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+                    "bodyText": "\"PlayCustomBarrage\", \"$1\" \"$2\"\n\t\"$3\",\n\t\"$4\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "EndCustomBarrage",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+                    "bodyText": "\"EndCustomBarrage\""
+                  },
+                  {
+                    "label": "PlayCustomBarrage2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+                    "bodyText": "\"PlayCustomBarrage2\", \"$1\" \"$2\"\n\t\"$3\",\n\t\"$4\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "EndCustomBarrage2",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+                    "bodyText": "\"EndCustomBarrage2\""
+                  },
+          {
+            "label": "PlayMotionEffect Characters",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+            "bodyText": "\"PlayMotionEffect\", \"${1|Realign,Bounce,BounceSlow,BounceFast,BounceOnce,Sway,SwaySlow,SwayFast,SwayOnce,Pump,PumpSlow,PumpFast,Ride,RideSlow,RideFast,Vibrate|}\""
+          },
+                  {
+                    "label": "PlayMotionEffect Screen",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+                    "bodyText": "\"PlayMotionEffect\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+                  },
+                  {
+                    "label": "PlayMotionEffectLoop Characters",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectloop)**. ",
+                    "bodyText": "\"PlayMotionEffectLoop\", \"${1|Realign,Bounce,BounceSlow,BounceFast,BounceOnce,Sway,SwaySlow,SwayFast,SwayOnce,Pump,PumpSlow,PumpFast,Ride,RideSlow,RideFast,Vibrate|}\""
+                  },
+                  {
+                    "label": "PlayMotionEffectLoop Screen",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectloop)**. ",
+                    "bodyText": "\"PlayMotionEffectLoop\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+                  },
+                  {
+                    "label": "EndMotionEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+                    "bodyText": "\"EndMotionEffect\""
+                  },
+          {
+            "label": "PlayMotionEffectCustom Characters",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+            "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Characters\", \"$2\", \"$3\""
+          },
+          {
+            "label": "PlayMotionEffectCustom Character",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+            "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Character\", \"$2\", \"$3\", \"$4\""
+          },
+          {
+            "label": "PlayMotionEffectCustom BodyPart",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+            "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Bodypart\", \"$2\", \"$3\", \"$4\", \"$5\""
+          },
+          {
+            "label": "EndAllVisualEffects",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#endallvisualeffects)**. ",
+            "bodyText": "\"EndAllVisualEffects\""
+          },
+
+
+
+
+
+
+
+
+          {
+            "label": "HideMonsterEncounter",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html)**. ",
+            "bodyText": "\"HideMonsterEncounter\""
+          },
+                  {
+                    "label": "ShowMonsterEncounter",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html)**. ",
+                    "bodyText": "\"ShowMonsterEncounter\""
+                  },
+                  {
+                    "label": "AddMonsterToEncounter",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#addmonstertoencounter)**. ",
+                    "bodyText": "\"AddMonsterToEncounter\", \"$1\""
+                  },
+                  {
+                    "label": "AddMonsterToEncounter + ChangeForm",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#changeform)**. ",
+                    "bodyText": "\"AddMonsterToEncounter\", \"ChangeForm\" \"$1\""
+                  },
+          {
+            "label": "PlayerLosesCombat",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html)**. ",
+            "bodyText": "\"PlayerLosesCombat\""
+          },
+                  {
+                    "label": "EndCombat",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#endcombat)**. ",
+                    "bodyText": "\"EndCombat\""
+                  },
+                  {
+                    "label": "ClearFightForVictory",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearfightforvictory)**. ",
+                    "bodyText": "\"ClearFightForVictory\""
+                  },
+                  {
+                    "label": "ClearMonsterEncounter",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearmonsterencounter)**. ",
+                    "bodyText": "\"ClearMonsterEncounter\""
+                  },
+                  {
+                    "label": "ClearMonsterEncounterBossFight",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearmonsterencounterbossfight)**. ",
+                    "bodyText": "\"ClearMonsterEncounterBossFight\""
+                  },
+                  {
+                    "label": "RemoveMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#removemonster)**. ",
+                    "bodyText": "\"RemoveMonster\""
+                  },
+                  {
+                    "label": "DefeatMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#defeatmonster)**. ",
+                    "bodyText": "\"DefeatMonster\""
+                  },
+                  {
+                    "label": "DenyTargetOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/IgnoreOrgasm.html)**. ",
+                    "bodyText": "\"DenyTargetOrgasm\""
+                  },
+                  {
+                    "label": "DenyAttackerOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/IgnoreOrgasm.html)**. ",
+                    "bodyText": "\"DenyAttackerOrgasm\""
+                  },
+          {
+            "label": "SemenHeal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html)**. ",
+            "bodyText": "\"SemenHeal\", \"$1\""
+          },
+                  {
+                    "label": "EnergyDrain",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#energydrain)**. ",
+                    "bodyText": "\"EnergyDrain\", \"$1\""
+                  },
+                  {
+                    "label": "SetSkipMonsterAttack",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#setskipmonsterattack)**. ",
+                    "bodyText": "\"SetSkipMonsterAttack\""
+                  },
+                  {
+                    "label": "SetResumeMonsterAttack",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#setresumemonsterattack)**. ",
+                    "bodyText": "\"SetResumeMonsterAttack\""
+                  },
+                  {
+                    "label": "SkipAllMonsterAttacks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#skipallmonsterattacks)**. ",
+                    "bodyText": "\"SkipAllMonsterAttacks\""
+                  },
+                  {
+                    "label": "ResumeAllMonsterAttacks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#resumeallmonsterattacks)**. ",
+                    "bodyText": "\"ResumeAllMonsterAttacks\""
+                  },
+                  {
+                    "label": "CallMonsterAttack",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
+                    "bodyText": "\"CallMonsterAttack\""
+                  },
+                  {
+                    "label": "CallMonsterAttack + SpecificAttack",
+                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
+                    "bodyText": "\"CallMonsterAttack\", \"SpecificAttack\", \"$1\""
+                  },
+                  {
+                    "label": "EndCounterChecks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#endcounterchecks)**. ",
+                    "bodyText": "\"EndCounterChecks\""
+                  },
+          {
+            "label": "IfThisMonsterIsInEncounter",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html)**. ",
+            "bodyText": "\"IfThisMonsterIsInEncounter\", \"$1\", \"$2\""
+          },
+                  {
+                    "label": "EncounterSizeGreaterOrEqualTo",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
+                    "bodyText": "\"EncounterSizeGreaterOrEqualTo\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "EncounterSizeLessOrEqualTo",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
+                    "bodyText": "\"EncounterSizeLessOrEqualTo\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "MonsterLevelGreaterThan",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterlevelgreaterthan)**. ",
+                    "bodyText": "\"MonsterLevelGreaterThan\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfMonsterHasStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                  },
+          {
+            "label": "IfMonsterHasStatusEffect (Buff)",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+            "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+          },
+                  {
+                    "label": "IfOtherMonsterHasStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$3\""
+                  },
+                  {
+                    "label": "IfOtherMonsterHasStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$3\""
+                  },
+                  {
+                    "label": "IfMonsterDoesntHaveStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}\""
+                  },
+                  {
+                    "label": "IfMonsterDoesntHaveStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\""
+                  },
+                  {
+                    "label": "IfOtherMonsterDoesntHaveStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}\", \"$3\""
+                  },
+                  {
+                    "label": "IfOtherMonsterDoesntHaveStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+                    "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$3\""
+                  },
+                  {
+                    "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Effect Variant",
+                    "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Buff Variant.",
+                    "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "IfMonsterArousalGreaterThan",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterarousalgreaterthan)**. ",
+                    "bodyText": "\"IfMonsterArousalGreaterThan\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfMonsterOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterorgasm)**. ",
+                    "bodyText": "\"IfMonsterOrgasm\", \"$1\""
+                  },
+                  {
+                    "label": "CallMonsterEncounterOrgasmCheck",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#callmonsterencounterorgasmcheck)**. ",
+                    "bodyText": "\"CallMonsterEncounterOrgasmCheck\", \"$1\""
+                  },
+                  {
+                    "label": "IfMonsterSpiritGone",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterspiritgone)**. ",
+                    "bodyText": "\"IfMonsterSpiritGone\", \"$1\""
+                  },
+                  {
+                    "label": "IfMonsterHasSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
+                    "bodyText": "\"IfMonsterHasSkill\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfMonsterHasPerk",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
+                    "bodyText": "\"IfMonsterHasPerk\", \"$1\", \"$2\""
+                  },
+          {
+            "label": "ChangeMonsterArousal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+            "bodyText": "\"ChangeMonsterArousal\", \"$1\""
+          },
+                  {
+                    "label": "ChangeMonsterSpirit",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+                    "bodyText": "\"ChangeMonsterSpirit\", \"$1\""
+                  },
+                  {
+                    "label": "MonsterOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#monsterorgasm)**. ",
+                    "bodyText": "\"MonsterOrgasm\", \"$1\""
+                  },
+                  {
+                    "label": "DenyMonsterOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#denymonsterorgasm)**. ",
+                    "bodyText": "\"DenyMonsterOrgasm\""
+                  },
+                  {
+                    "label": "RefreshMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#refreshmonster)**. ",
+                    "bodyText": "\"RefreshMonster\""
+                  },
+                  {
+                    "label": "ApplyStatusEffectToMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
+                    "bodyText": "\"ApplyStatusEffectToMonster\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveStatusEffectFromMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
+                    "bodyText": "\"RemoveStatusEffectFromMonster\", \"$1\""
+                  },
+                  {
+                    "label": "HitMonsterWith",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#hitmonsterwith)**. ",
+                    "bodyText": "\"HitMonsterWith\", \"$1\""
+                  },
+          {
+            "label": "FocusOnMonster",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html)**. ",
+            "bodyText": "\"FocusOnMonster\", \"$1\""
+          },
+                  {
+                    "label": "FocusOnRandomMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusonrandommonster)**. ",
+                    "bodyText": "\"FocusOnRandomMonster\""
+                  },
+                  {
+                    "label": "ShuffleMonsterEncounter",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#shufflemonsterencounter)**. ",
+                    "bodyText": "\"ShuffleMonsterEncounter\""
+                  },
+                  {
+                    "label": "RefocusOnInitialMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#refocusoninitialmonster)**. Will not work if you used `ShuffleMonsterEncounter`",
+                    "bodyText": "\"RefocusOnInitialMonster\""
+                  },
+                  {
+                    "label": "FocusedSpeaks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusedspeaks)**. ",
+                    "bodyText": "\"FocusedSpeaks\",\n\t\"$1\""
+                  },
+                  {
+                    "label": "FocusedSpeaksSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusedspeaksskill)**. ",
+                    "bodyText": "\"FocusedSpeaksSkill\",\n\t\"$1\""
+                  },
+          {
+            "label": "DenyPlayerOrgasm",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#denyplayerorgasm)**. ",
+            "bodyText": "\"DenyPlayerOrgasm\""
+          },
+                  {
+                    "label": "HitPlayerWith",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#hitplayerwith)**. Do not use any skill with a targetType that isn't `single`",
+                    "bodyText": "\"HitPlayerWith\", \"$1\""
+                  },
+                  {
+                    "label": "SkipPlayerAttack",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#skipplayerattack)**. Prevents the player from consuming the skill costType, and using consumables.",
+                    "bodyText": "\"SkipPlayerAttack\""
+                  },
+          {
+            "label": "IfPlayerHasStatusEffect",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+            "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+          },
+                  {
+                    "label": "IfPlayerHasStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+                    "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                  },
+                  {
+                    "label": " IfPlayerDoesntHaveStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+                    "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                  },
+                  {
+                    "label": " IfPlayerDoesntHaveStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+                    "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+                    "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+                    "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerStunnedByParalysis",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerstunnedbyparalysis)**. ",
+                    "bodyText": "\"IfPlayerStunnedByParalysis\", \"$1\""
+                  },
+                  {
+                    "label": "IfPlayerIsUsingThisSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerisusingthisskill)**. ",
+                    "bodyText": "\"IfPlayerIsUsingThisSkill\", \"$1\", \"$2\""
+                  },
+          {
+            "label": "ApplyStance",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
+            "bodyText": "\"ApplyStance\", \"$1\""
+          },
+                  {
+                    "label": "ApplyStance + SetAttack",
+                    "markdownDescription": "*Sub-Function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
+                    "bodyText": "\"ApplyStance\", \"$1\", \"SetAttack\", \"$2\""
+                  },
+                  {
+                    "label": "ApplyStanceToOtherMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystancetoothermonster)**. ",
+                    "bodyText": "\"ApplyStanceToOtherMonster\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ClearStanceFromMonsterAndPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#clearstancefrommonsterandplayer)**. ",
+                    "bodyText": "\"ClearStanceFromMonsterAndPlayer\", \"$1\""
+                  },
+          {
+            "label": "IfPlayerHasStance",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
+            "bodyText": "\"IfPlayerHasStance\", \"$1\", \"$2\""
+          },
+                  {
+                    "label": "IfPlayerDoesntHaveStance",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
+                    "bodyText": "\"IfPlayerDoesntHaveStance\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfPlayerHasStances",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstances)**. ",
+                    "bodyText": "\"IfPlayerHasStances\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\", \"$3\""
+                  },
+                  {
+                    "label": "IfMonsterHasStance",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
+                    "bodyText": "\"IfMonsterHasStance\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfMonsterDoesntHaveStance",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
+                    "bodyText": "\"IfMonsterDoesntHaveStance\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfOtherMonsterHasStance",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
+                    "bodyText": "\"IfOtherMonsterHasStance\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfOtherMonsterDoesntHaveStance",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
+                    "bodyText": "\"IfOtherMonsterDoesntHaveStance\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ClearStances",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#clearstances)**. ",
+                    "bodyText": "\"ClearStances\""
+                  },
+
+                  {
+                    "label": "PlayerSpeaksSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html)**.",
+                    "bodyText": "\"PlayerSpeaksSkill\",\n\t\"$1\""
+                  },
+
+
+
+
+
+
+
+
+
+          {
+            "label": "ChangeMonsterLevel",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+            "bodyText": "\"ChangeMonsterLevel\", \"$1\""
+          },
+                          {
+                            "label": "ChangeMonsterErosDrop",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterErosDrop\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterExpDrop",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText":  "\"ChangeMonsterExpDrop\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterMaxSpirit",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText":  "\"ChangeMonsterMaxSpirit\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterMaxArousal",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterMaxArousal\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterMaxEnergy",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterMaxEnergy\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterPower",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterPower\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterWill",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterWill\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterTech",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterTech\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterAllure",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterAllure\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterLuck",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterLuck\", \"$1\""
+                          },
+                          {
+                            "label": "ChangeMonsterInt",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                            "bodyText": "\"ChangeMonsterInt\", \"$1\""
+                          },
+                  {
+                    "label": "ChangeMonsterSensitivity",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonstersensitivity)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                    "bodyText": "\"ChangeMonsterSensitivity\", \"${1|Sex,Ass,Breasts,Mouth,Seduction,Magic,Pain,Holy,Unholy|}\", \"$2\""
+                  },
+                  {
+                    "label": "ChangeMonsterStatusEffectResistances",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonsterstatuseffectresistances)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue. Positive values improve resistance, negative values decrease.",
+                    "bodyText": "\"ChangeMonsterEffectResistances\", \"${1|Aphrodisiac,Charm,Debuff,Restraints,Paralysis,Sleep,Stun,Trance|}\", \"$2\""
+                  },
+                  {
+                    "label": "ChangeMonsterFetish",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonsterfetish)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue. ",
+                    "bodyText": "\"ChangeMonsterFetish\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "GivePerkToMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#giveperktomonster-removeperkfrommonster)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"GivePerkToMonster\", \"$1\""
+                  },
+                  {
+                    "label": "RemovePerkFromMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#giveperktomonster-removeperkfrommonster)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"RemovePerkFromMonster\", \"$1\""
+                  },
+                  {
+                    "label": "GiveSkillToMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#giveskilltomonster-removeskillfrommonster)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"GiveSkillToMonster\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveSkillFromMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#giveskilltomonster-removeskillfrommonster)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"RemoveSkillFromMonster\", \"$1\""
+                  },
+                  {
+                    "label": "ClearMonsterPerks",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#clearmonsterperks-clearmonsterskilllist)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"ClearMonsterPerks\""
+                  },
+                  {
+                    "label": "ClearMonsterSkillList",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#clearmonsterperks-clearmonsterskilllist)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+                    "bodyText": "\"ClearMonsterSkillList\""
+                  },
+          {
+            "label": "ChangeMaxArousal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+            "bodyText": "\"ChangeMaxArousal\", \"$1\""
+          },
+                  {
+                    "label": "ChangeMaxEnergy",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeMaxEnergy\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeMaxSpirit",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeMaxSpirit\", \"$1\""
+                  },
+                  {
+                    "label": "ChangePower",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangePower\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeWill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeWill\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeTech",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeTech\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeAllure",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeAllure\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeLuck",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeLuck\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeInt",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
+                    "bodyText": "\"ChangeInt\", \"$1\""
+                  },
+          {
+            "label": "ChangeSensitivity",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#changesensitivity)**. ",
+            "bodyText": "\"ChangeSensitivity\", \"${1|Sex,Ass,Breasts,Mouth,Seduction,Magic,Pain,Holy,Unholy|}\", \"$2\""
+          },
+                  {
+                    "label": "PermanentlyChangeSensitivity",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#permanentlychangesensitivity)**. ",
+                    "bodyText": "\"PermanentlyChangeSensitivity\", \"${1|Sex,Ass,Breasts,Mouth,Seduction,Magic,Pain,Holy,Unholy|}\", \"$2\""
+                  },
+                  {
+                    "label": "PermanentChangeStatusEffectResistances",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#permanentchangestatuseffectresistances)**. ",
+                    "bodyText": "\"PermanentChangeStatusEffectResistances\", \"${1|Aphrodisiac,Charm,Debuff,Restraints,Paralysis,Sleep,Stun,Trance|}\", \"$2\""
+                  },
+                  {
+                    "label": "ChangeFetish",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#changefetish)**. ",
+                    "bodyText": "\"ChangeFetish\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "PermanentlyChangeFetish",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#permanentlychangefetish)**. ",
+                    "bodyText": "\"PermanentlyChangeFetish\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "SetFetish",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#setfetish)**. ",
+                    "bodyText": "\"SetFetish\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "RespecPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#respecplayer)**. ",
+                    "bodyText": "\"RespecPlayer\""
+                  },
+          {
+            "label": "DonateToGoddess",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Church.html)**. ",
+            "bodyText": "\"DonateToGoddess\""
+          },
+                  {
+                    "label": "SensitivityRestore",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Church.html)**. ",
+                    "bodyText": "\"SensitivityRestore\""
+                  },
+                  {
+                    "label": "PurgeFetishes",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Church.html)**. ",
+                    "bodyText": "\"PurgeFetishes\""
+                  },
+                  {
+                    "label": "AddTributeToProgress",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Church.html)**. ",
+                    "bodyText": "\"AddTributeToProgress\""
+                  },
+          {
+            "label": "PlayerSpeaks",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html)**.",
+            "bodyText": "\"PlayerSpeaks\",\n\t\"$1\""
+          },
+                  {
+                    "label": "Speak",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html#speak)**.",
+                    "bodyText": "\"Speak\", \"$1\",\n\t\"$2\""
+                  },
+                  {
+                    "label": "SaveNextLine",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html#savenextline-usesavedlineinmenu-displaysavedline)**. ",
+                    "bodyText": "\"SaveNextLine\""
+                  },
+                  {
+                    "label": "DisplaySavedLine",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html#savenextline-usesavedlineinmenu-displaysavedline)**. ",
+                    "bodyText": "\"DisplaySavedLine\""
+                  },
+                  {
+                    "label": "UseSavedLineInMenu",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Dialogue.html#savenextline-usesavedlineinmenu-displaysavedline)**. ",
+                    "bodyText": "\"UseSavedLineInMenu\""
+                  },
+          {
+            "label": "ChangeEros",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Eros.html)**. Can be negative.",
+            "bodyText": "\"ChangeEros\", \"$1\""
+          },
+                  {
+                    "label": "ChangeErosByPercent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Eros.html#changeerosbypercent)**. Can be negative.",
+                    "bodyText": "\"ChangeErosByPercent\", \"$1\""
+                  },
+                  {
+                    "label": "SetEros",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Eros.html#seteros)**. **Take Caution**",
+                    "bodyText": "\"SetEros\", \"$1\""
+                  },
+          {
+            "label": "JumpToEvent",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/EventJumps.html)**. Picks the first scene listed by default.",
+            "bodyText": "\"JumpToEvent\", \"$1\""
+          },
+                  {
+                    "label": "JumpToLossEvent",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/EventJumps.html#jumptolossevent)**. ",
+                    "bodyText": "\"JumpToLossEvent\", \"$1\""
+                  },
+                  {
+                    "label": "JumpToEventThenScene",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/EventJumps.html#jumptoeventthenscene)**. ",
+                    "bodyText": "\"JumpToEventThenScene\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "CallCombatEventAndScene",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/EventJumps.html#callcombateventandscene)**. ",
+                    "bodyText": "\"CallCombatEventAndScene\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "CallEventAndSceneThenReturn",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/EventJumps.html#calleventandscenethenreturn)**. ",
+                    "bodyText": "\"CallEventAndSceneThenReturn\", \"$1\", \"$2\""
+                  },
+          {
+            "label": "AllowInventory",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Inventory.html)**. Use `DenyInventory` to undo.",
+            "bodyText": "\"AllowInventory\""
+          },
+                  {
+                    "label": "DenyInventory",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Inventory.html)**. ",
+                    "bodyText": "\"DenyInventory\""
+                  },
+          {
+            "label": "SetArousalToXUnlessHigherThanX",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#setarousaltoxunlesshigherthanx)**. Does not notify player.",
+            "bodyText": "\"SetArousalToXUnlessHigherThanX\", \"$1\""
+          },
+                  {
+                    "label": "SetArousalToXUnlessHigherThanXThenAddY",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#setarousaltoxunlesshigherthanxthenaddy)**. Does not notify player.",
+                    "bodyText": "\"SetArousalToXUnlessHigherThanXThenAddY\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "SetArousalToMax",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#setarousaltomax)**. Does not notify player.",
+                    "bodyText": "\"SetArousalToMax\""
+                  },
+                  {
+                    "label": "ChangeArousal",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changearousal-changearousalquietly)**. Can be negative.",
+                    "bodyText": "\"ChangeArousal\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeArousalQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changearousal-changearousalquietly)**. Can be negative.",
+                    "bodyText": "\"ChangeArousalQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeEnergy",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changeenergy-changeenergyquietly)**. Negative values subtract.",
+                    "bodyText": "\"ChangeEnergy\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeEnergyQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changeenergy-changeenergyquietly)**. Negative values subtract.",
+                    "bodyText": "\"ChangeEnergyQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "PlayerCurrentEnergyCost",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#playercurrentenergycost)**. ",
+                    "bodyText": "\"PlayerCurrentEnergyCost\""
+                  },
+                  {
+                    "label": "SetSpirit",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#setspirit)**. Rounds to the players maximum or 0 if the number is out of bounds.",
+                    "bodyText": "\"SetSpirit\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeSpirit",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changespirit-changespiritquietly)**. Can be negative.",
+                    "bodyText": "\"ChangeSpirit\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeSpiritQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changespirit-changespiritquietly)**. Can be negative.",
+                    "bodyText": "\"ChangeSpiritQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "DamagePlayerFromMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#damageplayerfrommonster)**. Can use `{DamageToPlayer}` to display.",
+                    "bodyText": "\"DamagePlayerFromMonster\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "DamageMonsterFromMonster",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#damagemonsterfrommonster)**. Can use `{DamageToEnemy}` to display.",
+                    "bodyText": "\"DamageMonsterFromMonster\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ChangePerkDuration",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#changeperkduration)**. `6` counts as a full day.",
+                    "bodyText": "\"ChangePerkDuration\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "ApplyStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#applystatuseffect)**. It cannot miss.",
+                    "bodyText": "\"ApplyStatusEffect\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveStatusEffect",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#removestatuseffect)**. ",
+                    "bodyText": "\"RemoveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}"
+                  },
+                  {
+                    "label": "RemoveStatusEffect (Buff)",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#removestatuseffect)**. ",
+                    "bodyText": "\"RemoveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}"
+                  },
+                  {
+                    "label": "ClearNonPersistentStatusEffects",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#clearnonpersistentstatuseffects)**. ",
+                    "bodyText": "\"ClearNonPersistentStatusEffects\""
+                  },
+                  {
+                    "label": "ClearPlayerStatusEffects",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#clearplayerstatuseffects)**. ",
+                    "bodyText": "\"ClearPlayerStatusEffects\""
+                  },
+                  {
+                    "label": "RefreshPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#refreshplayer)**. ",
+                    "bodyText": "\"RefreshPlayer\""
+                  },
+                  {
+                    "label": "HoldCurrentVirility",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#holdcurrentvirility)**. ",
+                    "bodyText": "\"HoldCurrentVirility\""
+                  },
+                  {
+                    "label": "HoldCurrentVirilityEnd",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#holdcurrentvirility)**. ",
+                    "bodyText": "\"HoldCurrentVirilityEnd\""
+                  },
+                  {
+                    "label": "PlayerOrgasm",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#playerorgasm)**. ",
+                    "bodyText": "\"PlayerOrgasm\", \"$1\""
+                  },
+                  {
+                    "label": "PlayerOrgasmNoSpiritLoss",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#playerorgasmnospiritloss)**. ",
+                    "bodyText": "\"PlayerOrgasmNoSpiritLoss\""
+                  },
+                  {
+                    "label": "EmptySpiritCounter",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#emptyspiritcounter)**. ",
+                    "bodyText": "\"EmptySpiritCounter\""
+                  },
+          {
+            "label": "GiveExp",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveexp)**. Ignores Exp modifiers from perks. Can be negative.",
+            "bodyText": "\"GiveExp\", \"$1\""
+          },
+                  {
+                    "label": "GiveItem",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveitem-giveitemquietly)**. Can be negative.",
+                    "bodyText": "\"GiveItem\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "GiveItemQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveitem-giveitemquietly)**. Can be negative.",
+                    "bodyText": "\"GiveItemQuietly\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "GiveSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
+                    "bodyText": "\"GiveSkill\", \"$1\""
+                  },
+                  {
+                    "label": "GiveSkill",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
+                    "bodyText": "\"GiveSkill\", \"$1\""
+                  },
+                  {
+                    "label": "GiveSkillQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
+                    "bodyText": "\"GiveSkillQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveSkillFromPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
+                    "bodyText": "\"RemoveSkillFromPlayer\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveSkillFromPlayerQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
+                    "bodyText": "\"RemoveSkillFromPlayerQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "RemoveSkillFromPlayerTemporarily",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskillthatwastemporarilyremoved-removeskillfromplayertemporarily)**. ",
+                    "bodyText": "\"RemoveSkillFromPlayerTemporarily\", \"$1\""
+                  },
+                  {
+                    "label": "GiveSkillThatWasTemporarilyRemoved",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskillthatwastemporarilyremoved-removeskillfromplayertemporarily)**. ",
+                    "bodyText": "\"GiveSkillThatWasTemporarilyRemoved\", \"$1\""
+                  },
+                  {
+                    "label": "GivePerk",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveperk-removeperk)**. ",
+                    "bodyText": "\"GivePerk\", \"$1\""
+                  },
+                  {
+                    "label": "RemovePerk",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveperk-removeperk)**. ",
+                    "bodyText": "\"RemovePerk\", \"$1\""
+                  },
+                  {
+                    "label": "GivePerkQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveperkquietly-removeperkquietly)**. ",
+                    "bodyText": "\"GivePerkQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "RemovePerkQuietly",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveperkquietly-removeperkquietly)**. ",
+                    "bodyText": "\"RemovePerkQuietly\", \"$1\""
+                  },
+          {
+            "label": "SkillShoppingMenu",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Shop.html)**. ",
+            "bodyText": "\"SkillShoppingMenu\",\n\t\"$1\",\"$2\",\"$3\",\"$4\",\"$5\",\"$6\",\n\t\"$7\",\"$8\",\"$9\",\"$10\",\"$11\",\"$12\",\n\"EndLoop\""
+          },
+                  {
+                    "label": "ShoppingMenu",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Shop.html)**. ",
+                    "bodyText": "\"ShoppingMenu\",\n\t\"$1\",\"$2\",\"$3\",\"$4\",\"$5\",\"$6\",\n\t\"$7\",\"$8\",\"$9\",\"$10\",\"$11\",\"$12\",\n\"EndLoop\""
+                  },
+                  {
+                    "label": "ShoppingMenu Sell Only",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Shop.html)**. ",
+                    "bodyText": "\"ShoppingMenu\", \"EndLoop\""
+                  },
+          {
+            "label": "SwapLineIf Random",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#swaplineif)**. ",
+            "bodyText": "\"SwapLineIf\", \"Random\",\n\t\"$1\",\n\t\"$2\",\n\t\"$3\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Stat",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#swaplineif)**. ",
+            "bodyText": "\"SwapLineIf\", \"Stat\",\n\t\"${1|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$3\",\n\t\"${4|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$5\", \"$6\",\n\t\"${7|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$8\", \"$9\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Arousal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#swaplineif)**. ",
+            "bodyText": "\"SwapLineIf\", \"Arousal\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf MaxArousal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#swaplineif)**. ",
+            "bodyText": "\"SwapLineIf\", \"MaxArousal\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Energy",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#energy-maxenergy)**. ",
+            "bodyText": "\"SwapLineIf\", \"Energy\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf MaxEnergy",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#energy-maxenergy)**. ",
+            "bodyText": "\"SwapLineIf\", \"MaxEnergy\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Virility",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#virility)**. ",
+            "bodyText": "\"SwapLineIf\", \"Virility\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf HasFetish",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#hasfetish)**. Can use blank String for False after checking for a Fetish.",
+            "bodyText": "\"SwapLineIf\", \"HasFetish\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf HasFetishLevelEqualOrGreater",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#hasfetishlevelequalorgreater)**. ",
+            "bodyText": "\"SwapLineIf\", \"HasFetishLevelEqualOrGreater\", \"$1\",\n\t\"$2\", \"$3\",\n\t\"$4\", \"$5\",\n\t\"$6\", \"$7\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Perk",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#perk)**. Can use blank String for False after checking for a Perk.",
+            "bodyText": "\"SwapLineIf\", \"Perk\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf EncounterSize",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#encountersize)**.",
+            "bodyText": "\"SwapLineIf\", \"EncounterSize\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Item",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#item)**.",
+            "bodyText": "\"SwapLineIf\", \"Item\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Eros",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#eros)**.",
+            "bodyText": "\"SwapLineIf\", \"Eros\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf IfTimeIs",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#iftimeis)**.",
+            "bodyText": "\"SwapLineIf\", \"IfTimeIs\",\n\t\"${1|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$2\",\n\t\"${3|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$4\",\n\t\"${5|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Progress",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#progress-othereventsprogress)**.",
+            "bodyText": "\"SwapLineIf\", \"Progress\",\n\t\"$1\", \"$2\",\n\t\"$3\", \"$4\",\n\t\"$5\", \"$6\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf OtherEventsProgress",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#progress-othereventsprogress)**. ",
+            "bodyText": "\"SwapLineIf\", \"OtherEventsProgress\", \"$1\",\n\t\"$2\", \"$3\",\n\t\"$4\", \"$5\",\n\t\"$6\", \"$7\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf Choice",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#choice-othereventschoice)**. ",
+            "bodyText": "\"SwapLineIf\", \"Choice\",\n\t\"$1\", \"$2\", \"$3\",\n\t\"$4\", \"$5\", \"$6\",\n\t\"$7\", \"$8\", \"$9\",\n\"EndLoop\""
+          },
+          {
+            "label": "SwapLineIf OtherEventsChoice",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/SwapLineIf.html#choice-othereventschoice)**. ",
+            "bodyText": "\"SwapLineIf\", \"OtherEventsChoice\", \"$1\",\n\t\"$2\", \"$3\", \"$4\",\n\t\"$5\", \"$6\", \"$7\",\n\t\"$8\", \"$9\", \"$10\",\n\"EndLoop\""
+          },
+          {
+            "label": "PlayerStep",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#playerstep)**. ",
+            "bodyText": "\"PlayerStep\""
+          },
+          {
+            "label": "AdvanceTime",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#advancetime)**. ",
+            "bodyText": "\"AdvanceTime\", \"$1\""
+          },
+          {
+            "label": "AdvanceTime + DelayNotifications",
+            "markdownDescription": "*Sub-function.* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#advancetime)**. ",
+            "bodyText": "\"AdvanceTime\", \"$1\", \"DelayNotifications\""
+          },
+          {
+            "label": "RestPlayer",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#restplayer)**. ",
+            "bodyText": "\"RestPlayer\", \"$1\""
+          },
+          {
+            "label": "RestPlayer + DelayNotifications",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#restplayer)**. ",
+            "bodyText": "\"RestPlayer\", \"$1\", \"DelayNotifications\""
+          },
+          {
+            "label": "IfDelayingNotifications",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#ifdelayingnotifications)**. ",
+            "bodyText": "\"IfDelayingNotifications\", \"$1\""
+          },
+          {
+            "label": "TimeBecomesNight",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#timebecomesnight-timebecomesday)**. ",
+            "bodyText": "\"TimeBecomesNight\""
+          },
+          {
+            "label": "TimeBecomesDay",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#timebecomesnight-timebecomesday)**. ",
+            "bodyText": "\"TimeBecomesDay\""
+          },
+          {
+            "label": "TimeBecomesNormal",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#timebecomesnormal)**. ",
+            "bodyText": "\"TimeBecomesNormal\""
+          },
+          {
+            "label": "IfTimeIs",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#iftimeis)**. ",
+            "bodyText": "\"IfTimeIs\", \"${1|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$2\""
+          },
+          {
+            "label": "HealingSickness",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#healingsickness)**. ",
+            "bodyText": "\"HealingSickness\""
+          },
+          {
+            "label": "IfHealingSickness",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#ifhealingsickness)**. ",
+            "bodyText": "\"IfHealingSickness\", \"$1\""
+          },
+          {
+            "label": "CallLossLevelUp",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html)**. ",
+            "bodyText": "\"CallLossLevelUp\""
+          },
+          {
+            "label": "GameOver",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gameover)**. ",
+            "bodyText": "\"GameOver\""
+          },
+          {
+            "label": "TrueGameOver",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#truegameover)**. ",
+            "bodyText": "\"TrueGameOver\""
+          },
+          {
+            "label": "GoToTown",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gototown)**. ",
+            "bodyText": "\"GoToTown\""
+          },
+          {
+            "label": "BumpToTown",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#bumptotown)**. ",
+            "bodyText": "\"BumpToTown\""
+          },
+          {
+            "label": "GoToChurch",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotochurch)**. ",
+            "bodyText": "\"GoToChurch\""
+          },
+          {
+            "label": "GoToRandomBrothelWaiterScene",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
+            "bodyText": "\"GoToRandomBrothelWaiterScene\""
+          },
+          {
+            "label": "GoToRandomBrothelBarScene",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
+            "bodyText": "\"GoToRandomBrothelBarScene\""
+          },
+          {
+            "label": "GoToRandomBrothelHoleScene",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
+            "bodyText": "\"GoToRandomBrothelHoleScene\""
+          },
+          {
+            "label": "GoToRandomBrothelDayScene",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
+            "bodyText": "\"GoToRandomBrothelDayScene\""
+          }
+        ] 
+      } 
+    }
+
+  }
+    
+}

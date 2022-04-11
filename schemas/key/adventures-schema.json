@@ -1,0 +1,515 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "defaultSnippets": [
+    {
+        "label": "Create Adventure",
+        "description": "A blank Adventure JSON",
+        "bodyText":  "{\n\t\"name\": \"$1\",\n\t\"Description\": \"$2\",\n\t\"requires\": [ \"\"],\n\t\"requiresEvent\": [\n\t\t{\n\t\t\"NameOfEvent\": \"\",\n\t\t\"Progress\": \"-99\",\n\t\t\"ChoiceNumber\": \"-1\",\n\t\t\"Choice\": \"\"\n\t\t}\n\t  ],\n\t\"MusicList\": [ \"\"],\n\t\"Deck\": [\n\t\t\"$3\"\n\t],\n\t\"RandomEvents\": [ \"\"],\n\t\"RandomMonsters\": [ \"\"],\n\t\"MonsterGroups\": [\n\t\t{\n\t\t\t\"Group\": [ \"\"]\n\t\t}\n\t],\n\t\"Treasure\": [\n\t\t{\n\t\t\t\"Common\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Rare\": [ \"\"]\n\t\t}\n\t],\n\t\"Eros\": [\n\t\t{\n\t\t\t\"Common\": \"0\"\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": \"0\"\n\t\t},\n\t\t{\n\t\t\t\"Rare\": \"0\"\n\t\t}\n\t]\n}"
+    },
+    {
+      "label": "Addition Adventure",
+      "description": "A blank Addition Adventure JSON",
+      "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"Addition\": \"Yes\",\n\t\"Deck\": [\n$1\n\t],\n\t\"RandomEvents\": [ \"\"],\n\t\"RandomMonsters\": [ \"\"],\n\t\"MonsterGroups\": [\n\t\t{\n\t\t\t\"Group\": [ \"\"]\n\t\t}\n\t],\n\t\"Treasure\": [\n\t\t{\n\t\t\t\"Common\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Rare\": [ \"\"]\n\t\t}\n\t]\n}"
+    }
+  ],
+  "if": {
+    "properties": {
+      "Addition": {
+        "const": "Yes"
+      }
+    },
+    "dependencies": {
+      "name": [
+        "Addition"
+      ]
+    }
+  },
+  "then": {
+    "required": [
+      "name",
+      "Addition",
+      "Deck",
+      "RandomEvents",
+      "RandomMonsters",
+      "MonsterGroups",
+      "Treasure"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "title": "name key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#name).",
+        "type": "string"
+      },
+      "Addition": {
+        "title": "Addition key",
+        "markdownDescription": "For declaring the Adventure as an addition. If not desired, remove the entire key. See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html).",
+        "type": "string",
+        "const": "Yes"
+      },
+      "Description": {
+        "title": "Description key",
+        "markdownDescription": "*Unused in Additions*.",
+        "type": "string"
+      },
+      "MusicList": {
+        "title": "MusicList key",
+        "markdownDescription": "*Unused in Additions*.",
+        "type": "array",
+        "items": {}
+      },
+      "requires": {
+        "title": "requires key",
+        "markdownDescription": "*Unused in Additions*.",
+        "anyOf": [
+          {
+            "type": "array"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "items": {
+          "type": "string"
+        }
+      },
+      "requiresEvent": {
+        "title": "requiresEvent key",
+        "markdownDescription": "*Unused in Additions*.",
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "required": [
+            "NameOfEvent",
+            "Progress",
+            "ChoiceNumber",
+            "Choice"
+          ],
+          "properties": {
+            "NameOfEvent": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string"
+            },
+            "Progress": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-99"
+            },
+            "ChoiceNumber": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-1"
+            },
+            "Choice": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Deck": {
+        "title": "Deck key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#deck).",
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "$ref": "../value/adventure-deck-schema.json"
+        }
+      },
+      "RandomEvents": {
+        "title": "RandomEvents key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#randomevents).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "RandomMonsters": {
+        "title": "RandomMonsters key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#randommonsters-monstergroups).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "MonsterGroups": {
+        "title": "MonsterGroups key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#randommonsters-monstergroups).",
+        "type": "array",
+        "items": {
+          "required": [
+            "Group"
+          ],
+          "defaultSnippets": [
+            {
+                "label": "Group",
+                "description": "A blank monster Group.",
+                "bodyText": "{ \n\t\"Group\": [ \"$1\"] \n}"
+            }
+          ],
+          "properties": {
+            "Group": {
+              "title": "MonsterGroups child object key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#randommonsters-monstergroups).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Treasure": {
+        "title": "Treasure key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#treasure).",
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": {
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "Common"
+              ]
+            },
+            {
+              "required": [
+                "Uncommon"
+              ]
+            },
+            {
+              "required": [
+                "Rare"
+              ]
+            }
+          ],
+          "properties": {
+            "Common": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#treasure).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Uncommon": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#treasure).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Rare": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#treasure).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Eros": {
+        "title": "Eros key",
+        "markdownDescription": "*Unused in Additions*.",
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "required": [
+                "Common"
+              ]
+            },
+            {
+              "required": [
+                "Uncommon"
+              ]
+            },
+            {
+              "required": [
+                "Rare"
+              ]
+            }
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "Common": {
+              "title": "Eros child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            },
+            "Uncommon": {
+              "title": "Eros child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            },
+            "Rare": {
+              "title": "Eros child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            }
+          }
+        }
+      }
+    }
+  },
+  "else": {
+    "required": [
+      "name",
+      "Description",
+      "requires",
+      "MusicList",
+      "Deck",
+      "RandomEvents",
+      "RandomMonsters",
+      "MonsterGroups",
+      "Treasure",
+      "Eros"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "title": "name key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#name).",
+        "type": "string"
+      },
+      "Addition": {
+        "title": "Addition key",
+        "markdownDescription": "For declaring the Adventure as an addition. If not desired, remove the entire key. See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html).",
+        "type": "string",
+        "const": "Yes"
+      },
+      "Description": {
+        "title": "Description key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#description).",
+        "type": "string"
+      },
+      "MusicList": {
+        "title": "MusicList key",
+        "markdownDescription": "See [documentation(https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#musiclist).",
+        "type": "array",
+        "items": {}
+      },
+      "requires": {
+        "title": "requires key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+        "anyOf": [
+          {
+            "type": "array"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "items": {
+          "type": "string"
+        }
+      },
+      "requiresEvent": {
+        "title": "requiresEvent key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "required": [
+            "NameOfEvent",
+            "Progress",
+            "ChoiceNumber",
+            "Choice"
+          ],
+          "properties": {
+            "NameOfEvent": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+              "type": "string"
+            },
+            "Progress": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+              "type": "string",
+              "pattern": "^-?[0-9]*$",
+              "default": "-99"
+            },
+            "ChoiceNumber": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+              "type": "string",
+              "pattern": "^-?[0-9]*$",
+              "default": "-1"
+            },
+            "Choice": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#requires-requiresevent).",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Deck": {
+        "title": "Deck key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#deck).",
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "$ref": "../value/adventure-deck-schema.json"
+        }
+      },
+      "RandomEvents": {
+        "title": "RandomEvents key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#randomevents).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "RandomMonsters": {
+        "title": "RandomMonsters key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#randommonsters-monstergroups).",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "MonsterGroups": {
+        "title": "MonsterGroups key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#randommonsters-monstergroups).",
+        "type": "array",
+        "items": {
+          "required": [
+            "Group"
+          ],
+          "defaultSnippets": [
+            {
+                "label": "Group",
+                "description": "A blank monster Group.",
+                "bodyText": "\"Group\": [ \"$1\"]"
+            }
+          ],
+          "properties": {
+            "Group": {
+              "title": "MonsterGroups child object key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#randommonsters-monstergroups).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Treasure": {
+        "title": "Treasure key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": {
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "Common"
+              ]
+            },
+            {
+              "required": [
+                "Uncommon"
+              ]
+            },
+            {
+              "required": [
+                "Rare"
+              ]
+            }
+          ],
+          "properties": {
+            "Common": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Uncommon": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Rare": {
+              "title": "Treasure child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Eros": {
+        "title": "Eros key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "required": [
+                "Common"
+              ]
+            },
+            {
+              "required": [
+                "Uncommon"
+              ]
+            },
+            {
+              "required": [
+                "Rare"
+              ]
+            }
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "Common": {
+              "title": "Eros child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            },
+            "Uncommon": {
+              "title": "Eros child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            },
+            "Rare": {
+              "title": "Eros child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#treasure-eros).",
+              "type": "string",
+              "pattern": "^-?[0-9]+$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

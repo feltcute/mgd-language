@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.json.deck.mgd",
+	"injectionSelector": "L:other.type.deck.mgd",
+	"patterns": [
+		{
+			"include": "#single-event"
+		},
+		{
+			"include": "#looping-event"
+		},
+		{
+			"include": "#event-event"
+		}
+	  ],
+	  "repository": {
+      "event-event":{
+        "begin": "\"Event\",",
+        "beginCaptures": {
+          "0": {
+            "name": "keyword.deck.begin.mgd"
+          }
+        },
+        "end": "\"[^\"]*\"",
+        "endCaptures": {
+          "0": {
+            "name": "constant.deck.end.mgd"
+          }
+        },
+        "name": "string.loop.mgd"
+      },
+    "looping-event":{
+      "begin": "\"Monster\"",
+      "beginCaptures": {
+				"0": {
+					"name": "keyword.deck.begin.mgd"
+				}
+			},
+      "end": "\"EndLoop\"",
+      "endCaptures": {
+				"0": {
+					"name": "keyword.deck.end.mgd"
+				}
+			},
+      "name": "keyword.loop.mgd",
+      "patterns": [{"include":"#the-loop"}]
+    },
+    "the-loop":{
+      "match": "\"(?!EndLoop).*?\",",
+      "name": "constant.deck.loop.mgd"
+    },
+    "single-event": {
+    "match": "\"(RandomEvent|RandomMonsters|RandomTreasure|CommonTreasure|UncommonTreasure|RareTreasure|BreakSpot|Unrepeatable)\"",
+    "name": "string.deck.mgd"
+    }
+		}
+}

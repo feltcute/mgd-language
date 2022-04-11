@@ -1,0 +1,94 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.json.strmarfunc.mgd",
+	"injectionSelector": "L:string.marfunc.mgd",
+	"patterns": [{"include": "#the-bodies"}],
+	"repository": {
+		"the-bodies": {
+			"patterns": [
+				{
+					"include": "#string-body"
+				},
+				{
+					"include": "#f-body"
+				}
+			]
+		},
+		"string-body": {
+			"patterns": [
+				{
+					"include": "#the-markup"
+				},
+				{
+					"include": "#the-functions"
+				}
+			]
+		},
+		"f-body": {
+			"patterns": [
+				{
+					"include": "#markup"
+				}
+			]
+		},
+		"markup": {
+			"patterns": [
+				{
+					"include": "#single-markup"
+				},
+				{
+					"include": "#character-markup"
+				},
+				{
+					"include": "#enclosed-markup"
+				},
+				{
+					"include": "#color-end-markup"
+				}
+			]
+		},
+		"single-markup": {
+		  "match": "{(w|w=[0-9]+|nw|fast|ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|TargetName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWords)}",
+		  "name": "keyword.single.markup"
+		},
+		"character-markup":{
+			"match": "([|]n[|]|[|]f[|]|[|]c[|])",
+			"name": "keyword.character.mgd"
+		},
+    "enclosed-markup":{
+      "begin": "{(b|i|u|s|plain|p|p=[0-9]+|cps=[0-9]+|size=[\\-\\+]?[0-9]+)}",
+      "beginCaptures": {
+				"0": {
+					"name": "keyword.enclosed.begin.mgd"
+				}
+			},
+      "end": "{/(b|i|u|s|plain|cps|size)}",
+      "endCaptures": {
+				"0": {
+					"name": "keyword.enclosed.end.mgd"
+				}
+			},
+      "name": "constant.enclosed.mgd"
+    },
+		"color-end-markup": {
+			"begin": "{(Pink|UseSetColor|UseSetColor[2-7]|SetTextColor)}",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.color.begin.mgd"
+				}
+			},
+			"end": "{ColorEnd}",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.color.end.mgd"
+				}
+			},
+			"name": "constant.color.mgd",
+      "patterns": [{"include":"#color-done-markup"}]
+		},
+		"color-done-markup": {
+			"match": "{Done}",
+			"name": "markup.changed.mgd"
+		}
+	  }
+}

@@ -1,0 +1,397 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#",
+"type": "object",
+"defaultSnippets": [
+  {
+      "label": "Create Event",
+      "description": "A blank Event JSON",
+      "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"CardType\": \"$2\",\n\t\"CardLimit\": \"$3\",\n\t\"Description\": \"$4\",\n\t\"requires\": [ \"\"],\n\t\"requiresEvent\": [\n\t\t{\n\t\t\t\"NameOfEvent\": \"\",\n\t\t\t\"Progress\": \"99\",\n\t\t\t\"ChoiceNumber\": \"-1\",\n\t\t\t\"Choice\": \"\"\n\t\t}\n\t],\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"$5\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n\t\t{\n\t\t\t\"NameOfScene\": \"\",\n\t\t\t\"theScene\": [\n\t\t\t\t\"\"\n\t\t\t]\n\t\t}\n\n\t]\n}"
+  },
+  {
+    "label": "Addition Event",
+    "description": "A blank Addition Event JSON",
+    "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"Addition\": \"Yes\",\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n\t\t{\n\t\t\t\"NameOfScene\": \"\",\n\t\t\t\"theScene\": [\n\t\t\t\t\"\"\n\t\t\t]\n\t\t}\n\n\t]\n}"
+  }
+],
+"properties": {
+  "CardType": {
+    "title": "CardType key",
+    "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#cardtype).",
+    "type": "string",
+    "enum": ["Event", "Quest", "BarShift", "WaiterShift", "GloryHoleShift", "DayShift", "Shopping", "Church", "Guild", "Inn", "", "EndOfDay", "TimePassed", "StepTaken", "EndOfTurn", "EndOfCombat", "StartOfTurn", "StartOfCombat", "PlayerOrgasm", "Dream"]
+  }
+},
+"if": {
+  "properties": {
+    "Addition": {
+      "const": "Yes"
+    }
+  },
+  "dependencies": {
+    "name": ["Addition"]
+  }
+},
+"then": {
+  "required": ["name", "Addition", "Speakers", "EventText"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#name-cardtype).",
+      "type": "string"
+    },
+    "Addition": {
+      "title": "Addition key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#name).",
+      "type": "string",
+      "const": "Yes"
+    },
+    "CardType": {
+      "title": "CardType key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#name-cardtype).",
+      "type": "string"
+    },
+    "CardLimit": {
+      "title": "CardLimit key",
+      "markdownDescription": "*Unused in Additions*.",
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "Description": {
+      "title": "Description key",
+      "markdownDescription": "*Unused in Additions*.",
+      "type": "string"
+    },
+    "requires": {
+      "title": "requires key",
+      "markdownDescription": "*Unused in Additions*.",
+      "anyOf": [{
+          "type": "array"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "requiresEvent": {
+      "title": "requiresEvent key",
+      "markdownDescription": "*Unused in Additions*.",
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
+        "properties": {
+          "NameOfEvent": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "*Unused in Additions*.",
+            "type": "string"
+          },
+          "Progress": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "*Unused in Additions*.",
+            "type": "string",
+            "pattern": "^-?[0-9]+$",
+            "default": "-99"
+          },
+          "ChoiceNumber": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "*Unused in Additions*.",
+            "type": "string",
+            "pattern": "^-?[0-9]+$",
+            "default": "-1"
+          },
+          "Choice": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "*Unused in Additions*.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Speakers": {
+      "title": " key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#speakers).",
+      "type": "array",
+      "items": {
+        "required": ["name", "postName", "SpeakerType"],
+        "properties": {
+          "additionalProperties": false,
+          "name": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#speakers).",
+            "type": "string"
+          },
+          "postName": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#speakers).",
+            "type": "string"
+          },
+          "SpeakerType": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#speakers).",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "EventText": {
+      "title": "EventText key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#eventtext).",
+      "type": "array",
+      "items": {
+        "$ref": "../value/event-only-schema.json"
+      }
+    }
+  }
+},
+"else": {
+  "required": ["name", "CardType", "CardLimit", "Description", "requires", "Speakers", "EventText"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#name).",
+      "type": "string"
+    },
+    "Addition": {
+      "title": "Addition key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Additions.html#name).",
+      "type": "string",
+      "const": "Yes"
+    },
+    "CardType": {
+      "title": "CardType key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#cardtype).",
+      "type": "string"
+    },
+    "CardLimit": {
+      "title": "CardLimit key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#cardlimit).",
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "Description": {
+      "title": "Description key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#description).",
+      "type": "string"
+    },
+    "requires": {
+      "title": "requires key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+      "anyOf": [{
+          "type": "array"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "requiresEvent": {
+      "title": "requiresEvent key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
+        "properties": {
+          "NameOfEvent": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+            "type": "string"
+          },
+          "Progress": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+            "type": "string",
+            "pattern": "^-?[0-9]+$",
+            "default": "-99"
+          },
+          "ChoiceNumber": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+            "type": "string",
+            "pattern": "^-?[0-9]+$",
+            "default": "-1"
+          },
+          "Choice": {
+            "title": "requiresEvent child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Speakers": {
+      "title": " key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#speakers).",
+      "type": "array",
+      "items": {
+        "required": ["name", "postName", "SpeakerType"],
+        "properties": {
+          "additionalProperties": false,
+          "name": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#speakers).",
+            "type": "string"
+          },
+          "postName": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#speakers).",
+            "type": "string"
+          },
+          "SpeakerType": {
+            "title": "Speakers child key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#speakers).",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "EventText": {
+      "title": "EventText key",
+      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
+      "type": "array",
+      "items": {
+        "$ref": "../value/event-only-schema.json"
+      }
+    }
+},
+
+"allOf": [
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "Shopping"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["EnterArea"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "Church"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["EnterArea"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "Guild"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["EnterArea"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "Inn"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["EnterArea"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "BarShift"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["BarShift", "WaiterShift", "GloryHoleShift", "DayShift"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "WaiterShift"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["BarShift", "WaiterShift", "GloryHoleShift", "DayShift"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "GloryHoleShift"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["BarShift", "WaiterShift", "GloryHoleShift", "DayShift"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "CardType": {
+            "const": "DayShift"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "Description": {
+            "examples": ["BarShift", "WaiterShift", "GloryHoleShift", "DayShift"]
+          }
+        }
+      }
+    }
+  ]
+}
+}

@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "defaultSnippets": [
+    {
+        "label": "Create FetishList",
+        "description": "A blank FetishList JSON",
+        "bodyText":  "{\n\t\"FetishList\": [\n\t\t{\n\t\t\t\"Name\": \"$1\",\n\t\t\t\"BaseLevel\": \"0\",\n\t\t\t\"Type\": \"$2\",\n\t\t\t\"CreationOn\": \"$3\",\n\t\t\t\"CreationOff\": \"\"\n\t\t}\n\t]\n}"
+    }
+  ],
+  "additionalProperties": false,
+  "required": ["FetishList"],
+  "properties": {
+    "FetishList":
+    {
+      "title": "FetishList key",
+      "markdownDescription": "See [fetish documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#fetishes-addictions), and the [addiction section](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#addictions).",
+      "type": "array",
+      "items": {
+        "defaultSnippets": [
+          {
+              "label": "Fetish",
+              "description": "A blank Fetish .",
+              "body": { "Name": "$1", "BaseLevel": "0", "Type": "Fetish", "CreationOn": "$2", "CreationOff": "$3" }
+          },
+          {
+            "label": "Addiction",
+            "description": "A blank Addiction object.",
+            "body": { "Name": "$1", "BaseLevel": "0", "Type": "Addiction", "CreationOn": "$2", "CreationOff": "$3" }
+          }
+        ],
+        "properties": {
+          "Type": {
+            "title": "Type key",
+            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+            "type": "string",
+            "enum": ["Fetish", "Addiction"]
+          }
+        },
+        "if": {
+          "properties": {
+            "Type": {
+              "const": "Fetish"
+            }
+          },
+          "dependencies": {
+            "name": ["Type"]
+          }
+        },
+        "then": {
+          "required": ["Name", "BaseLevel", "Type", "CreationOn", "CreationOff"],
+          "additionalProperties": false,
+          "properties":
+          {
+            "Name": {
+              "title": "Name key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).",
+              "type": "string"
+            },
+            "BaseLevel": {
+              "title": "BaseLevel key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).",
+              "type": "string",
+              "pattern": "^-?[0-9]*$"
+            },
+            "Type": {
+              "title": "Type key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+              "type": "string"
+            },
+            "CreationOn": {
+              "title": "CreationOn key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "type": "string"
+            },
+            "CreationOff": {
+              "title": "CreationOff key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "type": "string"
+            }
+          }
+        },
+        "else": {
+          "required": ["Name", "BaseLevel", "Type", "CreationOn", "CreationOff"],
+          "additionalProperties": false,
+          "properties": {
+            "Name": {
+              "title": "Name key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).",
+              "type": "string"
+            },
+            "BaseLevel": {
+              "title": "BaseLevel key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).",
+              "type": "string",
+              "pattern": "^-?[0-9]*$"
+            },
+            "Type": {
+              "title": "Type key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+              "type": "string"
+            },
+            "CreationOn": {
+              "title": "CreationOn key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "type": "string",
+              "minLength": 1
+            },
+            "CreationOff": {
+              "title": "CreationOff key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
