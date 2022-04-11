@@ -6,7 +6,7 @@
 "engines": {
     "vscode": "^1.66.0"
 },
-"repository": {"url": ""},
+"repository": {"url": "https://github.com/feltcute/mgd-language"},
 "publisher": "feltcutemightcleanlater",
 "categories": ["Programming Languages"],
 "main": ".",
