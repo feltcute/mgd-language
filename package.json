@@ -4,7 +4,7 @@
 "description": "Assists content development using the JSON-based DSL in the game Monster Girl Dreams.",
 "version": "23.9.0",
 "engines": {
-    "vscode": "^1.66.0"
+    "vscode": "^1.63.0"
 },
 "repository": {"url": "https://github.com/feltcute/mgd-language"},
 "publisher": "feltcutemightcleanlater",
