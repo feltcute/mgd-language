@@ -9,7 +9,7 @@
 "repository": {"url": "https://github.com/feltcute/mgd-language"},
 "publisher": "feltcutemightcleanlater",
 "categories": ["Programming Languages"],
-"main": ".",
+"main": "./out/src/extension",
 "activationEvents": [
     "workspaceContains:**/game/Json/**.json",
     "workspaceContains:**/game/Mods/**.json"
