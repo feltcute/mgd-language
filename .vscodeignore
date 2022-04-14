@@ -1,2 +1,3 @@
-.vscode
-.vscode-test
+.vscode/**
+.vscode-test/**
+.gitignore
