@@ -7,6 +7,16 @@
         "label": "Scene",
         "markdownDescription": "A blank EventText scene.",
         "body": { "NameOfScene": "$1", "theScene": ["$2"]}
+    },
+    {
+      "label": "Gridmap Custom Tiles",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html)**.",
+      "bodyText": "{\n\t\"NameOfScene\": \"$1\",\n\t\"theScene\": [\n\t\t\"GoToMap\",\n\t\t\"Tileset\",\n\t\t\t\"0\", \"$2\", \"\", \"\", \"\", \"\",\n\t\t\t\"1\", \"$3\", \"\",\"\", \"\", \"\",\n\t\t\"EndLoop\",\n\n\t\t\"YAdjust\", \"75\",\n\t\t\"PlayerCoord\", \"$4\", \"$5\",\n\t\t\"Sight\", \"$6\",\n\n\t\t\"NPC\",\n\t\t\t\"Name\", \"RecallPoint\",\n\t\t\t\"Img\", \"Invisible\",\n\t\t\"EndLoop\",\n\n\t\t${7:\"Row\", \"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\", \"EndLoop\",\n\t\t\"Row\", \"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\", \"EndLoop\",}\n\n\t\t\"StartMap\"\n\t]\n}"
+    },
+    {
+      "label": "Gridmap Base Tiles",
+      "markdownDescription": "**[documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html)**.",
+      "bodyText": "{\n\t\"NameOfScene\": \"$1\",\n\t\"theScene\": [\n\t\t\"GoToMap\",\n\t\t\"Tileset\",\n\t\t\t\"0\", \"GridMap/floor.png\", \"Floor\", \"\", \"\", \"\",\n\t\t\t\"1\", \"GridMap/Wall.png\", \"Wall\",  \"\", \"\", \"\",\n\t\t\t\"2\", \"GridMap/Void.png\", \"Floor\", \"\", \"\", \"\",\n\t\t\t\"E\", \"GridMap/LockedGate.png\", \"Interactable\", \"\", \"\", \"You stand before a large metal gate with multiple large locks...\",\n\t\t\"EndLoop\",\n\n\t\t\"YAdjust\", \"75\",\n\t\t\"PlayerCoord\", \"$2\", \"$3\",\n\t\t\"Sight\", \"$4\",\n\n\t\t\"NPC\",\n\t\t\t\"Name\", \"RecallPoint\",\n\t\t\t\"Img\", \"Invisible\",\n\t\t\"EndLoop\",\n\n\t\t${5:\"Row\", \"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",   \"EndLoop\",\n\t\t\"Row\", \"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",   \"EndLoop\",}\n\n\t\t\"StartMap\"\n\t]\n}"
     }
   ],
   "properties": {
@@ -185,117 +195,117 @@
                     "bodyText": "\"Menu\", \"ShuffleMenu\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
                   },
                   {
-                    "label": "MaxMenuSlots",
+                    "label": "MaxMenuSlots -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#maxmenuslots)**. Maximum of 6, minimum of 1. FinalOption does not count.",
                     "bodyText": "\"MaxMenuSlots\", \"$0\""
                   },
                   {
-                    "label": "FinalOption",
+                    "label": "FinalOption -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#finaloption)**. Does not count towards MaxMenuSlots, at bottom of every page.",
                     "bodyText": "\"FinalOption\", \"$0\""
                   },
                   {
-                    "label": "EventJump",
+                    "label": "EventJump -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#eventjump-thenjumptoscene)**. ",
                     "bodyText": "\"EventJump\", \"$0\""
                   },
                   {
-                    "label": "EventJump + ThenJumpToScene OR FinalOption",
+                    "label": "EventJump + ThenJumpToScene OR FinalOption -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#eventjump-thenjumptoscene)**. ",
                     "bodyText": "\"EventJump\", \"${1|ThenJumpToScene,FinalOption|}\", \"$0\""
                   },
                   {
-                    "label": "HideOptionOnRequirementFail",
+                    "label": "HideOptionOnRequirementFail -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#hideoptiononrequirementfail)**. ",
                     "bodyText": "\"HideOptionOnRequirementFail\", \"$0\""
                   },
                   {
-                    "label": "HideOptionOnRequirementFail + InverseRequirement",
+                    "label": "HideOptionOnRequirementFail + InverseRequirement -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#hideoptiononrequirementfail)**. ",
                     "bodyText": "\"HideOptionOnRequirementFail\", \"InverseRequirement\", \"$0\""
                   },
                   {
-                    "label": "InverseRequirement",
+                    "label": "InverseRequirement -- Menu",
                     "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#inverserequirement)**. ",
                     "bodyText": "\"InverseRequirement\", \"$0\""
                   },
                           {
-                            "label": "RequiresStat",
+                            "label": "RequiresStat -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresstat)**. Displayed by default.",
                             "bodyText": "\"RequiresStat\", \"${1|Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresItem",
+                            "label": "RequiresItem -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresitem)**. Displayed by default.",
                             "bodyText": "\"RequiresItem\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresSkill",
+                            "label": "RequiresSkill -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresskill)**. Displayed by default.",
                             "bodyText": "\"RequiresSkill\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresPerk",
+                            "label": "RequiresPerk -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresperk)**. Displayed by default.",
                             "bodyText": "\"RequiresPerk\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresEnergy",
+                            "label": "RequiresEnergy -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresenergy)**. Displayed by default.",
                             "bodyText": "\"RequiresEnergy\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresVirility",
+                            "label": "RequiresVirility -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresvirility)**. Displayed by default.",
                             "bodyText": "\"RequiresVirility\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresItemEquipped",
+                            "label": "RequiresItemEquipped -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresitemequipped)**. ",
                             "bodyText": "\"RequiresItemEquipped\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresTime",
+                            "label": "RequiresTime -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requirestime)**. ",
                             "bodyText": "\"RequiresTime\", \"${1|Day,Night,Morning,Noon,Afternoon,Dusk,Evening,Midnight,DayFaked,DayTrue,NightFaked,NightTrue|}\", \"$0\""
                           },
                           {
-                            "label": "RequiresFetishLevelEqualOrGreater",
+                            "label": "RequiresFetishLevelEqualOrGreater -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresfetishlevelequalorgreater-requiresfetishlevelequalorless)**. ",
                             "bodyText": "\"RequiresFetishLevelEqualOrGreater\", \"$1\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresFetishLevelEqualOrLess",
+                            "label": "RequiresFetishLevelEqualOrLess -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresfetishlevelequalorgreater-requiresfetishlevelequalorless)**. ",
                             "bodyText": "\"RequiresFetishLevelEqualOrLess\", \"$1\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresMinimumProgress",
+                            "label": "RequiresMinimumProgress -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresminimumprogress-requiresminimumprogressfromevent)**. ",
                             "bodyText": "\"RequiresMinimumProgress\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresMinimumProgressFromEvent",
+                            "label": "RequiresMinimumProgressFromEvent -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requiresminimumprogress-requiresminimumprogressfromevent)**. ",
                             "bodyText": "\"RequiresMinimumProgressFromEvent\", \"$1\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresLessProgress",
+                            "label": "RequiresLessProgress -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireslessprogress-requireslessprogressfromevent)**. ",
                             "bodyText": "\"RequiresLessProgress\", \"$1\", \"$0\""
                           },
                           {
-                            "label": "RequiresLessProgressFromEvent",
+                            "label": "RequiresLessProgressFromEvent -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireslessprogress-requireslessprogressfromevent)**. ",
                             "bodyText": "\"RequiresLessProgressFromEvent\", \"$1\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresChoice",
+                            "label": "RequiresChoice -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireschoice-requireschoicefromevent)**. ",
                             "bodyText": "\"RequiresChoice\", \"$1\", \"$2\", \"$0\""
                           },
                           {
-                            "label": "RequiresChoiceFromEvent",
+                            "label": "RequiresChoiceFromEvent -- Menu",
                             "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#requireschoice-requireschoicefromevent)**. ",
                             "bodyText": "\"RequiresChoiceFromEvent\", \"$1\", \"$2\", \"$3\", \"$0\""
                           },
@@ -392,7 +402,12 @@
                   {
                     "label": "IfInExploration",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifinexploration)**. ",
-                    "bodyText": "\"\", \"$1\""
+                    "bodyText": "\"IfInExploration\", \"$1\""
+                  },
+                  {
+                    "label": "IfRanAway",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifranaway)**. ",
+                    "bodyText": "\"IfRanAway\", \"$1\""
                   },
           {
             "label": "CombatEncounter",
@@ -410,12 +425,12 @@
                     "bodyText": "\"CombatEncounter\", \"RunningWontSkipEvent\",\n\t\"$1\",\n\t\"$2\",\n\"StartCombat\""
                   },
                   {
-                    "label": "SetBGOnRun",
+                    "label": "SetBGOnRun -- CombatEncounter",
                     "markdownDescription": "*Sub-function*. **[Documentation]()**. Uses Clipboard.",
                     "bodyText": "\"SetBGOnRun\", \"${1:$CLIPBOARD}\""
                   },
                   {
-                    "label": "Restrainer",
+                    "label": "Restrainer -- CombatEncounter",
                     "markdownDescription": "*Sub-function*. **[Documentation]()**. ",
                     "bodyText": "\"Restrainer\""
                   },
@@ -515,6 +530,16 @@
                             "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
                           },
                           {
+                            "label": "ChangeStatCheckDifficulty+IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                          },
+                          {
+                            "label": "ChangeStatCheckDifficulty+IfPlayerHasStatusEffectWithPotencyEqualOrGreater (Buff)",
+                            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+                            "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                          },
+                          {
                             "label": "ChangeStatCheckDifficulty+IfHasPerk",
                             "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifhasperk)**. ",
                             "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasPerk\", \"$1\", \"$2\""
@@ -589,6 +614,124 @@
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StoreEvent.html#gobacktostoredevent)**. ",
             "bodyText": "\"GoBackToStoredEvent\""
           },
+
+
+
+          {
+            "label": "Tile -- Tileset",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#tileset)**. Uses Clipboard.",
+            "bodyText": "\"$1\", \"${2:$CLIPBOARD}\", \"${3|Floor,Wall,Interactable,Auto|}\", \"$4\", \"$5\", \"$6\""
+          },
+                  {
+                    "label": "NPC + TurnEvent -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#npc)**. Uses Clipboard.",
+                    "bodyText": "\"NPC\"\n\t\"Name\", \"$1\",\n\t\"Img\", \"${2:$CLIPBOARD}\"\n\t\"TurnEvent\", \"$3\", \"$4\",${5:\n\t\"Obstacle\",}\n\"EndLoop\""
+                  },
+                  {
+                    "label": "NPC + Event -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#npc)**. Uses Clipboard.",
+                    "bodyText": "\"NPC\"\n\t\"Name\", \"$1\",\n\t\"Img\", \"${2:$CLIPBOARD}\"\n\t\"Event\", \"${3|Floor,Wall,Interactable,Auto|}\", \"$4\", \"$5\",${6:\n\t\"Obstacle\",}\n\"EndLoop\""
+                  },
+                  {
+                    "label": "NPC + Movement -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#npc)**. Uses Clipboard.",
+                    "bodyText": "\"NPC\"\n\t\"Name\", \"$1\",\n\t\"Img\", \"${2:$CLIPBOARD}\"\n\t\"Event\", \"${3|Floor,Wall,Interactable,Auto|}\", \"$4\", \"$5\",\n\t\"TurnEvent\", \"$6\", \"$7\",\n\t\"Movement\", \"${8|Chase,Ambush,Whimsical,Wander|}\", \"$9\",${10:\n\t\"Obstacle\",}\n\"EndLoop\""
+                  },
+                  {
+                    "label": "SpawnNPC -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#spawnnpc)**. ",
+                    "bodyText": "\"SpawnNPC\", \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "Row Full -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#rows)**. ",
+                    "bodyText": "\"Row\", \"$1\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$2\",\"$1\",   \"EndLoop\""
+                  },
+                  {
+                    "label": "Row Single -- Gridmap",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#rows)**. ",
+                    "bodyText": "\"Row\", \"$1\",   \"EndLoop\""
+                  },
+          {
+            "label": "ExitGridmap",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#exitgridmap)**. ",
+            "bodyText": "\"ExitGridmap\""
+          },
+                  {
+                    "label": "StunGridPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#stungridplayer)**. ",
+                    "bodyText": "\"StunGridPlayer\", \"$1\""
+                  },
+                  {
+                    "label": "IfGridPlayerStunned",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridplayerstunned)**. ",
+                    "bodyText": "\"IfGridPlayerStunned\", \"$1\""
+                  },
+                  {
+                    "label": "SetPlayerGridPosition",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#setplayergridposition)**. ",
+                    "bodyText": "\"SetPlayerGridPosition\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "IfGridNPCSeesPlayer",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcseesplayer)**. ",
+                    "bodyText": "\"IfGridNPCSeesPlayer\",${1: \"IgnoreWalls\",} \"$2\""
+                  },
+                  {
+                    "label": "IfGridNPCSeesPlayer + Range",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcseesplayer)**. ",
+                    "bodyText": "\"IfGridNPCSeesPlayer\",${1: \"IgnoreWalls\",} \"Range\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "ChangeGridVision",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#changegridvision)**. ",
+                    "bodyText": "\"ChangeGridVision\", \"$1\""
+                  },
+                  {
+                    "label": "IfGridVisonOn",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridvisonon)**. ",
+                    "bodyText": "\"IfGridVisonOn\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeGridNPCMovement",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#changegridnpcmovement)**. ",
+                    "bodyText": "\"ChangeGridNPCMovement\", \"${2|Chase,Ambush,Whimsical,Wander|}\", \"$3\""
+                  },
+                  {
+                    "label": "ChangeGridNPCMovement Blank",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#changegridnpcmovement)**. ",
+                    "bodyText": "\"ChangeGridNPCMovement\", \"\", \"\""
+                  },
+                  {
+                    "label": "IfGridNPCThere",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcthere)**. ",
+                    "bodyText": "\"IfGridNPCThere\", \"$1\", \"$2\""
+                  },
+                  {
+                    "label": "SpawnGridNPC Here",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#spawngridnpc)**. ",
+                    "bodyText": "\"SpawnGridNPC\", \"$1\" \"Here\""
+                  },
+                  {
+                    "label": "SpawnGridNPC Coord",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#spawngridnpc)**. ",
+                    "bodyText": "\"SpawnGridNPC\" \"$1\", \"$2\", \"$3\""
+                  },
+                  {
+                    "label": "RemoveGridNPC Current",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#removegridnpc)**. ",
+                    "bodyText": "\"RemoveGridNPC\", \"Current\""
+                  },
+                  {
+                    "label": "RemoveGridNPC Specific",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#removegridnpc)**. ",
+                    "bodyText": "\"RemoveGridNPC\", \"Specific\", \"$1\""
+                  },
+                  {
+                    "label": "ChangeMapTile",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#changemaptile)**. ",
+                    "bodyText": "\"ChangeMapTile\", \"$1\", \"$2\", \"$3\""
+                  },
 
 
 
@@ -741,17 +884,17 @@
           {
             "label": "PlayVisualEffect",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-            "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+            "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,MajorHazeToBlackOut,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
           },
                   {
                     "label": "PlayVisualEffect2",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-                    "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+                    "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,MajorHazeToBlackOut,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
                   },
                   {
                     "label": "PlayVisualEffect3",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-                    "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+                    "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,MajorHazeToBlackOut,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
                   },
                   {
                     "label": "EndVisualEffect",
@@ -938,7 +1081,7 @@
                   },
                   {
                     "label": "AddMonsterToEncounter + ChangeForm",
-                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#changeform)**. ",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#changeform)**. ",
                     "bodyText": "\"AddMonsterToEncounter\", \"ChangeForm\" \"$1\""
                   },
           {
@@ -1023,7 +1166,7 @@
                   },
                   {
                     "label": "CallMonsterAttack + SpecificAttack",
-                    "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
                     "bodyText": "\"CallMonsterAttack\", \"SpecificAttack\", \"$1\""
                   },
                   {
@@ -1112,6 +1255,11 @@
                     "bodyText": "\"IfMonsterOrgasm\", \"$1\""
                   },
                   {
+                    "label": "IfMonsterEnergyGone",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterenergygone)**. ",
+                    "bodyText": "\"IfMonsterEnergyGone\", \"$1\""
+                  },
+                  {
                     "label": "CallMonsterEncounterOrgasmCheck",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#callmonsterencounterorgasmcheck)**. ",
                     "bodyText": "\"CallMonsterEncounterOrgasmCheck\", \"$1\""
@@ -1133,12 +1281,17 @@
                   },
           {
             "label": "ChangeMonsterArousal",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html?highlight=ChangeMonsterEnergy%27#changemonsterarousal-changemonsterenergy-changemonsterspirit)**. ",
             "bodyText": "\"ChangeMonsterArousal\", \"$1\""
           },
                   {
+                    "label": "ChangeMonsterEnergy",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html?highlight=ChangeMonsterEnergy%27#changemonsterarousal-changemonsterenergy-changemonsterspirit)**. ",
+                    "bodyText": "\"ChangeMonsterEnegy\", \"$1\""
+                  },
+                  {
                     "label": "ChangeMonsterSpirit",
-                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html?highlight=ChangeMonsterEnergy%27#changemonsterarousal-changemonsterenergy-changemonsterspirit)**. ",
                     "bodyText": "\"ChangeMonsterSpirit\", \"$1\""
                   },
                   {
@@ -1227,14 +1380,14 @@
                     "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
                   },
                   {
-                    "label": " IfPlayerDoesntHaveStatusEffect",
+                    "label": "IfPlayerDoesntHaveStatusEffect",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-                    "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
+                    "bodyText": "\"IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Surrender,Defend|}, \"$2\""
                   },
                   {
-                    "label": " IfPlayerDoesntHaveStatusEffect (Buff)",
+                    "label": "IfPlayerDoesntHaveStatusEffect (Buff)",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-                    "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                    "bodyText": "\"IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
                   },
                   {
                     "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
@@ -1263,7 +1416,7 @@
           },
                   {
                     "label": "ApplyStance + SetAttack",
-                    "markdownDescription": "*Sub-Function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
                     "bodyText": "\"ApplyStance\", \"$1\", \"SetAttack\", \"$2\""
                   },
                   {
@@ -1391,6 +1544,16 @@
                             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonster-functions)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
                             "bodyText": "\"ChangeMonsterInt\", \"$1\""
                           },
+                  {
+                    "label": "LevelUpMonster Number",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html?highlight=LevelUpMonster#levelupmonster)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                    "bodyText": "\"LevelUpMonster\", \"$1\""
+                  },
+                  {
+                    "label": "LevelUpMonster Other",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html?highlight=LevelUpMonster#levelupmonster)**. Resets upon leaving event and/or encounter. Does not produce dialogue.",
+                    "bodyText": "\"LevelUpMonster\", \"${1|MatchPlayer,GoUpByProgress,GoUpByProgressFromOtherEvent|}\""
+                  },
                   {
                     "label": "ChangeMonsterSensitivity",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#changemonstersensitivity)**. Can take negative values. Resets upon leaving event and/or encounter. Does not produce dialogue.",
@@ -1923,7 +2086,7 @@
           },
           {
             "label": "AdvanceTime + DelayNotifications",
-            "markdownDescription": "*Sub-function.* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#advancetime)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/Time.html#advancetime)**. ",
             "bodyText": "\"AdvanceTime\", \"$1\", \"DelayNotifications\""
           },
           {
@@ -2020,132 +2183,7 @@
             "label": "GoToRandomBrothelDayScene",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
             "bodyText": "\"GoToRandomBrothelDayScene\""
-          },
-    {
-      "label": "GridMap Custom Tiles",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#gotomap)**. ",
-      "bodyText": "\"\""
-    },
-    {
-      "label": "Gridmap Base Tiles",
-      "markdownDescription": "**[Documentation]()**. ",
-      "bodyText": "\"\""
-    },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-    {
-      "label": "",
-      "markdownDescription": "**[Documentation]()**. ",
-      "bodyText": "\"\""
-    },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            },
-            {
-              "label": "",
-              "markdownDescription": "**[Documentation]()**. ",
-              "bodyText": "\"\""
-            }
+          }
         ] 
       } 
     }

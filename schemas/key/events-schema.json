@@ -5,12 +5,12 @@
   {
       "label": "Create Event",
       "description": "A blank Event JSON",
-      "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"CardType\": \"$2\",\n\t\"CardLimit\": \"$3\",\n\t\"Description\": \"$4\",\n\t\"requires\": [ \"\"],\n\t\"requiresEvent\": [\n\t\t{\n\t\t\t\"NameOfEvent\": \"\",\n\t\t\t\"Progress\": \"99\",\n\t\t\t\"ChoiceNumber\": \"-1\",\n\t\t\t\"Choice\": \"\"\n\t\t}\n\t],\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"$5\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n]\n}"
+      "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"CardType\": \"$2\",\n\t\"CardLimit\": \"$3\",\n\t\"Description\": \"$4\",\n\t\"requires\": [ \"\"],\n\t\"requiresEvent\": [\n\t\t{\n\t\t\t\"NameOfEvent\": \"\",\n\t\t\t\"Progress\": \"99\",\n\t\t\t\"ChoiceNumber\": \"-1\",\n\t\t\t\"Choice\": \"\"\n\t\t}\n\t],\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"$5\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n\t\t$0\n]\n}"
   },
   {
     "label": "Addition Event",
     "description": "A blank Addition Event JSON",
-    "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"Addition\": \"Yes\",\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n]\n}"
+    "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"Addition\": \"Yes\",\n\t\"Speakers\": [\n\t\t{\n\t\t\t\"name\": \"\",\n\t\t\t\"postName\": \"\",\n\t\t\t\"SpeakerType\": \"\"\n\t\t}\n\t],\n\t\"EventText\": [\n$0\n]\n}"
   }
 ],
 "properties": {
@@ -141,6 +141,7 @@
       "title": "EventText key",
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#eventtext).",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../value/event-only-schema.json"
       }
@@ -257,6 +258,7 @@
       "title": "EventText key",
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../value/event-only-schema.json"
       }
