@@ -800,12 +800,12 @@
                   },
           {
             "label": "PlayHypnoSpiral",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypnospiral)**. ",
             "bodyText": "\"PlayHypnoSpiral\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
           },
                   {
                     "label": "EndHypnoSpiral",
-                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypnospiral)**. ",
                     "bodyText": "\"EndHypnoSpiral\""
                   },
                   {
@@ -2020,7 +2020,132 @@
             "label": "GoToRandomBrothelDayScene",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/TownJumps.html#gotorandombrothel-scene-functions)**. ",
             "bodyText": "\"GoToRandomBrothelDayScene\""
-          }
+          },
+    {
+      "label": "GridMap Custom Tiles",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#gotomap)**. ",
+      "bodyText": "\"\""
+    },
+    {
+      "label": "Gridmap Base Tiles",
+      "markdownDescription": "**[Documentation]()**. ",
+      "bodyText": "\"\""
+    },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+    {
+      "label": "",
+      "markdownDescription": "**[Documentation]()**. ",
+      "bodyText": "\"\""
+    },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            },
+            {
+              "label": "",
+              "markdownDescription": "**[Documentation]()**. ",
+              "bodyText": "\"\""
+            }
         ] 
       } 
     }

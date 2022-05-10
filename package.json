@@ -31,15 +31,15 @@
     },
     "jsonValidation": [
         {
-            "fileMatch": "**game/**/Adventures/**/**.json",
+            "fileMatch": "**/game/**/Adventures/**/**.json",
             "url": "./schemas/key/adventures-schema.json"
         },
         {
-            "fileMatch": "**game/**/Events/**/**.json",
+            "fileMatch": "**/game/**/Events/**/**.json",
             "url": "./schemas/key/events-schema.json"
         },
         {
-            "fileMatch": "**game/**/Fetishes/**/**.json",
+            "fileMatch": "**/game/**/Fetishes/**/**.json",
             "url": "./schemas/key/fetishes-schema.json"
         }
     ],
