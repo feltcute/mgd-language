@@ -1,1 +1,73 @@
-{"name":"mgd-language","displayName":"MGD Language","description":"Assists content development using the JSON-based DSL in the game Monster Girl Dreams.","version":"25.0.0","engines":{"vscode":"^1.63.0"},"repository":{"url":"https://github.com/feltcute/mgd-language"},"publisher":"feltcutemightcleanlater","categories":["Programming Languages"],"main":"src/extension.js","activationEvents":["workspaceContains:**/game/Json/**.json","workspaceContains:**/game/Mods/**.json"],"contributes":{"configurationDefaults":{"[json]":{"editor.quickSuggestions":{"other":true,"comments":true,"strings":true},"editor.snippetSuggestions":"top","editor.suggest.snippetsPreventQuickSuggestions":false,"editor.suggest.showSnippets":true,"editor.suggest.showWords":true,"editor.inlineSuggest.enabled":true}},"jsonValidation":[{"fileMatch":"**/game/**/Adventures/**/**.json","url":"./schemas/key/adventures-schema.json"},{"fileMatch":"**/game/**/Events/**/**.json","url":"./schemas/key/events-schema.json"},{"fileMatch":"**/game/**/Fetishes/**/**.json","url":"./schemas/key/fetishes-schema.json"}],"grammars":[{"scopeName":"source.json.locate.deck.mgd","path":"./syntaxes/locate/mgd-deck.json","injectTo":["source.json"]},{"scopeName":"source.json.deck.mgd","path":"./syntaxes/mgd-deck.json","injectTo":["source.json"]},{"scopeName":"source.json.locate.marfunc.mgd","path":"./syntaxes/locate/mgd-marfunc.json","injectTo":["source.json"]},{"scopeName":"source.json.strmarfunc.mgd","path":"./syntaxes/mgd-str-marfunc.json","injectTo":["source.json"]},{"scopeName":"source.json.dicmarfunc.mgd","path":"./syntaxes/mgd-dic-marfunc.json","injectTo":["source.json"]}]}}
+{
+    "name": "mgd-language",
+    "displayName": "MGD Language",
+    "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
+    "version": "24.3.0",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "repository": {"url": "https://github.com/feltcute/mgd-language"},
+    "publisher": "feltcutemightcleanlater",
+    "categories": ["Programming Languages"],
+    "main": "src/extension.js",
+    "activationEvents": [
+        "workspaceContains:**/game/Json/**.json",
+        "workspaceContains:**/game/Mods/**.json"
+    ],
+    "contributes": {
+        "configurationDefaults": {
+            "[json]": {
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": true,
+                    "strings": true
+                },
+                "editor.snippetSuggestions": "top",
+                "editor.suggest.snippetsPreventQuickSuggestions": false,
+                "editor.suggest.showSnippets": true,
+                "editor.suggest.showWords": true,
+                "editor.inlineSuggest.enabled": true
+          }
+        },
+        "jsonValidation": [
+            {
+                "fileMatch": "**/game/**/Adventures/**/**.json",
+                "url": "./schemas/key/adventures-schema.json"
+            },
+            {
+                "fileMatch": "**/game/**/Events/**/**.json",
+                "url": "./schemas/key/events-schema.json"
+            },
+            {
+                "fileMatch": "**/game/**/Fetishes/**/**.json",
+                "url": "./schemas/key/fetishes-schema.json"
+            }
+        ],
+        "grammars": [
+            {
+                "scopeName": "source.json.locate.deck.mgd",
+                "path": "./syntaxes/locate/mgd-deck.json",
+                "injectTo": ["source.json"]
+            },
+            {
+                "scopeName": "source.json.deck.mgd",
+                "path": "./syntaxes/mgd-deck.json",
+                "injectTo": ["source.json"]
+            },
+            {
+                "scopeName": "source.json.locate.marfunc.mgd",
+                "path": "./syntaxes/locate/mgd-marfunc.json",
+                "injectTo": ["source.json"]
+            },
+            {
+                "scopeName": "source.json.strmarfunc.mgd",
+                "path": "./syntaxes/mgd-str-marfunc.json",
+                "injectTo": ["source.json"]
+            },
+            {
+                "scopeName": "source.json.dicmarfunc.mgd",
+                "path": "./syntaxes/mgd-dic-marfunc.json",
+                "injectTo": ["source.json"] 
+            }
+        ]
+    }}

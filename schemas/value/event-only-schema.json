@@ -1599,6 +1599,26 @@
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#clearmonsterperks-clearmonsterskilllist)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
                     "bodyText": "\"ClearMonsterSkillList\""
                   },
+                              {
+              "label": "RecalculateMonsterExpDrop",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#recalculatemonsterexpdrop)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+              "bodyText": "\"RecalculateMonsterExpDrop\""
+            },
+            {
+              "label": "RecalculateMonsterExpDrop + AlterByPercent",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#recalculatemonsterexpdrop)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+              "bodyText": "\"RecalculateMonsterExpDrop\", \"AlterByPercent\", \"$1\""
+            },
+            {
+              "label": "RecalculateMonsterErosDrop",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#recalculatemonstererosdrop)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+              "bodyText": "\"RecalculateMonsterExpDrop\""
+            },
+            {
+              "label": "RecalculateMonsterErosDrop + AlterByPercent",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeMonster.html#recalculatemonstererosdrop)**. Resets upon leaving the event and/or encounter. These do not produce dialogue.",
+              "bodyText": "\"RecalculateMonsterExpDrop\", \"AlterByPercent\", \"$1\""
+            },
           {
             "label": "ChangeMaxArousal",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/ChangeStats.html#change-stat-functions)**. ",
@@ -1920,14 +1940,14 @@
                     "bodyText": "\"GiveSkill\", \"$1\""
                   },
                   {
-                    "label": "GiveSkill",
-                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
-                    "bodyText": "\"GiveSkill\", \"$1\""
-                  },
-                  {
                     "label": "GiveSkillQuietly",
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#giveskill-removeskillfromplayer)**. ",
                     "bodyText": "\"GiveSkillQuietly\", \"$1\""
+                  },
+                  {
+                    "label": "GiveTreasure",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerGiveAndTake.html#givetreasure)**. ",
+                    "bodyText": "\"GiveTreasure\", \"${1|Common,Uncommon,Rare|}\""
                   },
                   {
                     "label": "RemoveSkillFromPlayer",

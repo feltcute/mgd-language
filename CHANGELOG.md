@@ -2,6 +2,11 @@
 
 Meant to mirror the current supported game release for its major and minor version number, and room for conveying a patch to the extension itself. I believe it's best to communicate compatible game versions first, over anything about the extension itself, given its purpose to help with a DSL.
 
+## [24.3.0]
+
+- Adjusted based color in syntax highlighting.
+- Parity to latest MGD functions.
+
 ## [24.0.0]
 
 - Parity with v24 functions for autocomplete.
