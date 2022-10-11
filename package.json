@@ -2,7 +2,7 @@
     "name": "mgd-language",
     "displayName": "MGD Language",
     "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
-    "version": "24.3.0",
+    "version": "24.3.1",
     "engines": {
         "vscode": "^1.63.0"
     },

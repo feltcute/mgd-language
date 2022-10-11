@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"scopeName": "source.json.locate.marfunc.mgd",
-	"injectionSelector": "R:source.json",
+	"injectionSelector": "L:source.json",
 	"patterns": [
 		{
 		  "include": "#markup-keys"
@@ -24,7 +24,7 @@
 					"name": "other.definition.dictionary.end.mgd"
 				}
 			},
-      "name": "other.marfunc.mgd"
+      "name": "string.marfunc.mgd"
     },
     "markup-keys-string":{
       "begin": "\"(Description|description|descrip|encyclopedia|CreationOn|CreationOff|useOutcome|useMiss|outcome|miss|restraintStruggle|restraintStruggleCharmed|restraintEscaped|restraintEscaped|restraintEscapedFail|restraintOnLoss|statusOutcome|statusMiss)\":",
