@@ -652,6 +652,12 @@
                     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#rows)**. ",
                     "bodyText": "\"Row\", \"$1\",   \"EndLoop\""
                   },
+                  {
+                    "label": "DenyGridInventory",
+                    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Gridmap.html#denygridinventory)**. **Only works inside GoToMap.**",
+                    "bodyText": "\"DenyGridInventory\""
+                  },
+
           {
             "label": "ExitGridmap",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#exitgridmap)**. ",
@@ -1064,6 +1070,11 @@
 
 
 
+          {
+            "label": "IfAttackCrits",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Attacker.html)**. ",
+            "bodyText": "\"IfAttackCrits\", \"$1\""
+          },
           {
             "label": "HideMonsterEncounter",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html)**. ",
