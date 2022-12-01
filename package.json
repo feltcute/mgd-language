@@ -2,13 +2,17 @@
     "name": "mgd-language",
     "displayName": "MGD Language",
     "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
-    "version": "24.4.2",
+    "version": "23.4.3",
     "engines": {
         "vscode": "^1.63.0"
     },
-    "repository": {"url": "https://github.com/feltcute/mgd-language"},
+    "repository": {
+        "url": "https://github.com/feltcute/mgd-language"
+    },
     "publisher": "feltcutemightcleanlater",
-    "categories": ["Programming Languages"],
+    "categories": [
+        "Programming Languages"
+    ],
     "main": "src/extension.js",
     "activationEvents": [
         "workspaceContains:**/game/Json/**.json",
@@ -27,7 +31,7 @@
                 "editor.suggest.showSnippets": true,
                 "editor.suggest.showWords": true,
                 "editor.inlineSuggest.enabled": true
-          }
+            }
         },
         "jsonValidation": [
             {
@@ -47,27 +51,38 @@
             {
                 "scopeName": "source.json.locate.deck.mgd",
                 "path": "./syntaxes/locate/mgd-deck.json",
-                "injectTo": ["source.json"]
+                "injectTo": [
+                    "source.json"
+                ]
             },
             {
                 "scopeName": "source.json.deck.mgd",
                 "path": "./syntaxes/mgd-deck.json",
-                "injectTo": ["source.json"]
+                "injectTo": [
+                    "source.json"
+                ]
             },
             {
                 "scopeName": "source.json.locate.marfunc.mgd",
                 "path": "./syntaxes/locate/mgd-marfunc.json",
-                "injectTo": ["source.json"]
+                "injectTo": [
+                    "source.json"
+                ]
             },
             {
                 "scopeName": "source.json.strmarfunc.mgd",
                 "path": "./syntaxes/mgd-str-marfunc.json",
-                "injectTo": ["source.json"]
+                "injectTo": [
+                    "source.json"
+                ]
             },
             {
                 "scopeName": "source.json.dicmarfunc.mgd",
                 "path": "./syntaxes/mgd-dic-marfunc.json",
-                "injectTo": ["source.json"] 
+                "injectTo": [
+                    "source.json"
+                ]
             }
         ]
-    }}
+    }
+}
