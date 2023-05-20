@@ -1,5 +1,5 @@
 {
-"$schema": "http://json-schema.org/draft-07/schema#",
+"$schema": "https://json-schema.org/draft-07/schema#",
 "type": "object",
 "defaultSnippets": [
   {
@@ -18,7 +18,8 @@
     "title": "CardType key",
     "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#cardtype).",
     "type": "string",
-    "enum": ["Event", "Quest", "BarShift", "WaiterShift", "GloryHoleShift", "DayShift", "Shopping", "Church", "Guild", "Inn", "", "EndOfDay", "TimePassed", "StepTaken", "EndOfTurn", "EndOfCombat", "StartOfTurn", "StartOfCombat", "PlayerOrgasm", "Dream"]
+    "enum": ["Event", "Quest", "BarShift", "WaiterShift", "GloryHoleShift", "DayShift", "Shopping", "Church", "Guild", "Inn", "", "EndOfDay", "TimePassed", "StepTaken", "EndOfTurn", "EndOfCombat", "StartOfTurn", "StartOfCombat", "PlayerOrgasm", "Dream"],
+    "enumDescriptions": ["Event asdfasd", "Quest sdgsdsdfg", "BarShift sdgsdfgsdgsd", "WaiterShift", "GloryHoleShift", "DayShift", "Shopping", "Church", "Guild", "Inn", "", "EndOfDay", "TimePassed", "StepTaken", "EndOfTurn", "EndOfCombat", "StartOfTurn", "StartOfCombat", "PlayerOrgasm", "Dream"]
   }
 },
 "if": {
@@ -77,42 +78,10 @@
       }
     },
     "requiresEvent": {
-      "title": "requiresEvent key",
-      "markdownDescription": "*Unused in Additions*.",
-      "type": "array",
-      "items": {
-        "additionalProperties": false,
-        "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
-        "properties": {
-          "NameOfEvent": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "*Unused in Additions*.",
-            "type": "string"
-          },
-          "Progress": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "*Unused in Additions*.",
-            "type": "string",
-            "pattern": "^-?[0-9]+$",
-            "default": "-99"
-          },
-          "ChoiceNumber": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "*Unused in Additions*.",
-            "type": "string",
-            "pattern": "^-?[0-9]+$",
-            "default": "-1"
-          },
-          "Choice": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "*Unused in Additions*.",
-            "type": "string"
-          }
-        }
-      }
+      "$ref": "subschemas/requiresEvent.json#/unusedRequiresEvent"
     },
     "Speakers": {
-      "title": " key",
+      "title": "Speakers key",
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#speakers).",
       "type": "array",
       "items": {
@@ -142,9 +111,8 @@
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#eventtext).",
       "type": "array",
       "minItems": 1,
-      "items": {
-        "$ref": "../value/event-only-schema.json"
-      }
+      "required": ["theScene", "NameOfScene"],
+      "$ref": "subschemas/event-theText.json#"
     }
   }
 },
@@ -194,42 +162,10 @@
       }
     },
     "requiresEvent": {
-      "title": "requiresEvent key",
-      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
-      "type": "array",
-      "items": {
-        "additionalProperties": false,
-        "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
-        "properties": {
-          "NameOfEvent": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
-            "type": "string"
-          },
-          "Progress": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
-            "type": "string",
-            "pattern": "^-?[0-9]+$",
-            "default": "-99"
-          },
-          "ChoiceNumber": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
-            "type": "string",
-            "pattern": "^-?[0-9]+$",
-            "default": "-1"
-          },
-          "Choice": {
-            "title": "requiresEvent child key",
-            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
-            "type": "string"
-          }
-        }
-      }
+      "$ref": "subschemas/requiresEvent.json#/eventCreation"
     },
     "Speakers": {
-      "title": " key",
+      "title": "Speakers key",
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#speakers).",
       "type": "array",
       "items": {
@@ -259,9 +195,7 @@
       "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
       "type": "array",
       "minItems": 1,
-      "items": {
-        "$ref": "../value/event-only-schema.json"
-      }
+      "$ref": "subschemas/event-theText.json#"
     }
 },
 

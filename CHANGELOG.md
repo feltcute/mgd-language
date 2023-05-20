@@ -2,6 +2,18 @@
 
 Meant to mirror the current supported game release for its major and minor version number, and room for conveying a patch to the extension itself. I believe it's best to communicate compatible game versions first, over anything about the extension itself, given its purpose to help with a DSL.
 
+## [25.2.0]
+
+- **PSA**: *1.78.2* of VS Code is needed for snippets to work! *1.78-1.78.1* is bugged.
+- Parity to latest game version for autocomplete and syntax highlighting.
+- Added fetish schema.
+- Added meta schema.
+- Markup syntax highlighting is now file-wide, rather than limited to certain keys.
+- Internally improved schema structure for eased development.
+- Internally improved syntax highlighting injection and names for future improvements.
+- Fixed all cases of typo'd function names from 24.3.0
+- RecalculateMonsterExpDrop and RecalculateMonsterErosDrop now combine AlterByPercent as an optional value (can still search 'AlterByPercent' to find them)
+
 ## [24.3.0]
 
 - Adjusted based color in syntax highlighting.

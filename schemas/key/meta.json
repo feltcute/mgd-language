@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "defaultSnippets": [
+        {
+            "label": "Create meta.json",
+            "description": "A blank FetishList JSON",
+            "bodyText":  "{\n\t\"name\": \"$1\",\n\t\"description\": \"$2\",\n\t\"testedFor\": ${3:25.2},\n\t\"version\": ${4:0.0},\n\t\"tags\" : [\n\t\t\"$9\",\n\t\t\"$10\",${11:\n\t\t\"$12\",\n\t\t\"$13\",\n\t\t\"$14\"}\n\t],\n\t\"credits\": \"$5\",\n\t\"authors\": [\n\t\t\"$6\"\n\t],\n\t\"urlLabel\": \"$7\",\n\t\"url\": \"$8\"\n}"
+        }
+    ],
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "description",
+        "testedFor",
+        "version",
+        "tags",
+        "credits",
+        "authors",
+        "urlLabel",
+        "url"
+    ],
+    "properties": {
+        "name": {
+            "title": "name key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#name)**. ",
+            "type": "string"
+        },
+        "description": {
+            "title": "description key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#description)**. ",
+            "type": "string"
+        },
+        "testedFor": {
+            "title": "testedFor key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#testedfor)**. ",
+            "type": "number",
+            "minimum": 25.2
+        },
+        "version": {
+            "title": "version key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#version)**. ",
+            "type": "number",
+            "minimum": 0.0
+        },
+        "tags": {
+            "title": "tags key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#tags)**. ",
+            "type": "array",
+            "items": [
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "credits": {
+            "title": "credits key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#credits)**. ",
+            "type": "string"
+        },
+        "authors": {
+            "title": "authors key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#authors)**. ",
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "minLength": 2
+                }
+            ]
+        },
+        "urlLabel": {
+            "title": "urlLabel key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#urllabel-url)**. ",
+            "type": "string"
+        },
+        "url": {
+            "title": "url key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#urllabel-url)**. ",
+            "type": "string",
+            "pattern": "(((https|http):\\/\\/)|(^|\\s))([a-zA-Z0-9\\-]+\\.)+[a-z]{2,13}[\\.\\?\\=\\&\\%\\/\\w\\-]*\\b([^@]|$)"
+        }
+    }
+}

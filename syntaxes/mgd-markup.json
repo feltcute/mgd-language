@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"scopeName": "source.json.dicmarfunc.mgd",
-	"injectionSelector": "L:string.marfunc.mgd",
+	"scopeName": "source.mgd.markup",
+	"injectionSelector": "L:string",
 	"patterns": [{"include": "#the-bodies"}],
 	"repository": {
 		"the-bodies": {
@@ -48,7 +48,7 @@
 			]
 		},
 		"single-markup": {
-		  "match": "{(w|w=[0-9]+|nw|fast|ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWords)}",
+		  "match": "{(w|w=[0-9]+|nw|fast|ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|PlayerLevel|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|FocusedMonsterName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWords)}",
 		  "name": "keyword.single.mgd"
 		},
 		"character-markup":{

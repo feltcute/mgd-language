@@ -1,0 +1,64 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#",    
+"defaultSnippets": [
+{
+    "label": "Event",
+    "description": "Jumps to an event given in the following string.",
+    "bodyText": "\"Event\", \"$1\""
+},
+{
+    "label": "Monster",
+    "description": "Introduces a monster encounter. Provide the IDname of each included monster.",
+    "bodyText": "\"Monster\", \"$1\", \"EndLoop\""
+},
+{
+    "label": "Monster2x",
+    "description": "Introduces a monster encounter. Provide the IDname of each included monster.",
+    "bodyText": "\"Monster\", \"$1\", \"$2\", \"EndLoop\""
+},
+{
+    "label": "Monster3x",
+    "description": "Introduces a monster encounter. Provide the IDname of each included monster.",
+    "bodyText": "\"Monster\", \"$1\", \"$2\", \"$3\", \"EndLoop\""
+},
+{
+    "label": "RandomEvent",
+    "description": "Introduces a random event from the RandomEvents key.",
+    "bodyText": "\"RandomEvent\""
+},
+{
+    "label": "RandomMonster",
+    "description": "Introduces a random monster encounter based on a Group from the MonsterGroups key.",
+    "bodyText": "\"RandomMonster\""
+},
+{
+    "label": "RandomTreasure",
+    "description": "Introduces a random treasure of random rarity from the Treasure key.",
+    "bodyText": "\"RandomTreasure\""
+},
+{
+    "label": "CommonTreasure",
+    "description": "Introduces a common treasure from the Common key from the Treasure key.",
+    "bodyText": "\"CommonTreasure\""
+},
+{
+    "label": "UncommonTreasure",
+    "description": "Introduces a uncommon treasure from the Common key from the Treasure key.",
+    "bodyText": "\"UncommonTreasure\""
+},
+{
+    "label": "RareTreasure",
+    "description": "Introduces a rare treasure from the Common key from the Treasure key.",
+    "bodyText": "\"RareTreasure\""
+},
+{
+    "label": "BreakSpot",
+    "description": "Places a break spot where the player can move on, return to town, or rest.",
+    "bodyText": "\"BreakSpot\""
+},
+{
+    "label": "Unrepeatable",
+    "description": "Upon reaching this string in a deck, the adventure becomes unavailable for repeating, preventing the player from accessing the adventure again. Do not use this if you want players to be able to replay the adventure.",
+    "bodyText": "\"Unrepeatable\""
+}
+]}

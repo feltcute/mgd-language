@@ -1,10 +1,10 @@
 node_modules
 *.vsix
-schemas/key/skills-schema.json
-schemas/key/monsters-schema.json
-schemas/key/items-schema.json
-schemas/key/locations-schema.json
-schemas/key/perks-schema.json
+schemas/key/skills.json
+schemas/key/monsters.json
+schemas/key/items.json
+schemas/key/locations.json
+schemas/key/perks.json
 snippets
 .vscode
 package-lock.json

@@ -1,0 +1,315 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#",
+"defaultSnippets": [
+{
+    "label": "ChangeBG",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#changebg)**. ",
+    "bodyText": "\"ChangeBG\", \"${1:$CLIPBOARD}\""
+},
+    {
+        "label": "StoreCurrentBG",
+        "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#storecurrentbg-useheldbg)**. ",
+        "bodyText": "\"StoreCurrentBG\""
+    },
+    {
+      "label": "UseHeldBG",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#storecurrentbg-useheldbg)**. ",
+      "bodyText": "\"UseHeldBG\""
+    },
+    {
+      "label": "ShowTreasureChest",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#showtreasurechest-hidetreasurechest)**. ",
+      "bodyText": "\"ShowTreasureChest\""
+    },
+    {
+      "label": "HideTreasureChest",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#showtreasurechest-hidetreasurechest)**. ",
+      "bodyText": "\"HideTreasureChest\""
+    },
+{
+  "label": "ChangeImageLayer",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#changeimagelayer)**. ",
+  "bodyText": "\"ChangeImageLayer\", \"$1\", \"$2\", \"$3\""
+},
+    {
+      "label": "AnimateImageLayer",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#animateimagelayer)**. ",
+      "bodyText": "\"AnimateImageLayer\", \"${1|Animation,Animation2,Animation3|}\", \"$2\", \"$3\", \"$4\"\n\t\"$5\",\n\t\"$6\",\n\"EndLoop\""
+    },
+{
+  "label": "StopBGM",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#stopbgm)**. ",
+  "bodyText": "\"StopBGM\""
+},
+    {
+      "label": "StopBGMHard",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#stopbgmhard)**. ",
+      "bodyText": "\"StopBGMHard\""
+    },
+    {
+      "label": "ChangeBGM",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm)**. ",
+      "bodyText": "\"ChangeBGM\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "ChangeBGM-List",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-list)**. ",
+      "bodyText": "\"ChangeBGM-List\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+    },
+    {
+      "label": "ChangeBGM-OverrideCombatMusic",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-overridecombatmusic)**. ",
+      "bodyText": "\"ChangeBGM-OverrideCombatMusic\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "ChangeBGM-NoFade",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-nofade)**. ",
+      "bodyText": "\"ChangeBGM-NoFade\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "PlayThisSongAfterCombat",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#playthissongaftercombat)**. ",
+      "bodyText": "\"PlayThisSongAfterCombat\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "StoreCurrentBGM",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#storecurrentbgm-playstoredbgm)**. ",
+      "bodyText": "\"StoreCurrentBGM\""
+    },
+    {
+      "label": "PlayStoredBGM",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#storecurrentbgm-playstoredbgm)**. ",
+      "bodyText": "\"PlayStoredBGM\""
+    },
+{
+  "label": "PlaySoundEffect",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+  "bodyText": "\"PlaySoundEffect\", \"${1:$CLIPBOARD}\""
+},
+    {
+      "label": "PlaySoundEffect2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+      "bodyText": "\"PlaySoundEffect2\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "PlaySoundEffect SoundBank",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+      "bodyText": "\"PlaySoundEffect\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+    },
+    {
+      "label": "PlaySoundEffect2 SoundBank",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
+      "bodyText": "\"PlaySoundEffect2\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+    },
+    {
+      "label": "PlaySoundBankOnce",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundbankonce)**. ",
+      "bodyText": "\"PlaySoundBankOnce\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+    },
+    {
+      "label": "PlayLoopingSoundEffect",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"PlayLoopingSoundEffect\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "PlayLoopingSoundEffect2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"PlayLoopingSoundEffect2\", \"${1:$CLIPBOARD}\""
+    },
+    {
+      "label": "PlayLoopingSoundEffect SoundBank",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"PlayLoopingSoundEffect\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+    },
+    {
+      "label": "PlayLoopingSoundEffect2 SoundBank",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"PlayLoopingSoundEffect2\", \"${1|QuickKiss,LongKiss,MakeOut,BlowjobLicking,BlowjobSucking,BlowjobDeepSuction,BlowjobVigorous,Ejaculation,EjaculationLong|}\""
+    },
+    {
+      "label": "StopSoundEffectLoop",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"StopSoundEffectLoop\""
+    },
+    {
+      "label": "StopSoundEffectLoop2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "bodyText": "\"StopSoundEffectLoop2\""
+    },
+{
+  "label": "PlayVisualEffect",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+  "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+},
+    {
+      "label": "PlayVisualEffect2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+      "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+    },
+    {
+      "label": "PlayVisualEffect3",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+      "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+    },
+    {
+      "label": "EndVisualEffect",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+      "bodyText": "\"EndVisualEffect\""
+    },
+    {
+      "label": "EndVisualEffect2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+      "bodyText": "\"EndVisualEffect2\""
+    },
+    {
+      "label": "EndVisualEffect3",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
+      "bodyText": "\"EndVisualEffect3\""
+    },
+{
+  "label": "PlayKiss",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+  "bodyText": "\"PlayKiss\""
+},
+    {
+      "label": "PlayKissingBarrage",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+      "bodyText": "\"PlayKissingBarrage\""
+    },
+    {
+      "label": "EndKissingBarrage",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+      "bodyText": "\"EndKissingBarrage\""
+    },
+    {
+      "label": "PlayKissingBarrageOnce",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+      "bodyText": "\"PlayKissingBarrageOnce\""
+    },
+    {
+      "label": "PlayBlackOut",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+      "bodyText": "\"PlayBlackOut\""
+    },
+    {
+      "label": "EndBlackOut",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#channel-independent-vfx)**. ",
+      "bodyText": "\"EndBlackOut\""
+    },
+{
+  "label": "PlayHypnoSpiral",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+  "bodyText": "\"PlayHypnoSpiral\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+},
+    {
+      "label": "EndHypnoSpiral",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
+      "bodyText": "\"EndHypnoSpiral\""
+    },
+    {
+      "label": "PlayPendulum",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. ",
+      "bodyText": "\"PlayPendulum\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+    },
+    {
+      "label": "EndPendulum",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. ",
+      "bodyText": "\"EndPendulum\""
+    },
+{
+  "label": "PlayImagePulseLoopingList",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+  "bodyText": "\"PlayImagePulseLoopingList\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+},
+    {
+      "label": "EndImagePulseLoopingList",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+      "bodyText": "\"EndImagePulseLoopingList\""
+    },
+    {
+      "label": "PlayImagePulseLoopingList2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+      "bodyText": "\"PlayImagePulseLoopingList2\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+    },
+    {
+      "label": "EndImagePulseLoopingList2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopinglist)**. ",
+      "bodyText": "\"EndImagePulseLoopingList2\""
+    },
+    {
+      "label": "PlayImagePulseLoopingRandom",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopingrandom)**. ",
+      "bodyText": "\"PlayImagePulseLoopingRandom\", \"$1\", \"$2\", \"$3\"\n\t\"$4\",\n\t\"$5\",\n\"EndLoop\""
+    },
+    {
+      "label": "EndImagePulseLoopingRandom",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playimagepulseloopingrandom)**. ",
+      "bodyText": "\"EndImagePulseLoopingRandom\""
+    },
+    {
+      "label": "PlayCustomBarrage",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+      "bodyText": "\"PlayCustomBarrage\", \"$1\" \"$2\"\n\t\"$3\",\n\t\"$4\",\n\"EndLoop\""
+    },
+    {
+      "label": "EndCustomBarrage",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+      "bodyText": "\"EndCustomBarrage\""
+    },
+    {
+      "label": "PlayCustomBarrage2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+      "bodyText": "\"PlayCustomBarrage2\", \"$1\" \"$2\"\n\t\"$3\",\n\t\"$4\",\n\"EndLoop\""
+    },
+    {
+      "label": "EndCustomBarrage2",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playcustombarrage)**. ",
+      "bodyText": "\"EndCustomBarrage2\""
+    },
+{
+  "label": "PlayMotionEffect Characters",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+  "bodyText": "\"PlayMotionEffect\", \"${1|Realign,Bounce,BounceSlow,BounceFast,BounceOnce,Sway,SwaySlow,SwayFast,SwayOnce,Pump,PumpSlow,PumpFast,Ride,RideSlow,RideFast,Vibrate|}\""
+},
+    {
+      "label": "PlayMotionEffect Screen",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+      "bodyText": "\"PlayMotionEffect\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+    },
+    {
+      "label": "PlayMotionEffectLoop Characters",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectloop)**. ",
+      "bodyText": "\"PlayMotionEffectLoop\", \"${1|Realign,Bounce,BounceSlow,BounceFast,BounceOnce,Sway,SwaySlow,SwayFast,SwayOnce,Pump,PumpSlow,PumpFast,Ride,RideSlow,RideFast,Vibrate|}\""
+    },
+    {
+      "label": "PlayMotionEffectLoop Screen",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectloop)**. ",
+      "bodyText": "\"PlayMotionEffectLoop\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+    },
+    {
+      "label": "EndMotionEffect",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
+      "bodyText": "\"EndMotionEffect\""
+    },
+{
+  "label": "PlayMotionEffectCustom Characters",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+  "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Characters\", \"$2\", \"$3\""
+},
+    {
+      "label": "PlayMotionEffectCustom Character",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+      "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Character\", \"$2\", \"$3\", \"$4\""
+    },
+    {
+      "label": "PlayMotionEffectCustom BodyPart",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectcustom)**. ",
+      "bodyText": "\"PlayMotionEffectCustom\", \"${1|Bounce,Sway,Pump,Ride,Vibrate|}\", \"Bodypart\", \"$2\", \"$3\", \"$4\", \"$5\""
+    },
+    {
+      "label": "EndAllVisualEffects",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#endallvisualeffects)**. ",
+      "bodyText": "\"EndAllVisualEffects\""
+    }
+]
+}

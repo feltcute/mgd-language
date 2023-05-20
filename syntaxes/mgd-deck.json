@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"scopeName": "source.json.deck.mgd",
+	"scopeName": "source.mgd.deck",
 	"injectionSelector": "L:other.type.deck.mgd",
 	"patterns": [
 		{

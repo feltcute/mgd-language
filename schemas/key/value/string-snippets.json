@@ -1,0 +1,20 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema",
+"$id": "value/event-only-snippets.json",
+"defaultSnippets": [
+{
+    "label": "\"\"",
+    "markdownDescription": "Safety buffer for autocomplete, commas placed automagically.",
+    "bodyText": "\"$0\""
+},
+{
+    "label": "\"\", \n\" \"",
+    "markdownDescription": "Inserts a new line with a string that you can tab to.",
+    "bodyText": "\"$1\",\n\"$0\""
+},
+{
+    "label": "\"\", \"\"",
+    "markdownDescription": "Adds a new string that you can tab to.",
+    "bodyText": "\"$1\", \"$0\""
+}
+]}

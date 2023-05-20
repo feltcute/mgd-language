@@ -2,9 +2,9 @@
     "name": "mgd-language",
     "displayName": "MGD Language",
     "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
-    "version": "23.4.3",
+    "version": "25.5.2",
     "engines": {
-        "vscode": "^1.63.0"
+        "vscode": "^1.68.0"
     },
     "repository": {
         "url": "https://github.com/feltcute/mgd-language"
@@ -29,56 +29,65 @@
                 "editor.snippetSuggestions": "top",
                 "editor.suggest.snippetsPreventQuickSuggestions": false,
                 "editor.suggest.showSnippets": true,
-                "editor.suggest.showWords": true,
                 "editor.inlineSuggest.enabled": true
             }
         },
         "jsonValidation": [
             {
-                "fileMatch": "**/game/**/Adventures/**/**.json",
-                "url": "./schemas/key/adventures-schema.json"
+                "fileMatch": "**/Mods/*/Adventures/**/**.json",
+                "url": "./schemas/key/adventures.json"
             },
             {
-                "fileMatch": "**/game/**/Events/**/**.json",
-                "url": "./schemas/key/events-schema.json"
+                "fileMatch": "**/Mods/*/Events/**/**.json",
+                "url": "./schemas/key/events.json"
             },
             {
-                "fileMatch": "**/game/**/Fetishes/**/**.json",
-                "url": "./schemas/key/fetishes-schema.json"
+                "fileMatch": "**/Mods/*/Fetishes/**/**.json",
+                "url": "./schemas/key/fetishes.json"
+            },
+            {
+                "fileMatch": "**/Mods/*/meta.json",
+                "url": "./schemas/key/meta.json"
+            },
+
+            {
+                "fileMatch": "**/game/Json/Adventures/**/**.json",
+                "url": "./schemas/key/adventures.json"
+            },
+            {
+                "fileMatch": "**/game/Json/Events/**/**.json",
+                "url": "./schemas/key/events.json"
+            },
+            {
+                "fileMatch": "**/game/Json/Fetishes/**/**.json",
+                "url": "./schemas/key/fetishes.json"
             }
         ],
         "grammars": [
             {
-                "scopeName": "source.json.locate.deck.mgd",
+                "scopeName": "source.mgd.locatedeck",
                 "path": "./syntaxes/locate/mgd-deck.json",
                 "injectTo": [
                     "source.json"
                 ]
             },
             {
-                "scopeName": "source.json.deck.mgd",
+                "scopeName": "source.mgd.deck",
                 "path": "./syntaxes/mgd-deck.json",
                 "injectTo": [
                     "source.json"
                 ]
             },
             {
-                "scopeName": "source.json.locate.marfunc.mgd",
-                "path": "./syntaxes/locate/mgd-marfunc.json",
+                "scopeName": "source.mgd.locatefunc",
+                "path": "./syntaxes/locate/func.json",
                 "injectTo": [
                     "source.json"
                 ]
             },
             {
-                "scopeName": "source.json.strmarfunc.mgd",
-                "path": "./syntaxes/mgd-str-marfunc.json",
-                "injectTo": [
-                    "source.json"
-                ]
-            },
-            {
-                "scopeName": "source.json.dicmarfunc.mgd",
-                "path": "./syntaxes/mgd-dic-marfunc.json",
+                "scopeName": "source.mgd.markup",
+                "path": "./syntaxes/mgd-markup.json",
                 "injectTo": [
                     "source.json"
                 ]

@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "schemas/requires",
+    "eventCreation": {
+        "title": "requiresEvent key",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
+          "properties": {
+            "NameOfEvent": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "type": "string"
+            },
+            "Progress": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-99"
+            },
+            "ChoiceNumber": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-1"
+            },
+            "Choice": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "type": "string"
+            }
+          }
+        }
+      },
+    "unusedRequiresEvent": {
+        "title": "requiresEvent key",
+        "markdownDescription": "*Unused in Additions*.",
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "required": ["NameOfEvent", "Progress", "ChoiceNumber", "Choice"],
+          "properties": {
+            "NameOfEvent": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string"
+            },
+            "Progress": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-99"
+            },
+            "ChoiceNumber": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string",
+              "pattern": "^-?[0-9]+$",
+              "default": "-1"
+            },
+            "Choice": {
+              "title": "requiresEvent child key",
+              "markdownDescription": "*Unused in Additions*.",
+              "type": "string"
+            }
+          }
+        }
+      }
+}

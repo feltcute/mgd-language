@@ -1,17 +1,10 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"scopeName": "source.json.locate.marfunc.mgd",
+	"name": "Locate Markup & Function Keys for Scope",
+	"scopeName": "source.mgd.locatefunc",
 	"injectionSelector": "L:source.json",
 	"patterns": [
-		{
-		  "include": "#markup-keys"
-		},
-		{
-		  "include": "#markup-keys-string"
-		}
-	  ],
-	  "repository": {
-    "markup-keys":{
+	{
       "begin": "\"(theText|theScene)\":",
       "beginCaptures": {
 				"0": {
@@ -26,7 +19,7 @@
 			},
       "name": "string.marfunc.mgd"
     },
-    "markup-keys-string":{
+    {
       "begin": "\"(Description|description|descrip|encyclopedia|CreationOn|CreationOff|useOutcome|useMiss|outcome|miss|restraintStruggle|restraintStruggleCharmed|restraintEscaped|restraintEscaped|restraintEscapedFail|restraintOnLoss|statusOutcome|statusMiss)\":",
       "beginCaptures": {
 				"0": {
@@ -40,6 +33,6 @@
 				}
 			},
       "name": "string.marfunc.mgd"
-    }
-	  }
+	}
+	]
 }

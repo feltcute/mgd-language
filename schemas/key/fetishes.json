@@ -1,11 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "type": "object",
   "defaultSnippets": [
     {
         "label": "Create FetishList",
         "description": "A blank FetishList JSON",
-        "bodyText":  "{\n\t\"FetishList\": [\n\t\t{\n\t\t\t\"Name\": \"$1\",\n\t\t\t\"BaseLevel\": \"0\",\n\t\t\t\"Type\": \"$2\",\n\t\t\t\"CreationOn\": \"$3\",\n\t\t\t\"CreationOff\": \"\"\n\t\t}\n\t]\n}"
+        "bodyText":  "{\n\t\"FetishList\": [\n\t\t{\n\t\t\t\"Name\": \"$1\",\n\t\t\t\"BaseLevel\": \"${2:0}\",\n\t\t\t\"Type\": \"${3|Fetish,Addiction|}\",\n\t\t\t\"CreationOn\": \"$4\",\n\t\t\t\"CreationOff\": \"$5\",\n\t\t\t\"ToolTip\": \"$6\\n\\nVerdict: \",\n\t\t\t\"LevelText\": [\n\t\t\t\t[\"0\", \"$7\"],\n\t\t\t\t[\"${8:25}\", \"$9\"],\n\t\t\t\t[\"${10:50}\", \"$11\"],\n\t\t\t\t[\"${12:75}\", \"$13\"],\n\t\t\t\t[\"${14:100}\", \"$15\"]\n\t\t\t]\n\t\t}$16\n\t]\n}"
     }
   ],
   "additionalProperties": false,
@@ -21,7 +21,7 @@
           {
               "label": "Fetish",
               "description": "A blank Fetish .",
-              "body": { "Name": "$1", "BaseLevel": "0", "Type": "Fetish", "CreationOn": "$2", "CreationOff": "$3" }
+              "bodyText": "{\n\t\"Name\": \"$1\",\n\t\"BaseLevel\": \"${2:0}\",\n\t\"Type\": \"${3|Fetish,Addiction|}\",\n\t\"CreationOn\": \"$4\",\n\t\"CreationOff\": \"$5\",\n\t\"ToolTip\": \"$6\\n\\nVerdict: \",\n\t\"LevelText\": [\n\t\t[\"0\", \"$7\"],\n\t\t[\"${8:25}\", \"$9\"],\n\t\t[\"${10:50}\", \"$11\"],\n\t\t[\"${12:75}\", \"$13\"],\n\t\t[\"${14:100}\", \"$15\"]\n\t]\n}"
           },
           {
             "label": "Addiction",
@@ -48,7 +48,7 @@
           }
         },
         "then": {
-          "required": ["Name", "BaseLevel", "Type", "CreationOn", "CreationOff"],
+          "required": ["Name", "BaseLevel", "Type", "CreationOn", "CreationOff", "ToolTip", "LevelText"],
           "additionalProperties": false,
           "properties":
           {
@@ -77,6 +77,30 @@
               "title": "CreationOff key",
               "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
               "type": "string"
+            },
+            "ToolTip": {
+              "title": "ToolTip key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#ToolTip).",
+              "type": "string"
+            },
+            "LevelText": {
+              "title": "LevelText key",
+              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#LevelText).",
+              "type": "array",
+              "items": {
+                "defaultSnippets": [
+                    {
+                        "label": "LevelText Array",
+                        "description": "An array template.",
+                        "bodyText": "[\"$1\", \"$2\"]$3"
+                    }
+                ],
+                "type": "array",
+                "items": {
+                  "maxItems": 2,
+                  "minItems": 2
+                }
+              }
             }
           }
         },

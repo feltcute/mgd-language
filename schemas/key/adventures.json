@@ -1,16 +1,24 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "type": "object",
   "defaultSnippets": [
     {
         "label": "Create Adventure",
-        "description": "A blank Adventure JSON",
+        "markdownDescription": "A blank Adventure JSON",
         "bodyText":  "{\n\t\"name\": \"$1\",\n\t\"Description\": \"$2\",\n\t\"requires\": [ \"\"],\n\t\"requiresEvent\": [\n\t\t{\n\t\t\"NameOfEvent\": \"\",\n\t\t\"Progress\": \"-99\",\n\t\t\"ChoiceNumber\": \"-1\",\n\t\t\"Choice\": \"\"\n\t\t}\n\t  ],\n\t\"MusicList\": [ \"\"],\n\t\"Deck\": [\n\t\t\"$3\"\n\t],\n\t\"RandomEvents\": [ \"\"],\n\t\"RandomMonsters\": [ \"\"],\n\t\"MonsterGroups\": [\n\t\t{\n\t\t\t\"Group\": [ \"\"]\n\t\t}\n\t],\n\t\"Treasure\": [\n\t\t{\n\t\t\t\"Common\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Rare\": [ \"\"]\n\t\t}\n\t],\n\t\"Eros\": [\n\t\t{\n\t\t\t\"Common\": \"0\"\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": \"0\"\n\t\t},\n\t\t{\n\t\t\t\"Rare\": \"0\"\n\t\t}\n\t]\n}"
     },
     {
       "label": "Addition Adventure",
-      "description": "A blank Addition Adventure JSON",
+      "markdownDescription": "A blank Addition Adventure JSON",
       "bodyText":   "{\n\t\"name\": \"$1\",\n\t\"Addition\": \"Yes\",\n\t\"Deck\": [\n$1\n\t],\n\t\"RandomEvents\": [ \"\"],\n\t\"RandomMonsters\": [ \"\"],\n\t\"MonsterGroups\": [\n\t\t{\n\t\t\t\"Group\": [ \"\"]\n\t\t}\n\t],\n\t\"Treasure\": [\n\t\t{\n\t\t\t\"Common\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Uncommon\": [ \"\"]\n\t\t},\n\t\t{\n\t\t\t\"Rare\": [ \"\"]\n\t\t}\n\t]\n}"
+    },
+    {
+      "label": "Testing",
+      "markdownDescription": "A blank Addition Adventure **JSON**",
+      "body": {
+        "name": "$1",
+            "Test2": ["No $2"]
+      }
     }
   ],
   "if": {
@@ -121,7 +129,7 @@
         "minItems": 1,
         "items": {
           "type": "string",
-          "$ref": "../value/adventure-deck-schema.json"
+          "$ref": "subschemas/adventure-deck.json"
         }
       },
       "RandomEvents": {
@@ -300,7 +308,7 @@
       },
       "MusicList": {
         "title": "MusicList key",
-        "markdownDescription": "See [documentation(https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#musiclist).",
+        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Adventures/Creation.html#musiclist).",
         "type": "array",
         "items": {}
       },
@@ -366,7 +374,7 @@
         "minItems": 1,
         "items": {
           "type": "string",
-          "$ref": "../value/adventure-deck-schema.json"
+          "$ref": "subschemas/adventure-deck.json"
         }
       },
       "RandomEvents": {
