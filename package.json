@@ -30,7 +30,8 @@
                 "editor.suggest.snippetsPreventQuickSuggestions": false,
                 "editor.suggest.showSnippets": true,
                 "editor.inlineSuggest.enabled": true
-            }
+            },
+            "explorer.copyRelativePathSeparator": "/"
         },
         "jsonValidation": [
             {

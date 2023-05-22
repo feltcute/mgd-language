@@ -24,14 +24,14 @@
     "additionalProperties": false,
     "NameOfScene": {
       "title": "EventText child key",
-      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).**",
       "type": "string",
       "minLength": 1
     },
     "theScene": {
       "type": "array",
       "title": "EventText child key",
-      "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#eventtext).**",
       "items": {
         "allOf": [
           {

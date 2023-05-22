@@ -3,8 +3,8 @@
 "defaultSnippets": [
 {
     "label": "ChangeBG",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#changebg)**. ",
-    "bodyText": "\"ChangeBG\", \"${1:$CLIPBOARD}\""
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/BGAndChest.html#changebg)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+    "bodyText": "\"ChangeBG\", \"${2:../Mods/}${1:$CLIPBOARD}\""
 },
     {
         "label": "StoreCurrentBG",
@@ -48,8 +48,8 @@
     },
     {
       "label": "ChangeBGM",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm)**. ",
-      "bodyText": "\"ChangeBGM\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"ChangeBGM\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "ChangeBGM-List",
@@ -58,18 +58,18 @@
     },
     {
       "label": "ChangeBGM-OverrideCombatMusic",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-overridecombatmusic)**. ",
-      "bodyText": "\"ChangeBGM-OverrideCombatMusic\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-overridecombatmusic)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"ChangeBGM-OverrideCombatMusic\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "ChangeBGM-NoFade",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-nofade)**. ",
-      "bodyText": "\"ChangeBGM-NoFade\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#changebgm-nofade)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"ChangeBGM-NoFade\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "PlayThisSongAfterCombat",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#playthissongaftercombat)**. ",
-      "bodyText": "\"PlayThisSongAfterCombat\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/Music.html#playthissongaftercombat)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlayThisSongAfterCombat\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "StoreCurrentBGM",
@@ -83,13 +83,13 @@
     },
 {
   "label": "PlaySoundEffect",
-  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
-  "bodyText": "\"PlaySoundEffect\", \"${1:$CLIPBOARD}\""
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+  "bodyText": "\"PlaySoundEffect\", \"${2:../Mods/}${1:$CLIPBOARD}\""
 },
     {
       "label": "PlaySoundEffect2",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. ",
-      "bodyText": "\"PlaySoundEffect2\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playsoundeffect)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlaySoundEffect2\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "PlaySoundEffect SoundBank",
@@ -108,13 +108,13 @@
     },
     {
       "label": "PlayLoopingSoundEffect",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
       "bodyText": "\"PlayLoopingSoundEffect\", \"${1:$CLIPBOARD}\""
     },
     {
       "label": "PlayLoopingSoundEffect2",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. ",
-      "bodyText": "\"PlayLoopingSoundEffect2\", \"${1:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/SFX.html#playloopingsoundeffect-stopsoundeffectloop)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlayLoopingSoundEffect2\", \"${2:../Mods/}${1:$CLIPBOARD}\""
     },
     {
       "label": "PlayLoopingSoundEffect SoundBank",
@@ -138,18 +138,18 @@
     },
 {
   "label": "PlayVisualEffect",
-  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-  "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+  "bodyText": "\"PlayVisualEffect\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${3:../Mods/}${2:$CLIPBOARD}\""
 },
     {
       "label": "PlayVisualEffect2",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-      "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlayVisualEffect2\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${3:../Mods/}${2:$CLIPBOARD}\""
     },
     {
       "label": "PlayVisualEffect3",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. ",
-      "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${2:$CLIPBOARD}\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlayVisualEffect3\", \"${1|StartHaze,GrowingHaze,IncreasingHaze,DecreasingHaze,FadingHaze,SuddenHaze,BlackOut,ScreenPulse,DoublePulse,TriplePulse,RepeatingPulse,ScreenFlash,BlindingFlash,OrgasmPulse|}\", \"${3:../Mods/}${2:$CLIPBOARD}\""
     },
     {
       "label": "EndVisualEffect",
@@ -198,8 +198,8 @@
     },
 {
   "label": "PlayHypnoSpiral",
-  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. ",
-  "bodyText": "\"PlayHypnoSpiral\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playhypospiral)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+  "bodyText": "\"PlayHypnoSpiral\", \"$1\", \"$2\", \"${4:../Mods/}${3:$CLIPBOARD}\", \"$5\""
 },
     {
       "label": "EndHypnoSpiral",
@@ -208,8 +208,8 @@
     },
     {
       "label": "PlayPendulum",
-      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. ",
-      "bodyText": "\"PlayPendulum\", \"$1\", \"$2\", \"${3:$CLIPBOARD}\", \"$4\""
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playpendulum)**. **Uses Clipboard.**\n1) Add `/Mods/` to workspace in Explorer\n2) Find asset in Explorer, right click\n3) Select `Copy Relative Path`",
+      "bodyText": "\"PlayPendulum\", \"$1\", \"$2\", \"${4:../Mods/}${3:$CLIPBOARD}\", \"$5\""
     },
     {
       "label": "EndPendulum",

@@ -3,7 +3,7 @@
     "$id": "schemas/requires",
     "eventCreation": {
         "title": "requiresEvent key",
-        "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+        "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).**",
         "type": "array",
         "items": {
           "additionalProperties": false,
@@ -11,26 +11,26 @@
           "properties": {
             "NameOfEvent": {
               "title": "requiresEvent child key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).**",
               "type": "string"
             },
             "Progress": {
               "title": "requiresEvent child key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).**",
               "type": "string",
               "pattern": "^-?[0-9]+$",
               "default": "-99"
             },
             "ChoiceNumber": {
               "title": "requiresEvent child key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).**",
               "type": "string",
               "pattern": "^-?[0-9]+$",
               "default": "-1"
             },
             "Choice": {
               "title": "requiresEvent child key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Creation.html#requires-requiresevent).**",
               "type": "string"
             }
           }

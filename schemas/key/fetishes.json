@@ -32,7 +32,7 @@
         "properties": {
           "Type": {
             "title": "Type key",
-            "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).**",
             "type": "string",
             "enum": ["Fetish", "Addiction"]
           }
@@ -54,38 +54,38 @@
           {
             "Name": {
               "title": "Name key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).**",
               "type": "string"
             },
             "BaseLevel": {
               "title": "BaseLevel key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).**",
               "type": "string",
               "pattern": "^-?[0-9]*$"
             },
             "Type": {
               "title": "Type key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).**",
               "type": "string"
             },
             "CreationOn": {
               "title": "CreationOn key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).**",
               "type": "string"
             },
             "CreationOff": {
               "title": "CreationOff key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).**",
               "type": "string"
             },
             "ToolTip": {
               "title": "ToolTip key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#ToolTip).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#ToolTip).**",
               "type": "string"
             },
             "LevelText": {
               "title": "LevelText key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#LevelText).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#LevelText).**",
               "type": "array",
               "items": {
                 "defaultSnippets": [
@@ -110,29 +110,29 @@
           "properties": {
             "Name": {
               "title": "Name key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#name).**",
               "type": "string"
             },
             "BaseLevel": {
               "title": "BaseLevel key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#baselevel).**",
               "type": "string",
               "pattern": "^-?[0-9]*$"
             },
             "Type": {
               "title": "Type key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#type).**",
               "type": "string"
             },
             "CreationOn": {
               "title": "CreationOn key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).**",
               "type": "string",
               "minLength": 1
             },
             "CreationOff": {
               "title": "CreationOff key",
-              "markdownDescription": "See [documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).",
+              "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Fetishes/Fetishes.html#creationon-creationoff).**",
               "type": "string"
             }
           }
