@@ -2,6 +2,11 @@
 
 Meant to mirror the current supported game release for its major and minor version number, and room for conveying a patch to the extension itself. I believe it's best to communicate compatible game versions first, over anything about the extension itself, given its purpose to help with a DSL.
 
+## [25.5.4]
+
+- Updated to compatibility with latest MGD update.
+- Fixed an asssortment of autocomplete options being incomplete strings.
+
 ## [25.2.1]
 
 - I totally messed up the naming scheme for the version updates. So uh, gotta wait till v26 for that to get fixed. This release would be `25.5.3`

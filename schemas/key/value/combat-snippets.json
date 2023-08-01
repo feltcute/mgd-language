@@ -139,22 +139,22 @@
           {
             "label": "IfMonsterHasStatusEffect",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
-            "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+            "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
   {
     "label": "IfMonsterHasStatusEffect (Buff)",
     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
-    "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+    "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
   },
           {
             "label": "IfOtherMonsterHasStatusEffect",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
-            "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$3\""
+            "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$3\""
           },
           {
             "label": "IfOtherMonsterHasStatusEffect (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
-            "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$3\""
+            "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$3\""
           },
           {
             "label": "IfMonsterDoesntHaveStatusEffect",
@@ -174,17 +174,17 @@
           {
             "label": "IfOtherMonsterDoesntHaveStatusEffect (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
-            "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$3\""
+            "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$3\""
           },
           {
             "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Effect Variant",
-            "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\", \"$3\""
+            "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\", \"$3\""
           },
           {
             "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Buff Variant.",
-            "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\", \"$3\""
+            "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\", \"$3\""
           },
           {
             "label": "IfMonsterArousalGreaterThan",
@@ -304,32 +304,32 @@
   {
     "label": "IfPlayerHasStatusEffect",
     "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-    "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+    "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
   },
           {
             "label": "IfPlayerHasStatusEffect (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-            "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+            "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerDoesntHaveStatusEffect",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-            "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+            "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
           {
             "label": "IfPlayerDoesntHaveStatusEffect (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
-            "bodyText": "\"IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+            "bodyText": "\"IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
-            "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+            "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
           {
             "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater (Buff)",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
-            "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+            "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerStunnedByParalysis",

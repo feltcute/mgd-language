@@ -5,7 +5,7 @@
         {
             "label": "Create meta.json",
             "description": "A blank FetishList JSON",
-            "bodyText":  "{\n\t\"name\": \"$1\",\n\t\"description\": \"$2\",\n\t\"testedFor\": ${3:25.2},\n\t\"version\": ${4:0.0},\n\t\"tags\" : [\n\t\t\"$9\",\n\t\t\"$10\",${11:\n\t\t\"$12\",\n\t\t\"$13\",\n\t\t\"$14\"}\n\t],\n\t\"credits\": \"$5\",\n\t\"authors\": [\n\t\t\"$6\"\n\t],\n\t\"urlLabel\": \"$7\",\n\t\"url\": \"$8\"\n}"
+            "bodyText": "{\n\t\"name\": \"$1\",\n\t\"description\": \"$2\",\n\t\"testedFor\": {\"major\": 25, \"minor\": 4, \"patch\": 0},\n\t\"version\": ${4:0.0},\n\t\"tags\" : [\n\t\t\"$9\",\n\t\t\"$10\",${11:\n\t\t\"$12\",\n\t\t\"$13\",\n\t\t\"$14\"}\n\t],\n\t\"credits\": \"$5\",\n\t\"authors\": [\n\t\t\"$6\"\n\t],\n\t\"urlLabel\": \"$7\",\n\t\"url\": \"$8\"\n}"
         }
     ],
     "additionalProperties": false,
@@ -34,9 +34,39 @@
         "testedFor": {
             "title": "testedFor key",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#testedfor)**. ",
-            "type": "number",
-            "minimum": 25.2
+            "type": "object",
+            "properties": {
+                "major": {
+                    "type": "integer"
+                },
+                "minor": {
+                    "type": "integer"
+                },
+                "patch": {
+                    "type": "integer"
+                }
+            },
+            "required": ["major", "minor", "patch"],
+            "additionalProperties": false
         },
+        "semVersion": {
+            "title": "semVersion key",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#semversion)**. ",
+            "type": "object",
+            "properties": {
+                "major": {
+                    "type": "integer"
+                },
+                "minor": {
+                    "type": "integer"
+                },
+                "patch": {
+                    "type": "integer"
+                }
+            },
+            "required": ["major", "minor", "patch"],
+            "additionalProperties": false
+        }, 
         "version": {
             "title": "version key",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#version)**. ",
@@ -56,7 +86,17 @@
         "credits": {
             "title": "credits key",
             "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/GettingStarted/MetaCreation.html#credits)**. ",
-            "type": "string"
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
         },
         "authors": {
             "title": "authors key",

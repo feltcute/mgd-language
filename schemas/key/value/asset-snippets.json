@@ -274,7 +274,7 @@
     {
       "label": "PlayMotionEffect Screen",
       "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffect)**. ",
-      "bodyText": "\"PlayMotionEffect\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+      "bodyText": "\"PlayMotionEffect\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,CrashSmol,Quake|}\""
     },
     {
       "label": "PlayMotionEffectLoop Characters",
@@ -284,7 +284,7 @@
     {
       "label": "PlayMotionEffectLoop Screen",
       "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/VFX.html#playmotioneffectloop)**. ",
-      "bodyText": "\"PlayMotionEffectLoop\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,Quake|}\""
+      "bodyText": "\"PlayMotionEffectLoop\", \"${1|ScreenBounce,SlowScreenBounce,ScreenSway,Explosion,LongExplosion,Crash,CrashSmol,Quake|}\""
     },
     {
       "label": "EndMotionEffect",

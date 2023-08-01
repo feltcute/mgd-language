@@ -132,6 +132,25 @@
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Input.html#removeprogressfromeros)**. ",
           "bodyText": "\"RemoveProgressFromEros\""
         },
+
+
+{
+  "label": "MenuAddition",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
+  "bodyText": "\"MenuAddition\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+},
+        {
+          "label": "ShopAddition",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
+          "bodyText": "\"MenuAddition\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+        },
+        {
+          "label": "SkillShopAddition",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
+          "bodyText": "\"MenuAddition\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
+        },
+
+
 {
   "label": "Menu",
   "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/Menu.html#menu-system)**. If more than 6 choices, page arrows will be added.",
@@ -475,32 +494,32 @@
 {
   "label": "StatCheck",
   "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#statcheck)**. ",
-  "bodyText": "\"StatCheck\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
+  "bodyText": "\"StatCheck\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
 },
         {
           "label": "StatCheck + ChangeStatCheckDifficulty(s)",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#changestatcheckdifficulty)**. Use Tab + Space to force autocomplete options.",
-          "bodyText": "\"StatCheck\",\n\t\"$1\"\n\t\"${2|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$3\", \"$4\"\n\t\"Fail\", \"$5\""
+          "bodyText": "\"StatCheck\",\n\t\"$1\"\n\t\"${2|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$3\", \"$4\"\n\t\"Fail\", \"$5\""
         },
                 {
                   "label": "ChangeStatCheckDifficulty+StatusEffect",
                   "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifplayerhasstatuseffect)**. ",
-                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
                 },
                 {
                   "label": "ChangeStatCheckDifficulty+StatusEffect(Buff)",
                   "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#ifplayerhasstatuseffect)**. ",
-                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
                 },
                 {
                   "label": "ChangeStatCheckDifficulty+IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
                   "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
-                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}, \"$2\""
+                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
                 },
                 {
                   "label": "ChangeStatCheckDifficulty+IfPlayerHasStatusEffectWithPotencyEqualOrGreater (Buff)",
                   "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
-                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}, \"$2\""
+                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
                 },
                 {
                   "label": "ChangeStatCheckDifficulty+IfHasPerk",
@@ -513,9 +532,9 @@
                   "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasFetish\", \"$1\", \"$2\""
                 },
                 {
-                  "label": "ChangeStatCheckDifficulty+IfHasFetishEqualOrGreater",
+                  "label": "ChangeStatCheckDifficulty+IfFetishLevelEqualOrGreater",
                   "markdownDescription": "*Sub-function* **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#iffetishlevelequalorgreater)**. ",
-                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfHasFetishEqualOrGreater\", \"$1\", \"$2\", \"$3\""
+                  "bodyText": "\"ChangeStatCheckDifficulty\", \"IfFetishLevelEqualOrGreater\", \"$1\", \"$2\", \"$3\""
                 },
                 {
                   "label": "ChangeStatCheckDifficulty+IfVirilityEqualOrGreater",
@@ -555,8 +574,13 @@
         {
           "label": "StatCheckRollUnder",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#statcheckrollunder)**. Can't use any sub-functions or related functions.",
-          "bodyText": "\"StatCheckRollUnder\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}, \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
+          "bodyText": "\"StatCheckRollUnder\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
         },
+                {
+                  "label": "StatCheckRollUnder + ChangeStatCheckDifficulty(s)",
+                  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#changestatcheckdifficulty)**. Use Tab + Space to force autocomplete options.",
+                  "bodyText": "\"StatCheckRollUnder\",\n\t\"$1\"\n\t\"${2|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$3\", \"$4\"\n\t\"Fail\", \"$5\""
+                },
         {
           "label": "ChangeNextStatCheckDifficulty",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#changenextstatcheckdifficulty)**. ",

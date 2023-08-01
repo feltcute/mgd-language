@@ -386,12 +386,12 @@
     {
       "label": "RemoveStatusEffect",
       "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#removestatuseffect)**. ",
-      "bodyText": "\"RemoveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}"
+      "bodyText": "\"RemoveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\""
     },
     {
       "label": "RemoveStatusEffect (Buff)",
       "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/General/PlayerAfflictions.html#removestatuseffect)**. ",
-      "bodyText": "\"RemoveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}"
+      "bodyText": "\"RemoveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\""
     },
     {
       "label": "ClearNonPersistentStatusEffects",
