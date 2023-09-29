@@ -447,6 +447,11 @@
           "bodyText": "\"IfProgressEqualsOrLess\", \"$1\", \"$2\""
         },
 {
+  "label": "IfEventExists",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/ScebeJumps.html#IfEventExists)**. ",
+  "bodyText": "\"IfEventExists\", \"$1\", \"$2\""
+},
+{
   "label": "JumpToScene",
   "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/SceneJumps.html#jumptoscene)**. ",
   "bodyText": "\"JumpToScene\", \"$1\""
@@ -709,6 +714,11 @@
           "label": "IfGridNPCThere",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcthere)**. ",
           "bodyText": "\"IfGridNPCThere\", \"$1\", \"$2\""
+        },
+        {
+          "label": "SetActiveGridNPC",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#SetActiveGridNPC)**. ",
+          "bodyText": "\"SetActiveGridNPC\", \"$1\""
         },
         {
           "label": "SpawnGridNPC Here",

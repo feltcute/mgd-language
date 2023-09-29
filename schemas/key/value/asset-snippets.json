@@ -28,9 +28,14 @@
     },
 {
   "label": "ChangeImageLayer",
-  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#changeimagelayer)**. ",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#changeimagelayer)**. **Sub-functions not yet implemented in extension.**",
   "bodyText": "\"ChangeImageLayer\", \"$1\", \"$2\", \"$3\""
 },
+    {
+      "label": "RoledCGEnd",
+      "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#changeimagelayer)**. ",
+      "bodyText": "\"RoledCGEnd\""
+    },
     {
       "label": "AnimateImageLayer",
       "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/Asset/ImageLayers.html#animateimagelayer)**. ",

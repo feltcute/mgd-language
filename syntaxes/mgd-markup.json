@@ -34,7 +34,10 @@
 		"markup": {
 			"patterns": [
 				{
-					"include": "#single-markup"
+					"include": "#single-markup-renpy"
+				},
+				{
+					"include": "#single-markup-interp"
 				},
 				{
 					"include": "#character-markup"
@@ -47,22 +50,26 @@
 				}
 			]
 		},
-		"single-markup": {
-		  "match": "{(w|w=[0-9]+|nw|fast|ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|PlayerLevel|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|FocusedMonsterName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWords)}",
-		  "name": "keyword.single.mgd"
+		"single-markup-renpy": {
+		  "match": "{(w|w=[0-9]+|nw|fast)}",
+		  "name": "keyword.renpy.mgd"
+		},
+		"single-markup-interp": {
+			"match": "\\[(ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|PlayerLevel|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|FocusedMonsterName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWord)\\]",
+			"name": "keyword.interp.mgd"
 		},
 		"character-markup":{
 			"match": "([|]n[|]|[|]f[|]|[|]c[|])",
 			"name": "keyword.character.mgd"
 		},
     "enclosed-markup":{
-      "begin": "{(b|i|u|s|plain|p|p=[0-9]+|cps=[0-9]+|size=[\\-\\+]?[0-9]+)}",
+      "begin": "{(Pink|b|i|u|s|plain|p|p=[0-9]+|cps=[0-9]+|size=[\\-\\+]?[0-9]+)}",
       "beginCaptures": {
 				"0": {
 					"name": "keyword.enclosed.begin.mgd"
 				}
 			},
-      "end": "{/(b|i|u|s|plain|cps|size)}",
+      "end": "{/(Pink|b|i|u|s|plain|cps|size)}",
       "endCaptures": {
 				"0": {
 					"name": "keyword.enclosed.end.mgd"
@@ -71,24 +78,18 @@
       "name": "constant.enclosed.mgd"
     },
 		"color-end-markup": {
-			"begin": "{(Pink|UseSetColor|UseSetColor[2-7]|SetTextColor)}",
+			"begin": "\\[(StoredColor|StoredColor[2-7])\\]",
 			"beginCaptures": {
 				"0": {
 					"name": "keyword.color.begin.mgd"
 				}
 			},
-			"end": "{ColorEnd}",
+			"end": "\\[ColorEnd\\]",
 			"endCaptures": {
 				"0": {
 					"name": "keyword.color.end.mgd"
 				}
 			},
-			"name": "constant.color.mgd",
-      "patterns": [{"include":"#color-done-markup"}]
-		},
-		"color-done-markup": {
-			"match": "{Done}",
-			"name": "markup.changed.mgd"
-		}
-	  }
+			"name": "constant.color.mgd"
+	  	}}
 }
