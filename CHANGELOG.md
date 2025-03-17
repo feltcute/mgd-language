@@ -2,6 +2,15 @@
 
 Meant to mirror the current supported game release for its major and minor version number, and room for conveying a patch to the extension itself. I believe it's best to communicate compatible game versions first, over anything about the extension itself, given its purpose to help with a DSL.
 
+## [25.8.0]
+
+- Updated to compatibility with latest MGD update.
+- Added syntax highlighting for all functions. 
+- **PSA**: There will be issues with some functions without EndLoops that were split across multiple lines, most will not be able to be fixed due to limits of Textmate Grammars in whitespace handling. You can use a function's autocomplete snippet for an example of valid whitespace.
+- Fixed broken documentation links in tooltips.
+- Removed gridmap scene autocomplete snippets, they got in the way of normal scene autocomplete, rare to use even if someone was using gridmaps, among other future prospects.
+
+
 ## [25.6.0]
 
 - Updated to compatibility with latest MGD update.

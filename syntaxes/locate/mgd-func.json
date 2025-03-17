@@ -1,38 +1,38 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Locate Markup & Function Keys for Scope",
-	"scopeName": "source.mgd.locatefunc",
-	"injectionSelector": "L:source.json",
-	"patterns": [
-	{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Locate Markup & Function Keys for Scope",
+  "scopeName": "source.mgd.locatefunc",
+  "injectionSelector": "L:source.json",
+  "patterns": [
+  {
       "begin": "\"(theText|theScene)\":",
       "beginCaptures": {
-				"0": {
-					"name": "support.type.property-name.json"
-				}
-			},
+        "0": {
+          "name": "support.type.property-name.json"
+        }
+      },
       "end": "\\W(])($|\n|,|\r|\t|}|{)",
       "endCaptures": {
-				"0": {
-					"name": "other.definition.dictionary.end.mgd"
-				}
-			},
+        "0": {
+          "name": "other.definition.dictionary.end.mgd"
+        }
+      },
       "name": "string.marfunc.mgd"
     },
     {
       "begin": "\"(Description|description|descrip|encyclopedia|CreationOn|CreationOff|useOutcome|useMiss|outcome|miss|restraintStruggle|restraintStruggleCharmed|restraintEscaped|restraintEscaped|restraintEscapedFail|restraintOnLoss|statusOutcome|statusMiss)\":",
       "beginCaptures": {
-				"0": {
-					"name": "support.type.property-name.json"
-				}
-			},
+        "0": {
+          "name": "support.type.property-name.json"
+        }
+      },
       "end": "\",",
       "endCaptures": {
-				"0": {
-					"name": "other.definition.string.end.mgd"
-				}
-			},
+        "0": {
+          "name": "other.definition.string.end.mgd"
+        }
+      },
       "name": "string.marfunc.mgd"
-	}
-	]
+  }
+  ]
 }

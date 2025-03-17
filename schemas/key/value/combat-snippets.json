@@ -3,402 +3,402 @@
 "defaultSnippets": [
 {
   "label": "IfAttackCrits",
-  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Attacker.html)**. ",
+  "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Attacker.html)**. ",
   "bodyText": "\"IfAttackCrits\", \"$1\""
 },
 {
     "label": "HideMonsterEncounter",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Encounter.html)**. ",
     "bodyText": "\"HideMonsterEncounter\""
 },
           {
             "label": "ShowMonsterEncounter",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Encounter.html)**. ",
             "bodyText": "\"ShowMonsterEncounter\""
           },
           {
             "label": "AddMonsterToEncounter",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#addmonstertoencounter)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Encounter.html#addmonstertoencounter)**. ",
             "bodyText": "\"AddMonsterToEncounter\", \"$1\""
           },
           {
             "label": "AddMonsterToEncounter + ChangeForm",
-            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Encounter.html#changeform)**. ",
+            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Encounter.html#changeform)**. ",
             "bodyText": "\"AddMonsterToEncounter\", \"ChangeForm\" \"$1\""
           },
   {
     "label": "PlayerLosesCombat",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html)**. ",
     "bodyText": "\"PlayerLosesCombat\""
   },
           {
             "label": "EndCombat",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#endcombat)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#endcombat)**. ",
             "bodyText": "\"EndCombat\""
           },
           {
             "label": "ClearFightForVictory",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearfightforvictory)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#clearfightforvictory)**. ",
             "bodyText": "\"ClearFightForVictory\""
           },
           {
             "label": "ClearMonsterEncounter",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearmonsterencounter)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#clearmonsterencounter)**. ",
             "bodyText": "\"ClearMonsterEncounter\""
           },
           {
             "label": "ClearMonsterEncounterBossFight",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#clearmonsterencounterbossfight)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#clearmonsterencounterbossfight)**. ",
             "bodyText": "\"ClearMonsterEncounterBossFight\""
           },
           {
             "label": "RemoveMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#removemonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#removemonster)**. ",
             "bodyText": "\"RemoveMonster\""
           },
           {
             "label": "DefeatMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/EndCombat.html#defeatmonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/EndCombat.html#defeatmonster)**. ",
             "bodyText": "\"DefeatMonster\""
           },
           {
             "label": "DenyTargetOrgasm",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/IgnoreOrgasm.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/IgnoreOrgasm.html)**. ",
             "bodyText": "\"DenyTargetOrgasm\""
           },
           {
             "label": "DenyAttackerOrgasm",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/IgnoreOrgasm.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/IgnoreOrgasm.html)**. ",
             "bodyText": "\"DenyAttackerOrgasm\""
           },
   {
     "label": "SemenHeal",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html)**. ",
     "bodyText": "\"SemenHeal\", \"$1\""
   },
           {
             "label": "EnergyDrain",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#energydrain)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#energydrain)**. ",
             "bodyText": "\"EnergyDrain\", \"$1\""
           },
           {
             "label": "SetSkipMonsterAttack",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#setskipmonsterattack)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#setskipmonsterattack)**. ",
             "bodyText": "\"SetSkipMonsterAttack\""
           },
           {
             "label": "SetResumeMonsterAttack",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#setresumemonsterattack)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#setresumemonsterattack)**. ",
             "bodyText": "\"SetResumeMonsterAttack\""
           },
           {
             "label": "SkipAllMonsterAttacks",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#skipallmonsterattacks)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#skipallmonsterattacks)**. ",
             "bodyText": "\"SkipAllMonsterAttacks\""
           },
           {
             "label": "ResumeAllMonsterAttacks",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#resumeallmonsterattacks)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#resumeallmonsterattacks)**. ",
             "bodyText": "\"ResumeAllMonsterAttacks\""
           },
           {
             "label": "CallMonsterAttack",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
             "bodyText": "\"CallMonsterAttack\""
           },
           {
             "label": "CallMonsterAttack + SpecificAttack",
-            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
+            "markdownDescription": "*Sub-function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#callmonsterattack)**. ",
             "bodyText": "\"CallMonsterAttack\", \"SpecificAttack\", \"$1\""
           },
           {
             "label": "EndCounterChecks",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterAttack.html#endcounterchecks)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterAttack.html#endcounterchecks)**. ",
             "bodyText": "\"EndCounterChecks\""
           },
   {
     "label": "IfThisMonsterIsInEncounter",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html)**. ",
     "bodyText": "\"IfThisMonsterIsInEncounter\", \"$1\", \"$2\""
   },
           {
             "label": "EncounterSizeGreaterOrEqualTo",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
             "bodyText": "\"EncounterSizeGreaterOrEqualTo\", \"$1\", \"$2\""
           },
           {
             "label": "EncounterSizeLessOrEqualTo",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#encountersizegreaterorequalto-encountersizelessorequalto)**. ",
             "bodyText": "\"EncounterSizeLessOrEqualTo\", \"$1\", \"$2\""
           },
           {
             "label": "IfMonsterLevelGreaterThan",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterlevelgreaterthan)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterlevelgreaterthan)**. ",
             "bodyText": "\"IfMonsterLevelGreaterThan\", \"$1\", \"$2\""
           },
           {
             "label": "IfMonsterHasStatusEffect",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
   {
     "label": "IfMonsterHasStatusEffect (Buff)",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
     "bodyText": "\"IfMonsterHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
   },
           {
             "label": "IfOtherMonsterHasStatusEffect",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$3\""
           },
           {
             "label": "IfOtherMonsterHasStatusEffect (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfOtherMonsterHasStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$3\""
           },
           {
             "label": "IfMonsterDoesntHaveStatusEffect",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\""
           },
           {
             "label": "IfMonsterDoesntHaveStatusEffect (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffect-ifmonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\""
           },
           {
             "label": "IfOtherMonsterDoesntHaveStatusEffect",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$3\""
           },
           {
             "label": "IfOtherMonsterDoesntHaveStatusEffect (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifothermonsterhasstatuseffect-ifothermonsterdoesnthavestatuseffect)**. ",
             "bodyText": "\"IfOtherMonsterDoesntHaveStatusEffect\", \"$1\", \"${2|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$3\""
           },
           {
             "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Effect Variant",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Effect Variant",
             "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\", \"$3\""
           },
           {
             "label": "IfMonsterHasStatusEffectWithPotencyEqualOrGreater (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Buff Variant.",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasstatuseffectwithpotencyequalorgreater)**. Buff Variant.",
             "bodyText": "\"IfMonsterHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\", \"$3\""
           },
           {
             "label": "IfMonsterArousalGreaterThan",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterarousalgreaterthan)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterarousalgreaterthan)**. ",
             "bodyText": "\"IfMonsterArousalGreaterThan\", \"$1\", \"$2\""
           },
           {
             "label": "IfMonsterOrgasm",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterorgasm)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterorgasm)**. ",
             "bodyText": "\"IfMonsterOrgasm\", \"$1\""
           },
           {
             "label": "CallMonsterEncounterOrgasmCheck",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#callmonsterencounterorgasmcheck)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#callmonsterencounterorgasmcheck)**. ",
             "bodyText": "\"CallMonsterEncounterOrgasmCheck\", \"$1\""
           },
           {
             "label": "IfMonsterSpiritGone",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterspiritgone)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterspiritgone)**. ",
             "bodyText": "\"IfMonsterSpiritGone\", \"$1\""
           },
           {
             "label": "IfMonsterHasSkill",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
             "bodyText": "\"IfMonsterHasSkill\", \"$1\", \"$2\""
           },
           {
             "label": "IfMonsterHasPerk",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterChecks.html#ifmonsterhasskill-ifmonsterhasperk)**. ",
             "bodyText": "\"IfMonsterHasPerk\", \"$1\", \"$2\""
           },
   {
     "label": "ChangeMonsterArousal",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
     "bodyText": "\"ChangeMonsterArousal\", \"$1\""
   },
           {
             "label": "ChangeMonsterSpirit",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#changemonsterarousal-changemonsterspirit)**. ",
             "bodyText": "\"ChangeMonsterSpirit\", \"$1\""
           },
           {
             "label": "MonsterOrgasm",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#monsterorgasm)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#monsterorgasm)**. ",
             "bodyText": "\"MonsterOrgasm\", \"$1\""
           },
           {
             "label": "DenyMonsterOrgasm",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#denymonsterorgasm)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#denymonsterorgasm)**. ",
             "bodyText": "\"DenyMonsterOrgasm\""
           },
           {
             "label": "RefreshMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#refreshmonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#refreshmonster)**. ",
             "bodyText": "\"RefreshMonster\""
           },
           {
             "label": "ApplyStatusEffectToMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
             "bodyText": "\"ApplyStatusEffectToMonster\", \"$1\""
           },
           {
             "label": "RemoveStatusEffectFromMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#applystatuseffecttomonster-removestatuseffectfrommonster)**. ",
             "bodyText": "\"RemoveStatusEffectFromMonster\", \"$1\""
           },
           {
             "label": "HitMonsterWith",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterCombatAfflictions.html#hitmonsterwith)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterCombatAfflictions.html#hitmonsterwith)**. ",
             "bodyText": "\"HitMonsterWith\", \"$1\""
           },
   {
     "label": "FocusOnMonster",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html)**. ",
     "bodyText": "\"FocusOnMonster\", \"$1\""
   },
           {
             "label": "FocusOnRandomMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusonrandommonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html#focusonrandommonster)**. ",
             "bodyText": "\"FocusOnRandomMonster\""
           },
           {
             "label": "ShuffleMonsterEncounter",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#shufflemonsterencounter)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html#shufflemonsterencounter)**. ",
             "bodyText": "\"ShuffleMonsterEncounter\""
           },
           {
             "label": "RefocusOnInitialMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#refocusoninitialmonster)**. Will not work if you used `ShuffleMonsterEncounter`",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html#refocusoninitialmonster)**. Will not work if you used `ShuffleMonsterEncounter`",
             "bodyText": "\"RefocusOnInitialMonster\""
           },
           {
             "label": "FocusedSpeaks",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusedspeaks)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html#focusedspeaks)**. ",
             "bodyText": "\"FocusedSpeaks${1:}\",\n\t\"$2\""
           },
           {
             "label": "FocusedSpeaksSkill",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/MonsterFocus.html#focusedspeaksskill)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/MonsterFocus.html#focusedspeaksskill)**. ",
             "bodyText": "\"FocusedSpeaksSkill${1:}\",\n\t\"$2\""
           },
   {
     "label": "DenyPlayerOrgasm",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#denyplayerorgasm)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatAfflictions.html#denyplayerorgasm)**. ",
     "bodyText": "\"DenyPlayerOrgasm\""
   },
           {
             "label": "HitPlayerWith",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#hitplayerwith)**. Do not use any skill with a targetType that isn't `single`",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatAfflictions.html#hitplayerwith)**. Do not use any skill with a targetType that isn't `single`",
             "bodyText": "\"HitPlayerWith\", \"$1\""
           },
           {
             "label": "SkipPlayerAttack",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatAfflictions.html#skipplayerattack)**. Prevents the player from consuming the skill costType, and using consumables.",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatAfflictions.html#skipplayerattack)**. Prevents the player from consuming the skill costType, and using consumables.",
             "bodyText": "\"SkipPlayerAttack\""
           },
   {
     "label": "IfPlayerHasStatusEffect",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html)**. ",
     "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
   },
           {
             "label": "IfPlayerHasStatusEffect (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html)**. ",
             "bodyText": "\"IfPlayerHasStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerDoesntHaveStatusEffect",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html)**. ",
             "bodyText": "\" IfPlayerDoesntHaveStatusEffect\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
           {
             "label": "IfPlayerDoesntHaveStatusEffect (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html)**. ",
             "bodyText": "\"IfPlayerDoesntHaveStatusEffect\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
             "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Aphrodisiac,Charm,Drowsy,Sleep,Restrain,Hypnotized,Paralysis,Paralyzed,Sleep,Stun,Trance,Debuffs,Buffs,Surrender,Defend|}\", \"$2\""
           },
           {
             "label": "IfPlayerHasStatusEffectWithPotencyEqualOrGreater (Buff)",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html#ifplayerhasstatuseffectwithpotencyequalorgreater)**. ",
             "bodyText": "\"IfPlayerHasStatusEffectWithPotencyEqualOrGreater\", \"${1|Damage,Crit,Power,Technique,Intelligence,Allure,Willpower,Luck|}\", \"$2\""
           },
           {
             "label": "IfPlayerStunnedByParalysis",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerstunnedbyparalysis)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html#ifplayerstunnedbyparalysis)**. ",
             "bodyText": "\"IfPlayerStunnedByParalysis\", \"$1\""
           },
           {
             "label": "IfPlayerIsUsingThisSkill",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/PlayerCombatChecks.html#ifplayerisusingthisskill)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/PlayerCombatChecks.html#ifplayerisusingthisskill)**. ",
             "bodyText": "\"IfPlayerIsUsingThisSkill\", \"$1\", \"$2\""
           },
   {
     "label": "ApplyStance",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#applystance)**. ",
     "bodyText": "\"ApplyStance\", \"$1\""
   },
           {
             "label": "ApplyStance + SetAttack",
-            "markdownDescription": "*Sub-Function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystance)**. ",
+            "markdownDescription": "*Sub-Function*. **[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#applystance)**. ",
             "bodyText": "\"ApplyStance\", \"$1\", \"SetAttack\", \"$2\""
           },
           {
             "label": "ApplyStanceToOtherMonster",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#applystancetoothermonster)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#applystancetoothermonster)**. ",
             "bodyText": "\"ApplyStanceToOtherMonster\", \"$1\", \"$2\""
           },
           {
             "label": "ClearStanceFromMonsterAndPlayer",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#clearstancefrommonsterandplayer)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#clearstancefrommonsterandplayer)**. ",
             "bodyText": "\"ClearStanceFromMonsterAndPlayer\", \"$1\""
           },
   {
     "label": "IfPlayerHasStance",
-    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
+    "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
     "bodyText": "\"IfPlayerHasStance\", \"$1\", \"$2\""
   },
           {
             "label": "IfPlayerDoesntHaveStance",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifplayerhasstance-ifplayerdoesnthavestance)**. ",
             "bodyText": "\"IfPlayerDoesntHaveStance\", \"$1\", \"$2\""
           },
           {
             "label": "IfPlayerHasStances",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifplayerhasstances)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifplayerhasstances)**. ",
             "bodyText": "\"IfPlayerHasStances\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\", \"$3\""
           },
           {
             "label": "IfMonsterHasStance",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
             "bodyText": "\"IfMonsterHasStance\", \"$1\", \"$2\""
           },
           {
             "label": "IfMonsterDoesntHaveStance",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifmonsterhasstance-ifmonsterdoesnthavestance)**. ",
             "bodyText": "\"IfMonsterDoesntHaveStance\", \"$1\", \"$2\""
           },
           {
             "label": "IfOtherMonsterHasStance",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
             "bodyText": "\"IfOtherMonsterHasStance\", \"$1\", \"$2\""
           },
           {
             "label": "IfOtherMonsterDoesntHaveStance",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#ifothermonsterhasstance-and-ifothermonsterdoesnthavestance)**. Will shift focus to the given monster.",
             "bodyText": "\"IfOtherMonsterDoesntHaveStance\", \"$1\", \"$2\""
           },
           {
             "label": "ClearStances",
-            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/CombatOnly/Stances.html#clearstances)**. ",
+            "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/CombatOnly/Stances.html#clearstances)**. ",
             "bodyText": "\"ClearStances\""
           }
 ]}

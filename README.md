@@ -16,32 +16,21 @@ Syntax highlighting, JSON schema based linting & hinting, and autocomplete funct
 
 *Will do pretty image later*
 
-* Syntax highlighting specifically for text markup. For now.
+* Syntax highlighting for functions and markup.
 
 *Will do pretty image later*
 
 ## Known Issues
 
 * Skills, Monsters, Items, Perks, and Locations do not yet have schemas. I intend to release them soon.
-* No syntax highlighting for functions. Is complicated to do both functions and markup at same time. Will try to fix.
+* Syntax highlighting is inflexible to certain whitespace scenarios, usually some use of linebreaks. Use autocomplete snippets to for reference of expected whitespace. This can be fixed when transitioned to a treesitter grammar in the future.
 * Markup autocomplete *cannot* work, due to issues inherent from how the JSON Language Server is implemented by VS Code.
 * Please let me know about more.
 
 ## Roadmap
 
-* Syntax highlighting for functions and markup.
-* A proper language server for VS Code.
-* Catch up Atom to VS Code myself? Maybe?
-
-### Stuff a language server could do
-
-* Automated linting check for if a skill/perk/item exists.
-* Advanced context-based autocomplete, such as providing scene jumps with valid scene choices.
-* Advanced hinting features, such as calculated damage values when giving a character a skill via `skillList`.
-* Better integrating the docs in hints.
-* Built-in scene/event jump validation.
-* Actually useful symbol search.
-* Function, sub-function, and markup linting.
+* Treesitter grammer instead of Textmate.
+* A proper dedicated language server for more robust value autocomplete and validation.
 
 ### Links
 

@@ -149,7 +149,16 @@
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
           "bodyText": "\"MenuAddition\",\n\t\"$1\",\n\t\"$2\",\n\"EndLoop\""
         },
-
+        {
+          "label": "PrependScene",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
+          "bodyText": "\"PrependScene\",\n\"$1\""
+        },
+        {
+          "label": "AppendScene",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Events/Additions.html#sceneadditions)**.",
+          "bodyText": "\"AppendScene\",\n\"$1\""
+        },
 
 {
   "label": "Menu",
@@ -339,17 +348,12 @@
         {
           "label": "IfHasSkills",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasskills)**. ",
-          "bodyText": "\"IfHasSkills\",\n\t\"$1\", \"$2\", \"$3\", \"$4\"\n\"Endloop\", \"$4\""
-        },
-        {
-          "label": "IfHasItem",
-          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**. ",
-          "bodyText": "\"IfHasItem\", \"$1\", \"$2\""
+          "bodyText": "\"IfHasSkills\",\n\t\"$1\", \"$2\", \"$3\", \"$4\",\n\"EndLoop\", \"$5\""
         },
         {
           "label": "IfHasItems",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**. ",
-          "bodyText": "\"IfHasItems\",\n\t\"$1\", \"$2\", \"$3\", \"$4\"\n\"Endloop\", \"$4\""
+          "bodyText": "\"IfHasItems\",\n\t\"$1\", \"$2\", \"$3\", \"$4\"\n\"EndLoop\", \"$5\""
         },
         {
           "label": "IfDoesntHaveItem",
@@ -365,6 +369,56 @@
           "label": "IfHasItemInInventory",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemininventory)**. ",
           "bodyText": "\"IfHasItemInInventory\", \"$1\", \"$2\", \"$3\""
+        },
+        {
+          "label": "IfHasRunesEquipped",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasrunesequipped)**. ",
+          "bodyText": "\"IfHasRunesEquipped\", \"$1\", \"$2\", \"$3\""
+        },
+        {
+          "label": "IfDoesntHaveItems",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifdoesnthaveitems)**. ",
+          "bodyText": "\"IfDoesntHaveItems\", \"$1\", \"$2\", \"$3\", \"$4\", \"EndLoop\", \"$5\""
+        },
+        {
+          "label": "IfDoesntHaveItemEquipped",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifdoesnthaveitemequipped)**. ",
+          "bodyText": "\"IfDoesntHaveItemEquipped\", \"$1\", \"$2\""
+        },
+        {
+          "label": "IfHasItem + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**.",
+          "bodyText": "\"IfHasItem\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\""
+        },
+        {
+          "label": "IfDoesntHaveItem + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitem-ifdoesnthaveitem)**.",
+          "bodyText": "\"IfDoesntHaveItem\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\""
+        },
+        {
+          "label": "IfHasItemEquipped + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemequipped)**.",
+          "bodyText": "\"IfHasItemEquipped\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\""
+        },
+        {
+          "label": "IfDoesntHaveItemEquipped + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemequipped)**.",
+          "bodyText": "\"IfDoesntHaveItemEquipped\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\""
+        },
+        {
+          "label": "IfHasItemInInventory + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemininventory)**.",
+          "bodyText": "\"IfHasItemInInventory\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\", \"$4\""
+        },
+        {
+          "label": "IfDoesntHaveItemInInventory + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasitemininventory)**.",
+          "bodyText": "\"IfDoesntHaveItemInInventory\", \"Tags\",\n\t \"$1\", \"$2\", \"EndLoop\", \"$3\", \"$4\""
+        },
+        {
+          "label": "IfHasRunesEquipped + Tag",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/PlayerChecks.html#ifhasrunesequipped)**.",
+          "bodyText": "\"IfHasRunesEquipped\", \"Tags\",\n\t \"$1\", \"EndLoop\", \"$2\", \"$3\""
         },
         {
           "label": "IfHasPerk",
@@ -577,6 +631,11 @@
                   "bodyText": "\"ChangeStatCheckDifficulty\", \"GetEventAndIfChoice\", \"$1\", \"$2\", \"$3\", \"$4\""
                 },
         {
+         "label": "IfDifficultyIs",
+         "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Functions/EventOnly/PlayerChecks.html#ifdifficultyis)**.",
+                   "bodyText": "\"IfDifficultyIs\",\n\t\"${1|Easy,Normal,Hard|}\", \"$2\", \"$3\""
+        },
+        {
           "label": "StatCheckRollUnder",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/StatCheck.html?#statcheckrollunder)**. Can't use any sub-functions or related functions.",
           "bodyText": "\"StatCheckRollUnder\",\n\t\"${1|Temptation,Power,Technique,Intelligence,Allure,Willpower,Luck,Arousal,Energy,Spirit,CurrentArousal,CurrentEenergy,CurrentSpirit|}\", \"$2\", \"$3\"\n\t\"Fail\", \"$4\""
@@ -689,6 +748,16 @@
           "label": "IfGridNPCSeesPlayer + Range",
           "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcseesplayer)**. ",
           "bodyText": "\"IfGridNPCSeesPlayer\",${1: \"IgnoreWalls\",} \"Range\", \"$2\", \"$3\""
+        },
+        {
+          "label": "IfGridNPCSeesPlayer + NPC",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcseesplayer)**. ",
+          "bodyText": "\"IfGridNPCSeesPlayer\",${1: \"IgnoreWalls\",} \"NPC\", \"$2\", \"$3\""
+        },
+        {
+          "label": "IfGridNPCSeesPlayer + NPC + Range",
+          "markdownDescription": "**[Documentation](https://mgd-modding-docs.readthedocs.io/Doc/Reference/EventOnly/GridmapFunctions.html#ifgridnpcseesplayer)**. ",
+          "bodyText": "\"IfGridNPCSeesPlayer\",${1: \"IgnoreWalls\",} \"NPC\", \"$2\", \"Range\", \"$3\", \"$4\""
         },
         {
           "label": "ChangeGridVision",

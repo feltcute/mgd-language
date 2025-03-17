@@ -2,9 +2,9 @@
     "name": "mgd-language",
     "displayName": "MGD Language",
     "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
-    "version": "25.6.0",
+    "version": "26.8.0",
     "engines": {
-        "vscode": "^1.68.0"
+        "vscode": "^1.96.0"
     },
     "repository": {
         "url": "https://github.com/feltcute/mgd-language"
@@ -26,8 +26,9 @@
                     "comments": true,
                     "strings": true
                 },
+                "editor.acceptSuggestionOnEnter": "smart",
+                "editor.inlineSuggest.showToolbar": "always",
                 "editor.snippetSuggestions": "top",
-                "editor.suggest.snippetsPreventQuickSuggestions": false,
                 "editor.suggest.showSnippets": true,
                 "editor.inlineSuggest.enabled": true
             },
@@ -81,7 +82,7 @@
             },
             {
                 "scopeName": "source.mgd.locatefunc",
-                "path": "./syntaxes/locate/func.json",
+                "path": "./syntaxes/locate/mgd-func.json",
                 "injectTo": [
                     "source.json"
                 ]

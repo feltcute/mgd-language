@@ -1,95 +1,3288 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"scopeName": "source.mgd.markup",
-	"injectionSelector": "L:string",
-	"patterns": [{"include": "#the-bodies"}],
-	"repository": {
-		"the-bodies": {
-			"patterns": [
-				{
-					"include": "#string-body"
-				},
-				{
-					"include": "#f-body"
-				}
-			]
-		},
-		"string-body": {
-			"patterns": [
-				{
-					"include": "#the-markup"
-				},
-				{
-					"include": "#the-functions"
-				}
-			]
-		},
-		"f-body": {
-			"patterns": [
-				{
-					"include": "#markup"
-				}
-			]
-		},
-		"markup": {
-			"patterns": [
-				{
-					"include": "#single-markup-renpy"
-				},
-				{
-					"include": "#single-markup-interp"
-				},
-				{
-					"include": "#character-markup"
-				},
-				{
-					"include": "#enclosed-markup"
-				},
-				{
-					"include": "#color-end-markup"
-				}
-			]
-		},
-		"single-markup-renpy": {
-		  "match": "{(w|w=[0-9]+|nw|fast)}",
-		  "name": "keyword.renpy.mgd"
-		},
-		"single-markup-interp": {
-			"match": "\\[(ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|PlayerLevel|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|FocusedMonsterName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWord)\\]",
-			"name": "keyword.interp.mgd"
-		},
-		"character-markup":{
-			"match": "([|]n[|]|[|]f[|]|[|]c[|])",
-			"name": "keyword.character.mgd"
-		},
-    "enclosed-markup":{
-      "begin": "{(Pink|b|i|u|s|plain|p|p=[0-9]+|cps=[0-9]+|size=[\\-\\+]?[0-9]+)}",
-      "beginCaptures": {
-				"0": {
-					"name": "keyword.enclosed.begin.mgd"
-				}
-			},
-      "end": "{/(Pink|b|i|u|s|plain|cps|size)}",
-      "endCaptures": {
-				"0": {
-					"name": "keyword.enclosed.end.mgd"
-				}
-			},
-      "name": "constant.enclosed.mgd"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.mgd.markup",
+  "injectionSelector": "L:string",
+  "patterns": [
+    {
+      "include": "#the-bodies"
+    }
+  ],
+  "repository": {
+    "the-bodies": {
+      "patterns": [
+        {
+          "include": "#string-body"
+        },
+        {
+          "include": "#f-body"
+        }
+      ]
     },
-		"color-end-markup": {
-			"begin": "\\[(StoredColor|StoredColor[2-7])\\]",
-			"beginCaptures": {
-				"0": {
-					"name": "keyword.color.begin.mgd"
-				}
-			},
-			"end": "\\[ColorEnd\\]",
-			"endCaptures": {
-				"0": {
-					"name": "keyword.color.end.mgd"
-				}
-			},
-			"name": "constant.color.mgd"
-	  	}}
+    "string-body": {
+      "patterns": [
+        {
+          "include": "#the-markup"
+        },
+        {
+          "include": "#the-functions"
+        }
+      ]
+    },
+    "f-body": {
+      "patterns": [
+        {
+          "include": "#markup"
+        }
+      ]
+    },
+    "the-markup": {
+      "patterns": [
+        {
+          "include": "#markup"
+        }
+      ]
+    },
+    "the-functions": {
+      "patterns": [
+        {
+          "include": "#markup"
+        },
+        {
+          "include": "#complex-function-blocks"
+        },
+        {
+          "include": "#other-functions"
+        }
+      ]
+    },
+    "markup": {
+      "patterns": [
+        {
+          "begin": "{(Pink|b|i|u|s|plain|p|p=[0-9]+|cps=[0-9]+|size=[\\-\\+]?[0-9]+)}",
+          "beginCaptures": {
+            "0": { "name": "keyword.enclosed.begin.general.mgd" }
+          },
+          "end": "{/(Pink|b|i|u|s|plain|cps|size)}",
+          "endCaptures": {
+            "0": { "name": "keyword.enclosed.end.general.mgd" }
+          },
+          "name": "constant.enclosed.mgd",
+          "patterns": [{ "include": "#markup" }]
+        },
+        {
+          "include": "#enclosed-markup"
+        },
+        {
+          "include": "#single-markup-renpy"
+        },
+        {
+          "include": "#single-markup-interp"
+        },
+        {
+          "include": "#character-markup"
+        },
+        {
+          "include": "#color-end-markup"
+        }
+      ]
+    },
+    "single-markup-renpy": {
+      "match": "{(w|w=[0-9]+|nw|fast)}",
+      "name": "keyword.other.mgd"
+    },
+    "single-markup-interp": {
+      "match": "\\[(ThePlayerName|THEPLAYERNAME|TPN|PlayerMoney|PlayerLevel|ProgressDisplay|DisplayPlayerChoice|DisplayMonsterChoice|PlayerOrgasmLine|MonsterOrgasmLine|DamageToPlayer|DamageToEnemy|FinalDamage|AttackerName|FocusedMonsterName|TargetName|AttackerYouOrMonsterName|TargetYouOrMonsterName|AttackerHeOrShe|AttackerHisOrHer|AttacherHimOrHer|TargetHeOrShe|TargetHisOrHer|TargetHimOrHer|SexAdjective|SexWord|StatCheckPost|PlayersInput|playersinput)\\]",
+      "name": "keyword.language.mgd"
+    },
+    "character-markup": {
+      "match": "([|]n[|]|[|]f[|]|[|]c[|])",
+      "name": "keyword.character.mgd"
+    },
+    "enclosed-markup": {
+      "patterns": [
+        {
+          "begin": "{(b)}",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.markup.bold.begin.mgd" }
+          },
+          "end": "{/(b)}",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.markup.bold.end.mgd" }
+          },
+          "name": "markup.bold.mgd",
+          "patterns": [
+            { "include": "#markup" },
+            { "include": "#enclosed-markup" }
+          ]
+        },
+        {
+          "begin": "{(i)}",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.markup.italic.begin.mgd" }
+          },
+          "end": "{/(i)}",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.markup.italic.end.mgd" }
+          },
+          "name": "markup.italic.mgd",
+          "patterns": [
+            { "include": "#markup" },
+            { "include": "#enclosed-markup" }
+          ]
+        },
+        {
+          "begin": "{(u)}",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.markup.underline.begin.mgd"
+            }
+          },
+          "end": "{/(u)}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.markup.underline.end.mgd"
+            }
+          },
+          "name": "markup.underline.mgd",
+          "patterns": [
+            { "include": "#markup" },
+            { "include": "#enclosed-markup" }
+          ]
+        },
+        {
+          "begin": "{(s)}",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.markup.strikethrough.begin.mgd"
+            }
+          },
+          "end": "{/(s)}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.markup.strikethrough.end.mgd"
+            }
+          },
+          "name": "markup.strikethrough.mgd",
+          "patterns": [
+            { "include": "#markup" },
+            { "include": "#enclosed-markup" }
+          ]
+        }
+      ]
+    },
+    "color-end-markup": {
+      "begin": "\\[(StoredColor|StoredColor[2-7])\\]",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.color.begin.mgd"
+        }
+      },
+      "end": "\\[ColorEnd\\]",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.color.end.mgd"
+        }
+      },
+      "name": "constant.color.mgd"
+    },
+    "complex-function-blocks": {
+      "patterns": [
+        {
+          "include": "#menu-function-block"
+        },
+        {
+          "include": "#statcheck-function-block"
+        },
+        {
+          "include": "#swaplineif-function-block"
+        },
+        {
+          "include": "#changeimagelayer-function-block"
+        },
+        {
+          "include": "#animateimagelayer-function-block"
+        }
+      ]
+    },
+    "menu-function-block": {
+      "begin": "\"(Menu|JumpToRandomScene|MenuAddition)\"",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.function.menu.mgd"
+        }
+      },
+      "end": "\"EndLoop\"",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.end.mgd"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#maxmenu-slots-function"
+        },
+        {
+          "include": "#event-jump-functions"
+        },
+        {
+          "include": "#other-menu-meta-functions"
+        },
+        {
+          "include": "#menu-requirement-blocks"
+        },
+        {
+          "include": "#menu-option"
+        },
+        {
+          "include": "#markup"
+        }
+      ],
+      "name": "meta.function.menu-block.mgd"
+    },
+    "event-jump-functions": {
+      "patterns": [
+        {
+          "match": "\"(EventJump)\",\\s*\"([^\"]*)\"(,\\s*\"(ThenJumpToScene)\",\\s*\"([^\"]*)\")?",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.menu-jump.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "4": {
+              "name": "entity.name.function.menu-jump.mgd"
+            },
+            "5": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "maxmenu-slots-function": {
+      "match": "\"(MaxMenuSlots)\",\\s*\"([1-6])\"",
+      "captures": {
+        "1": {
+          "name": "support.function.menu-meta.mgd"
+        },
+        "2": {
+          "name": "constant.numeric.menu-slots-value.mgd"
+        }
+      }
+    },
+    "other-menu-meta-functions": {
+      "match": "\"(ShuffleMenu|FinalOption|HideOptionOnRequirementFail|InverseRequirement)\"",
+      "name": "support.function.menu-meta.mgd"
+    },
+    "menu-requirement-blocks": {
+      "patterns": [
+        {
+          "match": "\"(RequiresStat)\",\\s*\"(Power|Allure|Technique|Toughness|Intelligence|Willpower|Luck)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.stat.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.stat-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresTime)\",\\s*\"(Morning|Noon|Afternoon|Evening|Night|Midnight)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.time-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresItem|RequiresItemEquipped)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.item.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresSkill)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.skill.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresPerk)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.perk.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresEnergy|RequiresVirility)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.resource-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresFetishLevelEqualOrGreater|RequiresFetishLevelEqualOrLess)\",\\s*\"(Ass|Breasts|Cock|Bondage|Sweat|Tentacles|Feet|Lactation|Transformation|NonCon|Pregnancy|Goo|Humiliation|Hypnosis|SelfPleasure|Bestiality|Incest|Watersports|Vore|Scat|Gore|Necrophilia|Snuff)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.fetish-level.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresMinimumProgress|RequiresLessProgress)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.progress-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresMinimumProgressFromEvent|RequiresLessProgressFromEvent)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.progress-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresChoice)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "3": {
+              "name": "string.quoted.double.choice-description.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RequiresChoiceFromEvent)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-requirement.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "4": {
+              "name": "string.quoted.double.choice-description.mgd"
+            },
+            "5": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(HideOptionOnRequirementFail)\",\\s*\"(RequiresStat|RequiresItem|RequiresSkill|RequiresPerk|RequiresEnergy|RequiresVirility|RequiresItemEquipped|RequiresTime|RequiresFetishLevelEqualOrGreater|RequiresFetishLevelEqualOrLess|RequiresMinimumProgress|RequiresMinimumProgressFromEvent|RequiresLessProgress|RequiresLessProgressFromEvent|RequiresChoice|RequiresChoiceFromEvent)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-meta.mgd"
+            },
+            "2": {
+              "name": "support.function.menu-requirement.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(InverseRequirement)\",\\s*\"(RequiresStat|RequiresItem|RequiresSkill|RequiresPerk|RequiresEnergy|RequiresVirility|RequiresItemEquipped|RequiresTime|RequiresFetishLevelEqualOrGreater|RequiresFetishLevelEqualOrLess|RequiresMinimumProgress|RequiresMinimumProgressFromEvent|RequiresLessProgress|RequiresLessProgressFromEvent|RequiresChoice|RequiresChoiceFromEvent)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.menu-meta.mgd"
+            },
+            "2": {
+              "name": "support.function.menu-requirement.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "menu-option": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.menu-option.begin.mgd"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.menu-option.end.mgd"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#markup"
+        }
+      ],
+      "name": "string.quoted.double.menu-option.mgd"
+    },
+    "statcheck-function-block": {
+      "begin": "\"(StatCheck|StatCheckRollUnder)\"",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.function.statcheck.mgd"
+        }
+      },
+      "end": "\"Fail\"\\s*,\\s*\"?([^\"]+)\"?",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.fail.mgd"
+        },
+        "1": {
+          "name": "entity.name.type.scene.fail.mgd"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#stat-check-difficulty-modifier"
+        },
+        {
+          "match": "\"(Power|Allure|Technique|Intelligence|Willpower|Luck|Temptation)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.stat.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.difficulty-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.scene.success.mgd"
+            }
+          }
+        },
+        {
+          "include": "#markup"
+        }
+      ],
+      "name": "meta.function.swapline-block.mgd"
+    },
+    "stat-check-difficulty-modifier": {
+      "patterns": [
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfPlayerHasStatusEffect)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.status-effect.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfPlayerHasStatusEffectWithPotencyEqualOrGreater)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.status-effect.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.potency-value.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfHasPerk)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.perk.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfHasFetish)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfFetishLevelEqualOrGreater)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.fetish-level.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfVirilityEqualOrGreater)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.virility-value.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfMonsterLevelGreaterThan)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.level-value.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfEncounterSizeGreaterOrEqualTo|IfEncounterSizeLessOrEqualTo)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.encounter-size.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfProgressEqualsOrGreater)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.progress-value.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(GetAnEventsProgressThenIfEqualsOrGreater)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.progress-value.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(IfChoice)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "4": {
+              "name": "string.quoted.double.choice-description.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeStatCheckDifficulty)\",\\s*\"(GetEventAndIfChoice)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "support.function.statcheck-modifier.mgd"
+            },
+            "2": {
+              "name": "support.function.condition.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "5": {
+              "name": "string.quoted.double.choice-description.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.modifier-value.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "swaplineif-function-block": {
+      "begin": "\"(SwapLineIf)\",\\s*\"(Random|Stat|Level|Arousal|MaxArousal|Energy|MaxEnergy|Virility|HasFetish|HasFetishLevelEqualOrGreater|Perk|EncounterSize|Item|Eros|IfTimeIs|Progress|OtherEventsProgress|Choice|OtherEventsChoice)\"(,\\s*\"([^\"]*)\")?",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.swapline.mgd"
+        },
+        "2": {
+          "name": "support.function.swapline-type.mgd"
+        },
+        "4": {
+          "name": "entity.name.type.event.mgd"
+        }
+      },
+      "end": "\"EndLoop\"",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.end.mgd"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\"(Power|Allure|Technique|Toughness|Intelligence|Willpower|Luck)\"",
+          "name": "entity.name.type.stat.mgd"
+        },
+        {
+          "match": "\"(Ass|Breasts|Cock|Bondage|Sweat|Tentacles|Feet|Lactation|Transformation|NonCon|Pregnancy|Goo|Humiliation|Hypnosis|SelfPleasure|Bestiality|Incest|Watersports|Vore|Scat|Gore|Necrophilia|Snuff)\"",
+          "name": "entity.name.type.fetish.mgd"
+        },
+        {
+          "match": "\"(Day|Night)\"",
+          "name": "entity.name.type.time-value.mgd"
+        },
+        {
+          "match": "\"([0-9]+)\"",
+          "name": "constant.numeric.value.mgd"
+        },
+        {
+          "match": "\"([^\"]+)\"(?=\\s*,\\s*\")",
+          "name": "entity.name.type.parameter.mgd"
+        },
+        {
+          "match": "\"([^\"]+)\"(?=\\s*\\n)",
+          "name": "string.quoted.double.swapline-option.mgd"
+        },
+        {
+          "include": "#markup"
+        }
+      ],
+      "name": "meta.function.swapline-block.mgd"
+    },
+    "changeimagelayer-function-block": {
+      "patterns": [
+        {
+          "begin": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"(ForEvery)\",\\s*\"([^\"]*)\"\\s*,\\s*\"(Random)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "support.function.forevery.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.monster-name.mgd"
+            },
+            "5": {
+              "name": "support.function.random.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "comment.image-name.mgd"
+            }
+          ],
+          "name": "meta.function.forevery-random-block.mgd"
+        },
+        {
+          "begin": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"(ForSpecific)\",\\s*\"([^\"]*)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "support.function.forspecific.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.monster-name.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([0-9]+)\"\\s*,\\s*\"([^\"]*)\"",
+              "captures": {
+                "1": {
+                  "name": "constant.numeric.monster-instance.mgd"
+                },
+                "2": {
+                  "name": "comment.image-name.mgd"
+                }
+              }
+            }
+          ],
+          "name": "meta.function.forspecific-block.mgd"
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.monster-position.mgd"
+            },
+            "4": {
+              "name": "comment.image-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"(ForEvery)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "support.function.forevery.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.monster-name.mgd"
+            },
+            "5": {
+              "name": "comment.image-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"(ImageSet|ImageSetPersist|ImageSetDontCarryOver|ImageSetRoleStart)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "support.function.image-set.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.monster-position.mgd"
+            },
+            "4": {
+              "name": "comment.set-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"(ActivateOverlay|DeactivateOverlay)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.monster-position.mgd"
+            },
+            "4": {
+              "name": "support.function.overlay-toggle.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"([^\"0-9][^\"]*)\",\\s*\"(?!PlayVisualEffect|PlayVisualEffect2|PlayVisualEffect3|EndVisualEffect|EndVisualEffect2|EndVisualEffect3|PlayKiss|PlayKissingBarrage|PlayKissingBarrageOnce|EndKissingBarrage|PlayBlackOut|EndBlackOut|PlayHypnoSpiral|EndHypnoSpiral|PlayPendulum|EndPendulum|PlayImagePulseLoopingList|EndImagePulseLoopingList|PlayImagePulseLoopingList2|EndImagePulseLoopingList2|PlayImagePulseLoopingRandom|EndImagePulseLoopingRandom|PlayCustomBarrage|EndCustomBarrage|PlayCustomBarrage2|EndCustomBarrage2|PlayMotionEffect|PlayMotionEffectLoop|EndMotionEffect|PlayMotionEffectCustom|EndAllVisualEffects)([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.monster-name.mgd"
+            },
+            "4": {
+              "name": "comment.image-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeImageLayer)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.changeimagelayer.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.layer-name.mgd"
+            },
+            "3": {
+              "name": "comment.image-name.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "animateimagelayer-function-block": {
+      "begin": "\"(AnimateImageLayer)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([0-9.]+)\"",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.animate.mgd"
+        },
+        "2": {
+          "name": "entity.name.type.animation-channel.mgd"
+        },
+        "3": {
+          "name": "entity.name.type.layer-name.mgd"
+        },
+        "4": {
+          "name": "entity.name.type.character-target.mgd"
+        },
+        "5": {
+          "name": "constant.numeric.animation-speed.mgd"
+        }
+      },
+      "end": "\"EndLoop\"",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.end.mgd"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\"(Monsters/[^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+          "name": "comment.filepath.image.mgd"
+        }
+      ],
+      "name": "meta.function.animate-block.mgd"
+    },
+    "other-functions": {
+      "patterns": [
+        {
+          "include": "#asset-functions"
+        },
+        {
+          "include": "#vfx-functions"
+        },
+        {
+          "include": "#event-only-functions"
+        },
+        {
+          "include": "#item-functions"
+        },
+        {
+          "include": "#even-more-event-only-functions"
+        },
+        {
+          "include": "#combat-only-functions"
+        },
+        {
+          "include": "#general-functions"
+        }
+      ]
+    },
+    "asset-functions": {
+      "patterns": [
+        {
+          "match": "\"(ChangeBG)\",\\s*\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.bg.mgd"
+            },
+            "2": {
+              "name": "comment.filepath.image.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(StoreCurrentBG|UseHeldBG)\"",
+          "name": "entity.name.function.bg-store.mgd"
+        },
+        {
+          "match": "\"(ShowTreasureChest|HideTreasureChest)\"",
+          "name": "entity.name.function.chest.mgd"
+        },
+        {
+          "match": "\"(RoledCGEnd)\"",
+          "name": "entity.name.function.cg.mgd"
+        },
+        {
+          "match": "\"(StopBGM|StopBGMHard|PlayStoredBGM|StoreCurrentBGM)\"",
+          "name": "entity.name.function.bgm.mgd"
+        },
+        {
+          "match": "\"(ChangeBGM|ChangeBGM-NoFade|ChangeBGM-OverrideCombatMusic|PlayThisSongAfterCombat)\",\\s*\"([^\"]*\\.(ogg|wav|mp3))\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.bgm.mgd"
+            },
+            "2": {
+              "name": "comment.filepath.audio.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(ChangeBGM-List)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.bgm-list.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*\\.(ogg|wav|mp3))\"",
+              "name": "comment.filepath.audio.mgd"
+            }
+          ],
+          "name": "meta.function.bgm-list-block.mgd"
+        },
+        {
+          "match": "\"(StopSoundEffectLoop|StopSoundEffectLoop2)\"",
+          "name": "entity.name.function.sfx.mgd"
+        },
+        {
+          "match": "\"(PlaySoundEffect|PlaySoundEffect2|PlayLoopingSoundEffect|PlayLoopingSoundEffect2|PlaySoundBankOnce)\",\\s*\"(sfx/[^\"]*\\.(ogg|wav|mp3))\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.sfx.mgd"
+            },
+            "2": {
+              "name": "comment.filepath.audio.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlaySoundEffect|PlaySoundEffect2|PlayLoopingSoundEffect|PlayLoopingSoundEffect2|PlaySoundBankOnce)\",\\s*\"(QuickKiss|LongKiss|MakeOut|BlowjobLicking|BlowjobSucking|BlowjobDeepSuction|BlowjobVigorous|Ejaculation|EjaculationLong)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.sfx.mgd"
+            },
+            "2": {
+              "name": "comment.soundbank.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "vfx-functions": {
+      "patterns": [
+        {
+          "match": "\"(EndVisualEffect|EndVisualEffect2|EndVisualEffect3|PlayKiss|PlayKissingBarrageOnce|EndKissingBarrage|PlayBlackOut|EndBlackOut|EndHypnoSpiral|EndPendulum|EndImagePulseLoopingList|EndImagePulseLoopingList2|EndImagePulseLoopingRandom|EndCustomBarrage|EndCustomBarrage2|EndMotionEffect|EndAllVisualEffects)\"",
+          "name": "entity.name.function.vfx.mgd"
+        },
+        {
+          "match": "\"(PlayVisualEffect|PlayVisualEffect2|PlayVisualEffect3)\",\\s*\"(StartHaze|GrowingHaze|IncreasingHaze|DecreasingHaze|FadingHaze|SuddenHaze|MajorHazeToBlackOut|BlackOut|ScreenPulse|ImagePulse|DoublePulse|TriplePulse|RepeatingPulse|Kiss|ScreenFlash|BlindingFlash|OrgasmPulse)\",\\s*\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.vfx-type.mgd"
+            },
+            "3": {
+              "name": "comment.filepath.image.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayKissingBarrage)\"",
+          "name": "entity.name.function.vfx.mgd"
+        },
+        {
+          "match": "\"(PlayHypnoSpiral)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\",\\s*\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\",\\s*\"([01])\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.speed.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.opacity.mgd"
+            },
+            "4": {
+              "name": "comment.filepath.image.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.layer-position.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayPendulum)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\",\\s*\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\",\\s*\"([01])\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.speed.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.angle.mgd"
+            },
+            "4": {
+              "name": "comment.filepath.image.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.layer-position.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(PlayImagePulseLoopingList|PlayImagePulseLoopingList2)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.pulse-speed.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.zoom.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.opacity.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+              "name": "comment.filepath.image.mgd"
+            }
+          ],
+          "name": "meta.function.image-pulse-list-block.mgd"
+        },
+        {
+          "begin": "\"(PlayImagePulseLoopingRandom)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.pulse-speed.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.zoom.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.opacity.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+              "name": "comment.filepath.image.mgd"
+            }
+          ],
+          "name": "meta.function.image-pulse-random-block.mgd"
+        },
+        {
+          "begin": "\"(PlayCustomBarrage|PlayCustomBarrage2)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.pulse-speed.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.opacity.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+              "name": "comment.filepath.image.mgd"
+            }
+          ],
+          "name": "meta.function.custom-barrage-block.mgd"
+        },
+        {
+          "match": "\"(PlayMotionEffect|PlayMotionEffectLoop)\",\\s*\"(Bounce|BounceSlow|BounceFast|BounceOnce|Sway|SwaySlow|SwayFast|SwayOnce|Pump|PumpSlow|PumpFast|Ride|RideSlow|RideFast|Vibrate|Realign|ScreenBounce|SlowScreenBounce|ScreenSway|Explosion|LongExplosion|Crash|CrashSmol|Quake)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "support.function.motion-type.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayMotionEffectCustom)\",\\s*\"(Bounce|Sway|Pump|Ride|Vibrate)\",\\s*\"(Characters)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "support.function.motion-type.mgd"
+            },
+            "3": {
+              "name": "comment.target-type.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.speed.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.distance.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayMotionEffectCustom)\",\\s*\"(Bounce|Sway|Pump|Ride|Vibrate)\",\\s*\"(Character)\",\\s*\"([^\"]*)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "support.function.motion-type.mgd"
+            },
+            "3": {
+              "name": "comment.target-type.mgd"
+            },
+            "4": {
+              "name": "comment.character-target.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.speed.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.distance.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayMotionEffectCustom)\",\\s*\"(Bounce|Sway|Pump|Ride|Vibrate)\",\\s*\"(Bodypart)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([0-9.]+)\",\\s*\"([0-9.]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "support.function.motion-type.mgd"
+            },
+            "3": {
+              "name": "comment.target-type.mgd"
+            },
+            "4": {
+              "name": "comment.character-target.mgd"
+            },
+            "5": {
+              "name": "comment.layer-target.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.speed.mgd"
+            },
+            "7": {
+              "name": "constant.numeric.distance.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayMotionEffectCustom)\",\\s*\"\",\\s*\"(Character|Bodypart)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([0])\",\\s*\"([0])\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.vfx.mgd"
+            },
+            "2": {
+              "name": "comment.target-type.mgd"
+            },
+            "3": {
+              "name": "comment.character-target.mgd"
+            },
+            "4": {
+              "name": "comment.layer-target.mgd"
+            }
+          }
+        }
+      ]
+    },
+    "event-only-functions": {
+      "patterns": [
+        {
+          "match": "\"(SetChoice)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.set-choice.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.choice-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfChoice)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-choice.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.choice-value.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChoiceToDisplayPlayer|ChoiceToDisplayMonster)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.choice-display.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.choice-number.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetChoiceToPlayerName)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.set-choice-player-name.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.choice-number.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(QuestComplete)\"",
+          "name": "entity.name.function.quest-complete.mgd"
+        },
+        {
+          "match": "\"(AdventureComplete)\"",
+          "name": "entity.name.function.adventure-complete.mgd"
+        },
+        {
+          "match": "\"(GetEventAndIfChoice)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.get-event-if-choice.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.choice-value.mgd"
+            },
+            "5": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GetEventAndSetChoice)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.get-event-set-choice.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.choice-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChoiceToDisplayPlayerFromOtherEvent|ChoiceToDisplayMonsterFromOtherEvent)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.choice-display-from-event.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetChoiceToPlayerNameFromOtherEvent)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.set-choice-player-name-from-event.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.choice-number.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GetEventAndChangeProgress|GetEventAndSetProgress)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.event-progress-modify.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.progress-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GetAnEventsProgressThenIfEquals|GetAnEventsProgressThenIfEqualsOrGreater|GetAnEventsProgressThenIfEqualsOrLess)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.event-progress-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.progress-value.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(EventsProgressEqualsOtherEventsProgress|IfEventsProgressEqualsOrLessThanOtherEventsProgress|EventsProgressEqualsOrGreaterThanOtherEventsProgress)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.event-progress-compare.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event-first.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.event-second.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ExitGridmap)\"",
+          "name": "entity.name.function.exit-gridmap.mgd"
+        },
+        {
+          "match": "\"(StunGridPlayer)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.stun-grid-player.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.turn-count.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfGridPlayerStunned)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-grid-player-stunned.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetPlayerGridPosition)\",\\s*\"([0-9]+)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.set-player-grid-position.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.x-position.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.y-position.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfGridNPCSeesPlayer)\"(,\\s*\"(IgnoreWalls)\")?\\s*(,\\s*\"(NPC)\",\\s*\"([^\"]*)\")?\\s*(,\\s*\"(Range)\",\\s*\"([0-9]+)\")?\\s*,\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-grid-npc-sees-player.mgd"
+            },
+            "3": {
+              "name": "keyword.other.ignore-walls.mgd"
+            },
+            "5": {
+              "name": "keyword.other.npc.mgd"
+            },
+            "6": {
+              "name": "entity.name.type.npc-name.mgd"
+            },
+            "8": {
+              "name": "keyword.other.range.mgd"
+            },
+            "9": {
+              "name": "constant.numeric.range-value.mgd"
+            },
+            "10": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeGridVision)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.change-grid-vision.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.vision-range.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfGridVisonOn)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-grid-vision-on.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeGridNPCMovement)\",\\s*\"(Chase|Ambush|Whimsical|Wander|ProjectileUp|ProjectileDown|ProjectileLeft|ProjectileRight|)\",?\\s*\"?(Player|Coord|[^\"]*)\"?(,\\s*\"([0-9]+)\",\\s*\"([0-9]+)\")?",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.change-grid-npc-movement.mgd"
+            },
+            "2": {
+              "name": "keyword.other.movement-type.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.target.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.x-coordinate.mgd"
+            },
+            "6": {
+              "name": "constant.numeric.y-coordinate.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfGridNPCThere)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-grid-npc-there.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.npc-name.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetActiveGridNPC)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.set-active-grid-npc.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.npc-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SpawnGridNPC)\",\\s*\"([^\"]*)\",\\s*\"(Here|([0-9]+))\",\\s*\"?([0-9]*)\"?",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.spawn-grid-npc.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.npc-name.mgd"
+            },
+            "3": {
+              "name": "keyword.other.location.mgd"
+            },
+            "4": {
+              "name": "constant.numeric.x-position.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.y-position.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RemoveGridNPC)\",\\s*\"(Current|Specific)\"(,\\s*\"([^\"]*)\")?",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.remove-grid-npc.mgd"
+            },
+            "2": {
+              "name": "keyword.other.selection-type.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.npc-name.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeMapTile)\",\\s*\"([0-9]+)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.change-map-tile.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.x-position.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.y-position.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.tile-id.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(InputProgress)\"",
+          "name": "entity.name.function.input-progress.mgd"
+        },
+        {
+          "match": "\"(HasErosLessThanInput)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.has-eros-less-than-input.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfInputEquals)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-input-equals.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.compare-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfInputEqualsOrLessThan)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-input-equals-or-less.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.compare-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RemoveInputFromPlayerEros)\"",
+          "name": "entity.name.function.remove-input-from-eros.mgd"
+        },
+        {
+          "match": "\"(AddInputToProgress|RemoveInputFromProgress)\"",
+          "name": "entity.name.function.modify-progress-with-input.mgd"
+        },
+        {
+          "match": "\"(RemoveProgressFromEros)\"",
+          "name": "entity.name.function.remove-progress-from-eros.mgd"
+        },
+        {
+          "match": "\"(StatEqualsOrMore)\",\\s*\"(Power|Allure|Technique|Toughness|Intelligence|Willpower|Luck)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.stat-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.stat.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.threshold-value.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(HasErosLessThan)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.eros-check.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.eros-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(VirilityEqualsOrGreater)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.virility-check.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.virility-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerOrgasm|IfPlayerSpiritGone|IfPlayerEnergyGone)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-state-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerArousalOverPercentOfMax|IfPlayerEnergyLessThanPercent)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-resource-percent-check.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.percent-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfSensitivityEqualOrGreater)\",\\s*\"(Sex|Ass|Breasts|Mouth|Seduction|Magic|Pain|Holy|Unholy)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.sensitivity-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.sensitivity.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.sensitivity-value.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfHasFetish)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.fetish-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfFetishLevelEqualOrGreater)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.fetish-level-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.fetish-level.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfHasSkill)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.skill-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.skill.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(IfHasSkills)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.skills-check.mgd"
+            }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": {
+              "name": "entity.name.function.end.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.skill.mgd"
+            }
+          ],
+          "name": "meta.function.skills-check-block.mgd"
+        },
+        {
+          "match": "\"(IfHasPerk)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.perk-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.perk.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerLevelGreaterThan)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.level-check.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.level-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfInExploration|IfRanAway)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.state-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerHasStatusEffect|IfPlayerDoesntHaveStatusEffect)\",\\s*\"(RequireAll|[^\"]*)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.status-effect-check.mgd"
+            },
+            "2": {
+              "name": "support.function.require-all.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.status-effect.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerHasStatusEffect|IfPlayerDoesntHaveStatusEffect)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.status-effect-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.status-effect.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfPlayerHasStatusEffectWithPotencyEqualOrGreater)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.status-effect-potency-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.status-effect.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.potency-value.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfDifficultyIs)\",\\s*\"(Easy|Normal|Hard)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.difficulty-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.difficulty.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(ShopAddition|SkillShopAddition)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.event-addition.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.event-item.mgd"
+            }
+          ],
+          "name": "meta.function.event-addition.mgd"
+        },
+        {
+          "match": "\"(PrependScene|AppendScene)\"",
+          "name": "entity.name.function.something-pend-scene.mgd"
+        }
+      ]
+    },
+    "item-functions": {
+      "patterns": [
+        {
+          "match": "\"(IfHasItem|IfDoesntHaveItem)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.item-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.item.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(IfHasItem|IfDoesntHaveItem)\",\\s*\"(Tags)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.item-check.mgd" },
+            "2": { "name": "support.function.tags.mgd" }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.end.mgd" },
+            "2": { "name": "entity.name.type.scene.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.tag.mgd"
+            }
+          ],
+          "name": "meta.function.item-check-block.mgd"
+        },
+        {
+          "begin": "\"(IfHasItems|IfDoesntHaveItems)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.items-check.mgd"
+            }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": {
+              "name": "entity.name.function.end.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.item.mgd"
+            }
+          ],
+          "name": "meta.function.items-check-block.mgd"
+        },
+        {
+          "match": "\"(IfHasItemEquipped|IfDoesntHaveItemEquipped)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.item-equipped-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.item.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(IfHasItemEquipped|IfDoesntHaveItemEquipped)\",\\s*\"(Tags)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.item-equipped-check.mgd" },
+            "2": { "name": "support.function.tags.mgd" }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.end.mgd" },
+            "2": { "name": "entity.name.type.scene.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.tag.mgd"
+            }
+          ],
+          "name": "meta.function.item-equipped-check-block.mgd"
+        },
+        {
+          "match": "\"(IfHasRunesEquipped)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.rune-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.rune.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.rune-count.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(IfHasRunesEquipped)\",\\s*\"(Tags)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.rune-check.mgd" },
+            "2": { "name": "support.function.tags.mgd" }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.end.mgd" },
+            "2": { "name": "constant.numeric.rune-count.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.tag.mgd"
+            }
+          ],
+          "name": "meta.function.runes-check-block.mgd"
+        },
+        {
+          "match": "\"(IfHasItemInInventory|IfDoesntHaveItemInInventory)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.item-inventory-check.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.item.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.item-count.mgd"
+            },
+            "4": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(IfHasItemInInventory|IfDoesntHaveItemInInventory)\",\\s*\"(Tags)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.item-inventory-check.mgd" },
+            "2": { "name": "support.function.tags.mgd" }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([0-9]+)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.end.mgd" },
+            "2": { "name": "constant.numeric.item-count.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.tag.mgd"
+            }
+          ],
+          "name": "meta.function.item-inventory-check-block.mgd"
+        }
+      ]
+    },
+    "even-more-event-only-functions": {
+      "patterns": [
+        {
+          "begin": "\"(CombatEncounter)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.combat.mgd" }
+          },
+          "end": "\"(StartCombat)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.start-combat.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"(NoRunning|DenyInventory)\"",
+              "name": "support.function.combat.modifier.mgd"
+            },
+            {
+              "match": "\"(SetBGOnRun)\",\\s*\"([^\"]*)\"",
+              "captures": {
+                "1": { "name": "support.function.combat.bg.mgd" },
+                "2": { "name": "string.quoted.double.image-path.mgd" }
+              }
+            },
+            {
+              "match": "\"(RunningWontSkipEvent)\"",
+              "name": "support.function.combat.running.mgd"
+            },
+            {
+              "match": "\"([^\"]+)\",\\s*\"(ApplyStance)\",\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": { "name": "entity.name.type.monster.mgd" },
+                "2": { "name": "support.function.combat.stance.mgd" },
+                "3": { "name": "entity.name.type.stance.mgd" }
+              }
+            },
+            {
+              "match": "\"([^\"]+)\",\\s*\"(Restrainer)\"",
+              "captures": {
+                "1": { "name": "entity.name.type.monster.mgd" },
+                "2": { "name": "keyword.control.combat.restrainer.mgd" }
+              }
+            },
+            {
+              "match": "\"([^\"]+)\"",
+              "name": "entity.name.type.monster.mgd"
+            }
+          ],
+          "name": "meta.function.combat-encounter.mgd"
+        },
+        {
+          "match": "\"(SetProgress|ChangeProgress)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.progress-modify.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.progress-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeProgressBasedOnVirility)\",\\s*\"([0-9.]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.progress-virility.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.multiplier-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(IfProgressEquals|IfProgressEqualsOrGreater|IfProgressEqualsOrLess)\",\\s*\"([-+]?[0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.progress-check.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.progress-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(JumpToScene|CallSceneThenReturn|SetPostName)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.scene-jump.mgd" },
+            "2": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(SetFlexibleSpeaker|StoreCurrentEventSpotSkippingLines)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.set-flexible-Speaker.mgd" },
+            "2": { "name": "constant.numeric.set-flexible-Speake.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfEventExists)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.event-check.mgd" },
+            "2": { "name": "entity.name.type.event.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(CallNextSceneJumpThenReturn)\"",
+          "name": "entity.name.function.scene-call-modifier.mgd"
+        },
+        {
+          "begin": "\"(FishingMiniGame)\"",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.fishing-game.mgd" }
+          },
+          "end": "\"(EndLoop)\"",
+          "endCaptures": {
+            "1": { "name": "entity.name.function.end-loop.mgd" }
+          },
+          "patterns": [
+            {
+              "match": "\"(AppearTimerRange|FailTimerRange|ReelsNeeded)\",\\s*\"([0-9]+)\"(?:,\\s*\"([0-9]+)\")?",
+              "captures": {
+                "1": { "name": "support.function.fishing-setting.mgd" },
+                "2": { "name": "constant.numeric.fishing-value.mgd" },
+                "3": { "name": "constant.numeric.fishing-value.mgd" }
+              }
+            },
+            {
+              "match": "\"(FishingPassJump|FishingFailJump)\",\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": { "name": "support.function.fishing-jump.mgd" },
+                "2": { "name": "entity.name.type.scene.mgd" }
+              }
+            }
+          ],
+          "name": "meta.function.fishing-game-block.mgd"
+        },
+        {
+          "begin": "\"(DisplayCharacters)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.display-characters.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([0-9]+)\"",
+              "name": "constant.numeric.display-characters.mgd"
+            }
+          ],
+          "name": "meta.function.display-characters.mgd"
+        },
+        {
+          "match": "\"(GoBackToStoredEvent)\"",
+          "name": "entity.name.function.go-back-to-stored-event.mgd"
+        }
+      ]
+    },
+    "combat-only-functions": {
+      "patterns": [
+        {
+          "match": "\"(IfAttackCrits)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.scene-jump.mgd" },
+            "2": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(HideMonsterEncounter|ShowMonsterEncounter)\"",
+          "name": "entity.name.function.hide-show-monster-encounter.mgd"
+        },
+        {
+          "match": "\"(AllowRunning)\"",
+          "name": "entity.name.function.allowRunning.mgd"
+        },
+        {
+          "match": "\"(AddMonsterToEncounter)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.add-monster-to-encounter.mgd"
+            },
+            "2": { "name": "entity.name.type.monster.mgd" }
+          }
+        },
+        {
+          "match": "\"(AddMonsterToEncounter)\",\\s*\"(ChangeForm)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.add-monster-to-encounter-change-form.mgd"
+            },
+            "2": { "name": "entity.name.type.changeform.mgd" },
+            "3": { "name": "entity.name.type.monster.mgd" }
+          }
+        },
+        {
+          "match": "\"(PlayerLosesCombat|EndCombat|ClearFightForVictory|ClearMonsterEncounter|ClearMonsterEncounterBossFight|RemoveMonster|DefeatMonster)\"",
+          "name": "entity.name.function.end-combat-monster.mgd"
+        },
+        {
+          "match": "\"(DenyTargetOrgasm|DenyAttackerOrgasm)\"",
+          "name": "entity.name.function.deny-orgasm-target-monster.mgd"
+        },
+        {
+          "match": "\"(CallMonsterAttack)\",\\s*\"(SpecificAttack)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.add-monster-to-encounter-change-form.mgd"
+            },
+            "2": { "name": "entity.name.type.specific-attack.mgd" },
+            "3": { "name": "entity.name.type.monster.mgd" }
+          }
+        },
+        {
+          "match": "\"(SetSkipMonsterAttack|SetResumeMonsterAttack|SkipAllMonsterAttacks|ResumeAllMonsterAttacks|CallMonsterAttack|EndCounterChecks)\"",
+          "name": "entity.name.function.set-call-resume-skip-end-monster-attacks-checks.mgd"
+        },
+        {
+          "match": "\"(IfThisMonsterIsInEncounter)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-check.mgd" },
+            "2": { "name": "entity.name.type.monster.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(EncounterSizeGreaterOrEqualTo|EncounterSizeLessOrEqualTo)\",\\s*\"([0-9]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.encounter-size-check.mgd" },
+            "2": { "name": "constant.numeric.monster-count.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfMonsterLevelGreaterThan|IfMonsterArousalGreaterThan)\",\\s*\"([0-9]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-level-check.mgd" },
+            "2": { "name": "constant.numeric.level-value.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "patterns": [
+            {
+              "match": "\"(IfMonsterHasStatusEffect|IfMonsterDoesntHaveStatusEffect)\",\\s*\"(RequireAll)\",\\s*((?:\"(?:Surrender|Defend|Stun|Charm|Aphrodisiac|Restrain|Drowsy|Sleep|Paralysis|Paralyzed|Trance|Hypnotized|Buffs|Debuffs|Damage|Defence|Power|Technique|Intelligence|Willpower|Allure|Luck|Crit)\"(?:,\\s*)?)+),\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": { "name": "entity.name.function.status-effect-check.mgd" },
+                "2": { "name": "support.function.require-all.mgd" },
+                "3": { "name": "entity.name.type.status-effects.mgd" },
+                "4": { "name": "entity.name.type.scene.mgd" }
+              }
+            },
+            {
+              "match": "\"(IfMonsterHasStatusEffect|IfMonsterDoesntHaveStatusEffect)\",\\s*((?:\"(?:Surrender|Defend|Stun|Charm|Aphrodisiac|Restrain|Drowsy|Sleep|Paralysis|Paralyzed|Trance|Hypnotized|Buffs|Debuffs|Damage|Defence|Power|Technique|Intelligence|Willpower|Allure|Luck|Crit)\"(?:,\\s*)?)+),\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": { "name": "entity.name.function.status-effect-check.mgd" },
+                "2": { "name": "entity.name.type.status-effects.mgd" },
+                "3": { "name": "entity.name.type.scene.mgd" }
+              }
+            },
+            {
+              "match": "\"(IfOtherMonsterHasStatusEffect|IfOtherMonsterDoesntHaveStatusEffect)\",\\s*\"([^\"]+)\",\\s*\"(RequireAll)\",\\s*((?:\"(?:Surrender|Defend|Stun|Charm|Aphrodisiac|Restrain|Drowsy|Sleep|Paralysis|Paralyzed|Trance|Hypnotized|Buffs|Debuffs|Damage|Defence|Power|Technique|Intelligence|Willpower|Allure|Luck|Crit)\"(?:,\\s*)?)+),\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": {
+                  "name": "entity.name.function.other-monster-status-check.mgd"
+                },
+                "2": { "name": "entity.name.type.monster.mgd" },
+                "3": { "name": "support.function.require-all.mgd" },
+                "4": { "name": "entity.name.type.status-effects.mgd" },
+                "5": { "name": "entity.name.type.scene.mgd" }
+              }
+            },
+            {
+              "match": "\"(IfOtherMonsterHasStatusEffect|IfOtherMonsterDoesntHaveStatusEffect)\",\\s*\"([^\"]+)\",\\s*((?:\"(?:Surrender|Defend|Stun|Charm|Aphrodisiac|Restrain|Drowsy|Sleep|Paralysis|Paralyzed|Trance|Hypnotized|Buffs|Debuffs|Damage|Defence|Power|Technique|Intelligence|Willpower|Allure|Luck|Crit)\"(?:,\\s*)?)+),\\s*\"([^\"]+)\"",
+              "captures": {
+                "1": {
+                  "name": "entity.name.function.other-monster-status-check.mgd"
+                },
+                "2": { "name": "entity.name.type.monster.mgd" },
+                "3": { "name": "entity.name.type.status-effects.mgd" },
+                "4": { "name": "entity.name.type.scene.mgd" }
+              }
+            }
+          ]
+        },
+        {
+          "match": "\"(IfMonsterOrgasm|IfMonsterEnergyGone|IfMonsterSpiritGone)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-condition-check.mgd" },
+            "2": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(CallMonsterEncounterOrgasmCheck)\"",
+          "name": "entity.name.function.monster-orgasm-check.mgd"
+        },
+        {
+          "match": "\"(IfMonsterHasSkill|IfMonsterHasPerk)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-skill-check.mgd" },
+            "2": { "name": "entity.name.type.skill-perk.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(ChangeMonsterArousal|ChangeMonsterEnergy|ChangeMonsterSpirit)\",\\s*\"(-?[0-9]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-stat-change.mgd" },
+            "2": { "name": "constant.numeric.stat-value.mgd" }
+          }
+        },
+        {
+          "match": "\"(MonsterOrgasm)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.monster-orgasm.mgd" },
+            "2": { "name": "constant.numeric.spirit-deduction.mgd" }
+          }
+        },
+        {
+          "match": "\"(DenyMonsterOrgasm|RefreshMonster)\"",
+          "name": "entity.name.function.monster-affliction-control.mgd"
+        },
+        {
+          "match": "\"(ApplyStatusEffectToMonster)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.apply-status-effect.mgd" },
+            "2": { "name": "entity.name.type.skill.mgd" }
+          }
+        },
+        {
+          "match": "\"(RemoveStatusEffectFromMonster)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.remove-status-effect.mgd" },
+            "2": { "name": "entity.name.type.status-effect.mgd" }
+          }
+        },
+        {
+          "match": "\"(HitMonsterWith)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.hit-monster.mgd" },
+            "2": { "name": "entity.name.type.skill.mgd" }
+          }
+        },
+        {
+          "match": "\"(FocusOnMonster)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.focus-monster.mgd" },
+            "2": { "name": "constant.numeric.monster-number.mgd" }
+          }
+        },
+        {
+          "match": "\"(FocusOnRandomMonster|ShuffleMonsterEncounter|RefocusOnInitialMonster)\"",
+          "name": "entity.name.function.monster-focus-control.mgd"
+        },
+        {
+          "match": "\"(FocusedSpeaks)\"",
+          "name": "entity.name.function.focused-monster-speaks.mgd"
+        },
+        {
+          "match": "\"(FocusedSpeaksSkill)\"",
+          "name": "entity.name.function.focused-monster-speaks-skill.mgd"
+        },
+        {
+          "match": "\"(ApplyStance)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.apply-stance.mgd" },
+            "2": { "name": "entity.name.type.stance.mgd" }
+          }
+        },
+        {
+          "match": "\"(ApplyStanceToOtherMonster)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.apply-stance-other-monster.mgd"
+            },
+            "2": { "name": "entity.name.type.monster.mgd" },
+            "3": { "name": "entity.name.type.stance.mgd" }
+          }
+        },
+        {
+          "match": "\"(ClearStanceFromMonsterAndPlayer)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.clear-stance.mgd" },
+            "2": { "name": "entity.name.type.stance.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfPlayerHasStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.if-player-has-stance.mgd" },
+            "2": { "name": "entity.name.type.stance.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfPlayerDoesntHaveStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-player-doesnt-have-stance.mgd"
+            },
+            "2": { "name": "entity.name.type.stance.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "begin": "\"(IfPlayerHasStances)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.player-has-stances.mgd"
+            }
+          },
+          "end": "\"(EndLoop)\",\\s*\"([^\"]*)\"",
+          "endCaptures": {
+            "1": {
+              "name": "entity.name.function.end.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.skill.mgd"
+            }
+          ],
+          "name": "meta.function.player-has-stances.mgd"
+        },
+        {
+          "match": "\"(IfMonsterHasStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.if-monster-has-stance.mgd" },
+            "2": { "name": "entity.name.type.stance.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfMonsterDoesntHaveStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-monster-doesnt-have-stance.mgd"
+            },
+            "2": { "name": "entity.name.type.stance.mgd" },
+            "3": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfOtherMonsterHasStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-other-monster-has-stance.mgd"
+            },
+            "2": { "name": "entity.name.type.monster.mgd" },
+            "3": { "name": "entity.name.type.stance.mgd" },
+            "4": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(IfOtherMonsterDoesntHaveStance)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-other-monster-doesnt-have-stance.mgd"
+            },
+            "2": { "name": "entity.name.type.monster.mgd" },
+            "3": { "name": "entity.name.type.stance.mgd" },
+            "4": { "name": "entity.name.type.scene.mgd" }
+          }
+        },
+        {
+          "match": "\"(ClearStances)\"",
+          "name": "entity.name.function.clear-stances.mgd"
+        }
+      ]
+    },
+    "general-functions": {
+      "patterns": [
+        {
+          "match": "\"(ChangeMonsterLevel|ChangeMonsterErosDrop|ChangeMonsterExpDrop|ChangeMonsterMaxSpirit|ChangeMonsterMaxArousal|ChangeMonsterMaxEnergy|ChangeMonsterPower|ChangeMonsterWill|ChangeMonsterTech|ChangeMonsterAllure|ChangeMonsterLuck|ChangeMonsterInt)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-change.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(LevelUpMonster)\",\\s*\"(MatchPlayer|GoUpByProgress|GoUpByProgressFromOtherEvent|[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-level.mgd"
+            },
+            "2": {
+              "name": "comment.level-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RecalculateMonsterExpDrop|RecalculateMonsterErosDrop)\"",
+          "name": "entity.name.function.monster-recalculate.mgd"
+        },
+        {
+          "match": "\"(RecalculateMonsterExpDrop|RecalculateMonsterErosDrop)\",\\s*\"(AlterByPercent)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-recalculate.mgd"
+            },
+            "2": {
+              "name": "support.function.alter-percent.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.percent-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeMonsterSensitivity)\",\\s*\"(Sex|Ass|Breasts|Mouth|Seduction|Magic|Pain|Holy|Unholy)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-sensitivity.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.sensitivity.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.sensitivity-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeMonsterStatusEffectResistances)\",\\s*\"(Aphrodisiac|Charm|Debuff|Restraints|Paralysis|Sleep|Stun|Trance)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-resistance.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.resistance.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.resistance-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeMonsterFetish)\",,\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-fetish.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.fetish-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GivePerkToMonster|RemovePerkFromMonster)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-perk.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.perk.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveSkillToMonster|RemoveSkillFromMonster)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.monster-skill.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.skill.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ClearMonsterPerks|ClearMonsterSkillList)\"",
+          "name": "entity.name.function.monster-clear.mgd"
+        },
+        {
+          "match": "\"(ChangeMaxArousal|ChangeMaxEnergy|ChangeMaxSpirit|ChangePower|ChangeWill|ChangeTech|ChangeAllure|ChangeLuck|ChangeInt)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-stat-change.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.stat-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeSensitivity|PermanentlyChangeSensitivity)\",\\s*\"(Sex|Ass|Breasts|Mouth|Seduction|Magic|Pain|Holy|Unholy)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-sensitivity.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.sensitivity.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.sensitivity-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PermanentChangeStatusEffectResistances)\",\\s*\"(Aphrodisiac|Charm|Debuff|Restraints|Paralysis|Sleep|Stun|Trance)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-resistance.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.resistance.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.resistance-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeFetish|PermanentlyChangeFetish)\",\\s*\"([^\"]*)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-fetish-change.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.fetish-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetFetish)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-fetish-set.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.fetish.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.fetish-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RespecPlayer)\"",
+          "name": "entity.name.function.player-respec.mgd"
+        },
+        {
+          "match": "\"(DonateToGoddess|SensitivityRestore|PurgeFetishes)\"",
+          "name": "entity.name.function.church-service.mgd"
+        },
+        {
+          "match": "\"(AddTributeToProgress)\"",
+          "name": "entity.name.function.church-tribute.mgd"
+        },
+        {
+          "match": "\"(Speak)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.speak.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.speaker.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayerSpeaks|Speaks|Speaks2|Speaks3|Speaks4|Speaks5|Speaks6|Speaks7|Speaks8|Speaks9|Speaks10|Speaks11|Speaks12|PlayerSpeaksSkill|FlexibleSpeaks)\"",
+          "name": "entity.name.function.player-speaks.mgd"
+        },
+        {
+          "match": "\"(SetStoredColor)\",\\s*\"(Reset)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.stored-color-reset.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.reset.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetStoredColor)\",\\s*\"([1-7])\",\\s*\"(#[0-9a-fA-F]{6})\"(,\\s*\"([1-7])\",\\s*\"(#[0-9a-fA-F]{6})\")*",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.stored-color.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.color-slot.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.color-hex.mgd"
+            },
+            "5": {
+              "name": "constant.numeric.color-slot.mgd"
+            },
+            "6": {
+              "name": "entity.name.type.color-hex.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SaveNextLine|DisplaySavedLine|UseSavedLineInMenu)\"",
+          "name": "entity.name.function.line-management.mgd"
+        },
+        {
+          "match": "\"(ChangeEros|SetEros)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.eros-change.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.eros-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangeErosByPercent)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.eros-percent.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.percent-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(JumpToEvent|JumpToNPCEvent|JumpToLossEvent)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.event-jump.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(JumpToEventThenScene|CallCombatEventAndScene|JumpToNPCEventThenScene|CallEventAndSceneThenReturn)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.event-scene-jump.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.event.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(AllowInventory|DenyInventory|ForceAutoSave|HideHealth)\"",
+          "name": "entity.name.function.inventory-access.mgd"
+        },
+        {
+          "match": "\"(SetArousalToXUnlessHigherThanX|SetArousalToXUnlessHigherThanXThenAddY|ChangeArousal|ChangeArousalQuietly|ChangeEnergy|ChangeEnergyQuietly|ChangeArousalByPercent|ChangeEnergyByPercent|SetSpirit|ChangeSpirit|ChangeSpiritQuietly)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-stat-affliction.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.affliction-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetArousalToXUnlessHigherThanXThenAddY)\",\\s*\"([0-9]+)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-stat-affliction.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.threshold-value.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.add-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(SetArousalToMax|PlayerCurrentEnergyCost|ClearNonPersistentStatusEffects|ClearPlayerStatusEffects|RefreshPlayer|HoldCurrentVirility|HoldCurrentVirilityEnd|PlayerOrgasmNoSpiritLoss|EmptySpiritCounter)\"",
+          "name": "entity.name.function.player-affliction.mgd"
+        },
+        {
+          "match": "\"(DamagePlayerFromMonster|DamageMonsterFromMonster)\",\\s*\"([^\"]*)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.damage.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.monster.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.skill.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ChangePerkDuration)\",\\s*\"([^\"]*)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.perk-duration.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.perk.mgd"
+            },
+            "3": {
+              "name": "constant.numeric.duration-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(ApplyStatusEffect)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.status-effect-apply.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.skill.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RemoveStatusEffect)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.status-effect-remove.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.status-effect.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(PlayerOrgasm)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.player-orgasm.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.spirit-loss.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveExp)\",\\s*\"([-+]?[0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.give-exp.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.exp-value.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveItem|GiveItemQuietly)\",\\s*\"([-+]?[0-9]+)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.give-item.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.item-quantity.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.item.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveTreasure)\",\\s*\"(Common|Uncommon|Rare)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.give-treasure.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.treasure-rarity.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveSkill|GiveSkillQuietly|RemoveSkillFromPlayer|RemoveSkillFromPlayerQuietly|RemoveSkillFromPlayerTemporarily)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.skill-management.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.skill.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(GiveSkillThatWasTemporarilyRemoved)\"",
+          "name": "entity.name.function.skill-management.mgd"
+        },
+        {
+          "match": "\"(GivePerk|GivePerkQuietly|RemovePerk|RemovePerkQuietly)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.perk-management.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.perk.mgd"
+            }
+          }
+        },
+        {
+          "begin": "\"(ShoppingMenu|SkillShoppingMenu)\"",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.shopping-menu.mgd"
+            }
+          },
+          "end": "\"EndLoop\"",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.end.mgd"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\"(PurchasesToProgress)\"",
+              "name": "support.function.purchases-progress.mgd"
+            },
+            {
+              "match": "\"([^\"]*)\"",
+              "name": "entity.name.type.item.mgd"
+            }
+          ],
+          "name": "meta.function.shopping-menu-block.mgd"
+        },
+        {
+          "match": "\"(PlayerStep)\"",
+          "name": "entity.name.function.player-step.mgd"
+        },
+        {
+          "match": "\"(AdvanceTime)\",\\s*\"([0-9]+)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.advance-time.mgd"
+            },
+            "2": {
+              "name": "constant.numeric.time-chunks.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(RestPlayer|SleepPlayer)\"",
+          "name": "entity.name.function.player-rest.mgd"
+        },
+        {
+          "match": "\"(DelayNotifications)\"",
+          "name": "entity.name.function.delay-notifications.mgd"
+        },
+        {
+          "match": "\"(IfDelayingNotifications)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-delaying-notifications.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(TimeBecomesNight|TimeBecomesDay|TimeBecomesNormal)\"",
+          "name": "entity.name.function.time-state.mgd"
+        },
+        {
+          "match": "\"(IfTimeIs)\",\\s*\"(Day|Night|DayFaked|DayTrue|NightFaked|NightTrue|Morning|Noon|Afternoon|Dusk|Evening|Midnight)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-time-is.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.time-value.mgd"
+            },
+            "3": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(HealingSickness)\"",
+          "name": "entity.name.function.healing-sickness.mgd"
+        },
+        {
+          "match": "\"(IfHealingSickness)\",\\s*\"([^\"]*)\"",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.if-healing-sickness.mgd"
+            },
+            "2": {
+              "name": "entity.name.type.scene.mgd"
+            }
+          }
+        },
+        {
+          "match": "\"(CallLossLevelUp)\"",
+          "name": "entity.name.function.loss-level-up.mgd"
+        },
+        {
+          "match": "\"(GameOver)\"",
+          "name": "entity.name.function.game-over.mgd"
+        },
+        {
+          "match": "\"(TrueGameOver)\"",
+          "name": "entity.name.function.true-game-over.mgd"
+        },
+        {
+          "match": "\"(GoToTown)\"",
+          "name": "entity.name.function.go-to-town.mgd"
+        },
+        {
+          "match": "\"(BumpToTown)\"",
+          "name": "entity.name.function.bump-to-town.mgd"
+        },
+        {
+          "match": "\"(GoToChurch)\"",
+          "name": "entity.name.function.go-to-church.mgd"
+        },
+        {
+          "match": "\"(GoToRandomBrothelWaiterScene|GoToRandomBrothelBarScene|GoToRandomBrothelHoleScene|GoToRandomBrothelDayScene)\"",
+          "name": "entity.name.function.go-to-brothel.mgd"
+        }
+      ]
+    }
+  },
+  "audio-file-path": {
+    "match": "\"((\\.\\./Mods/|/music/)[^\"]*\\.(ogg|wav|mp3))\"",
+    "name": "string.filepath.audio.mgd"
+  },
+  "blank Pattern": {
+    "match": "\"()\"",
+    "name": "entity.name.function.blank.mgd"
+  },
+  "image-file-path": {
+    "match": "\"([^\"]*\\.(png|jpg|jpeg|avif|webp))\"",
+    "name": "string.filepath.image.mgd"
+  }
 }
