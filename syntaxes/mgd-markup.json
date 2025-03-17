@@ -2313,7 +2313,7 @@
           }
         },
         {
-          "match": "\"(JumpToScene|CallSceneThenReturn|SetPostName)\",\\s*\"([^\"]+)\"",
+          "match": "\"(JumpToScene|CallSceneThenReturn)\",\\s*\"([^\"]+)\"",
           "captures": {
             "1": { "name": "entity.name.function.scene-jump.mgd" },
             "2": { "name": "entity.name.type.scene.mgd" }
@@ -2390,6 +2390,13 @@
         {
           "match": "\"(GoBackToStoredEvent)\"",
           "name": "entity.name.function.go-back-to-stored-event.mgd"
+        },
+        {
+          "match": "\"(SetPostName)\",\\s*\"[^\"]*\"",
+          "captures": {
+            "1": { "name": "entity.name.function.set-post-name.mgd" },
+            "2": { "name": "constant.numeric.set-post-name-name.mgd" }
+          }
         }
       ]
     },
@@ -2705,6 +2712,21 @@
         {
           "match": "\"(ClearStances)\"",
           "name": "entity.name.function.clear-stances.mgd"
+        },
+        {
+          "match": "\"(DenyPlayerOrgasm)\"",
+          "name": "entity.name.function.deny-player-orgasm.mgd"
+        },
+        {
+          "match": "\"(SkipPlayerAttack)\"",
+          "name": "entity.name.function.skip-player-attack.mgd"
+        },
+        {
+          "match": "\"(HitPlayerWith)\",\\s*\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.function.hit-player-with.mgd" },
+            "2": { "name": "entity.name.type.skill.mgd" }
+          }
         }
       ]
     },
