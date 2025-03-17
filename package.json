@@ -2,7 +2,7 @@
     "name": "mgd-language",
     "displayName": "MGD Language",
     "description": "Assists content development for the JSON-based DSL in the game Monster Girl Dreams.",
-    "version": "26.8.0",
+    "version": "26.9.0",
     "engines": {
         "vscode": "^1.96.0"
     },
@@ -51,7 +51,6 @@
                 "fileMatch": "**/Mods/*/meta.json",
                 "url": "./schemas/key/meta.json"
             },
-
             {
                 "fileMatch": "**/game/Json/Adventures/**/**.json",
                 "url": "./schemas/key/adventures.json"
